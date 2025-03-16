@@ -1,12 +1,11 @@
 
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -26,7 +25,7 @@ const Navbar = () => {
   // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
-  }, [location.pathname]);
+  });
 
   return (
     <header
@@ -38,8 +37,7 @@ const Navbar = () => {
     >
       <nav className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         <Link
-          to="/"
-          className="text-2xl font-display font-bold text-edvantage-blue flex items-center"
+          href="/" className="text-2xl font-display font-bold text-edvantage-blue flex items-center"
         >
           <span className="mr-2">Edvantage</span>
         </Link>
@@ -47,40 +45,37 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
           <Link
-            to="/"
-            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+            href="/"
+            className={`nav-link`}
+            // className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
           >
             Home
           </Link>
           <Link
-            to="/about"
-            className={`nav-link ${
-              location.pathname === "/about" ? "active" : ""
-            }`}
+            href="/about"
+            className={`nav-link`}
+            // className={`nav-link ${ location.pathname === "/about" ? "active" : ""}`}
           >
             About
           </Link>
           <Link
-            to="/team"
-            className={`nav-link ${
-              location.pathname === "/team" ? "active" : ""
-            }`}
+            href="/team"
+            className={`nav-link`}
+            // className={`nav-link ${ location.pathname === "/team" ? "active" : ""}`}
           >
             Team
           </Link>
           <Link
-            to="/blog"
-            className={`nav-link ${
-              location.pathname.includes("/blog") ? "active" : ""
-            }`}
+            href="/blog"
+            className={`nav-link`}
+            // className={`nav-link ${ location.pathname.includes("/blog") ? "active" : ""}`}
           >
             Blog
           </Link>
           <Link
-            to="/contact"
-            className={`nav-link ${
-              location.pathname === "/contact" ? "active" : ""
-            }`}
+            href="/contact"
+            className={`nav-link`}
+            // className={`nav-link ${ location.pathname === "/contact" ? "active" : ""}`}
           >
             Contact
           </Link>
@@ -90,8 +85,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-edvantage-dark-gray"
+        <button className="md:hidden text-edvantage-dark-gray"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -107,32 +101,27 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-8 flex flex-col space-y-6">
           <Link
-            to="/"
-            className="text-xl font-medium py-2 border-b border-gray-100"
+            href="/" className="text-xl font-medium py-2 border-b border-gray-100"
           >
             Home
           </Link>
           <Link
-            to="/about"
-            className="text-xl font-medium py-2 border-b border-gray-100"
+            href="/about" className="text-xl font-medium py-2 border-b border-gray-100"
           >
             About
           </Link>
           <Link
-            to="/team"
-            className="text-xl font-medium py-2 border-b border-gray-100"
+            href="/team" className="text-xl font-medium py-2 border-b border-gray-100"
           >
             Team
           </Link>
           <Link
-            to="/blog"
-            className="text-xl font-medium py-2 border-b border-gray-100"
+            href="/blog" className="text-xl font-medium py-2 border-b border-gray-100"
           >
             Blog
           </Link>
           <Link
-            to="/contact"
-            className="text-xl font-medium py-2 border-b border-gray-100"
+            href="/contact" className="text-xl font-medium py-2 border-b border-gray-100"
           >
             Contact
           </Link>

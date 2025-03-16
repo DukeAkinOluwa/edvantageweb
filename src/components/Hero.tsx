@@ -10,6 +10,7 @@ interface HeroProps {
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
   imageUrl?: string;
+  backgroundImage: string;
 }
 
 const Hero = ({

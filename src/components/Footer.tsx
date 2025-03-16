@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
             <Link
-              to="/"
+              href="/"
               className="text-2xl font-display font-bold text-edvantage-blue inline-block mb-2"
             >
               Edvantage
@@ -65,7 +65,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/"
+                  href="/"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   Home
@@ -73,7 +73,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/about"
+                  href="/about"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   About Us
@@ -81,7 +81,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/team"
+                  href="/team"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   Our Team
@@ -89,7 +89,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/blog"
+                  href="/blog"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   Blog
@@ -97,7 +97,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   Contact
@@ -111,7 +111,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/#features"
+                  href="/#features"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   Time Management
@@ -119,7 +119,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/#features"
+                  href="/#features"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   Collaboration
@@ -127,7 +127,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/#features"
+                  href="/#features"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   Gamification
@@ -135,7 +135,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/#features"
+                  href="/#features"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   Academic Resources
@@ -143,7 +143,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/#features"
+                  href="/#features"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
                   AI Support
