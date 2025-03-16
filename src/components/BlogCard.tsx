@@ -1,12 +1,14 @@
 
 import { Calendar } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface BlogCardProps {
   title: string;
   excerpt: string;
   slug: string;
   date: string;
+  author: string;
   category: string;
   imageUrl: string;
   delay?: number;
@@ -23,7 +25,9 @@ const BlogCard = ({ title, excerpt, slug, date, category, imageUrl, delay = 0 }:
       style={animationStyle}
     >
       <div className="relative h-48 overflow-hidden">
-        <img 
+        <Image
+          width={400}
+          height={400} 
           src={imageUrl} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"

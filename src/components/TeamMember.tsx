@@ -1,5 +1,6 @@
 
 import { Github, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
 
 interface SocialLink {
   platform: 'twitter' | 'linkedin' | 'github';
@@ -39,7 +40,9 @@ const TeamMember = ({ name, role, bio, imageUrl, socialLinks = [], delay = 0 }: 
       style={animationStyle}
     >
       <div className="relative overflow-hidden h-64">
-        <img 
+        <Image
+          width={400}
+          height={400}
           src={imageUrl} 
           alt={name} 
           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.05]"

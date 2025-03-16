@@ -17,7 +17,7 @@ export const teamMembers: TeamMember[] = [
     name: "Akinduko AkinOluwa",
     role: "Founder & CEO",
     bio: "Akinduko is a visionary leader with a passion for education technology. His experience as a student led him to create Edvantage to solve the productivity challenges facing tertiary students.",
-    imageUrl: "./Images/AkinOluwa.jpg",
+    imageUrl: "/Images/AkinOluwa.jpg",
     socialLinks: [
       {
         platform: "twitter",
@@ -34,7 +34,7 @@ export const teamMembers: TeamMember[] = [
     name: "Owolabi Titilayo",
     role: "Co-Founder & COO",
     bio: "Titilayo brings operational excellence and strategic vision to Edvantage. Her background in business administration ensures the company delivers on its promises to students.",
-    imageUrl: "./Images/Titilayo.jpg",
+    imageUrl: "/Images/Titilayo.jpg",
     socialLinks: [
       {
         platform: "twitter",

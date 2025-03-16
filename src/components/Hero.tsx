@@ -1,6 +1,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface HeroProps {
   title: string;
@@ -46,7 +47,9 @@ const Hero = ({
           </div>
           <div className="relative lg:h-[500px] animate-slide-in-right">
             {imageUrl ? (
-              <img
+              <Image
+                width={400}
+                height={400}
                 src={imageUrl}
                 alt="Edvantage App"
                 className="w-full h-full object-cover rounded-2xl shadow-2xl transition-transform duration-700 hover:scale-[1.02]"
