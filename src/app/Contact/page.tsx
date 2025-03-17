@@ -65,7 +65,7 @@ export default function Contact() {
                 <div className="text-center mb-16">
                   <h1 className="text-4xl font-bold mb-4 text-edvantage-blue">Get in Touch</h1>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Have questions or feedback? We'd love to hear from you. Fill out the form below and our team will get back to you as soon as possible.
+                    Have questions or feedback? We&apos;d love to hear from you. Fill out the form below and our team will get back to you as soon as possible.
                   </p>
                 </div>
                 
@@ -178,7 +178,7 @@ export default function Contact() {
                           </div>
                           <div className="ml-4">
                             <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                            <p className="mt-1 text-gray-600">info@edvantage.app</p>
+                            <p className="mt-1 text-gray-600">edvantage.edu.ng@gmail.con</p>
                           </div>
                         </div>
                         

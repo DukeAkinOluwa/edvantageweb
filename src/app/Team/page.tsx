@@ -55,7 +55,7 @@ export default function Team() {
                 <div className="mt-20 text-center bg-gray-50 p-10 rounded-xl">
                   <h2 className="text-2xl font-bold mb-4">Join Our Team</h2>
                   <p className="text-lg text-gray-700 mb-6">
-                    We're always looking for talented individuals who are passionate about education
+                    We&apos;re always looking for talented individuals who are passionate about education
                     and technology to join our mission of empowering students.
                   </p>
                   <a 

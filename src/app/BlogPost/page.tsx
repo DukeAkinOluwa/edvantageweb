@@ -7,6 +7,7 @@ import { blogPosts } from "@/data/blogData";
 import PageTransition from "@/components/PageTransition";
 import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
+import Image from "next/image";
 
 // Layouts
 import Navbar from '@/components/Navbar';
@@ -39,7 +40,7 @@ export default function BlogPost() {
           return (
             <div className="container mx-auto py-16 px-4 text-center">
               <h1 className="text-2xl font-bold">Blog post not found</h1>
-              <p className="mt-4">The article you're looking for doesn't exist or has been removed.</p>
+              <p className="mt-4">The article you&apos;re looking for doesn&apos;t exist or has been removed.</p>
             </div>
           );
         }
@@ -49,7 +50,7 @@ export default function BlogPost() {
             <div className="container mx-auto py-16 px-4">
               <div className="max-w-4xl mx-auto">
                 <div className="mb-8">
-                  <img 
+                  <Image 
                     src={post.imageUrl} 
                     alt={post.title} 
                     className="w-full h-[400px] object-cover rounded-xl" 
@@ -99,7 +100,7 @@ export default function BlogPost() {
                           className="block group"
                         >
                           <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-lg">
-                            <img 
+                            <Image 
                               src={relatedPost.imageUrl} 
                               alt={relatedPost.title} 
                               className="w-full h-48 object-cover" 

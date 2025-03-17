@@ -74,7 +74,7 @@ export default function Blog() {
                         slug={post.slug}
                         imageUrl={post.imageUrl}
                         delay={index * 100}
-                        category={""}
+                        category={post.category || "General"}
                       />
                     ))}
                   </div>
