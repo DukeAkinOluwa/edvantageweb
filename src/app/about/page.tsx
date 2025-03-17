@@ -51,6 +51,8 @@ export default function About() {
                             src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
                             alt="Student using Edvantage app" 
                             className="object-cover w-full h-full"
+                            width={1000}
+                            height={1000}
                           />
                         </AspectRatio>
                       </div>
@@ -134,6 +136,8 @@ export default function About() {
                           src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
                           alt="Educational technology" 
                           className="object-cover w-full h-full"
+                          width={1000}
+                          height={1000}
                         />
                       </div>
                     </div>
@@ -146,6 +150,8 @@ export default function About() {
                           src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
                           alt="Student studying" 
                           className="object-cover w-full h-full"
+                            width={1000}
+                            height={1000}
                         />
                       </div>
                       <div className="p-8 order-1 md:order-2">

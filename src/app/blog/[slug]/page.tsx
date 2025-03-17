@@ -54,6 +54,8 @@ export default function BlogPost() {
                     src={post.imageUrl} 
                     alt={post.title} 
                     className="w-full h-[400px] object-cover rounded-xl" 
+                    width={1000}
+                    height={1000}
                   />
                 </div>
                 
@@ -104,6 +106,8 @@ export default function BlogPost() {
                               src={relatedPost.imageUrl} 
                               alt={relatedPost.title} 
                               className="w-full h-48 object-cover" 
+                              width={1000}
+                              height={1000}
                             />
                             <div className="p-6">
                               <h4 className="text-xl font-semibold mb-2 group-hover:text-edvantage-blue transition-colors">
