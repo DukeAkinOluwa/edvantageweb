@@ -85,7 +85,7 @@ export default function Home() {
       },
       {
         question: "How much does Edvantage cost?",
-        answer: "Edvantage offers a freemium model. Basic features are available for free, with premium features accessible for ₦1200/year - an affordable price designed specifically for students."
+        answer: "Edvantage offers a freemium model. Basic features are available for free, with premium features accessible for ₦000.00/year - an affordable price designed specifically for students."
       },
       {
         question: "Can I use Edvantage on multiple devices?",
@@ -167,7 +167,7 @@ export default function Home() {
               
               <PricingTier
                 name="Pro"
-                price="₦1200"
+                price="₦000.00"
                 period="year"
                 description="Everything in Basic plus premium features"
                 features={[
@@ -215,7 +215,7 @@ export default function Home() {
                 <p className="text-xl opacity-80">Mobile Adoption</p>
               </div>
               <div className="p-6">
-                <div className="text-5xl font-bold mb-2">₦1200</div>
+                <div className="text-5xl font-bold mb-2">₦000.00</div>
                 <p className="text-xl opacity-80">Per Year</p>
               </div>
             </div>
