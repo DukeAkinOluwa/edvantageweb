@@ -247,7 +247,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600">
-                  "Edvantage has completely changed how I manage my academic life. The reminder system ensures I never miss deadlines, and the study squads feature has made group projects so much easier!"
+                  &quot;Edvantage has completely changed how I manage my academic life. The reminder system ensures I never miss deadlines, and the study squads feature has made group projects so much easier!&quot;
                 </p>
               </div>
               
@@ -265,7 +265,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600">
-                  "As a course rep, Edvantage has made communicating with my classmates seamless. The academic calendar keeps everyone on the same page, and the gamification makes studying more fun!"
+                  &quot;As a course rep, Edvantage has made communicating with my classmates seamless. The academic calendar keeps everyone on the same page, and the gamification makes studying more fun!&quot;
                 </p>
               </div>
               
@@ -283,7 +283,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600">
-                  "The AI study support is a game-changer for difficult concepts. I've seen my grades improve since using Edvantage, and the affordable price makes it accessible to all students."
+                  &quot;The AI study support is a game-changer for difficult concepts. I&apos;ve seen my grades improve since using Edvantage, and the affordable price makes it accessible to all students.&quot;
                 </p>
               </div>
             </div>

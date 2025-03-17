@@ -25,7 +25,7 @@ const Navbar = () => {
   // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
-  });
+  }, []);
 
   return (
     <header
