@@ -99,7 +99,15 @@ const Navbar = () => {
           isOpen ? "translate-x-0" : "translate-x-full"
         } pt-24`}
       >
-        <div className="container mx-auto px-8 flex flex-col space-y-6">
+        <div className="container mx-auto px-8 flex flex-col space-y-6 relative">
+          {/* Explicit Close Button */}
+          <button 
+            className="absolute top-[-60px] right-4 p-2 hover:bg-gray-100 rounded-full"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+          >
+            <X size={24} className="text-edvantage-dark-gray" />
+          </button>
           <Link
             href="/" className="text-xl font-medium py-2 border-b border-gray-100"
           >

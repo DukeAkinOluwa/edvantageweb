@@ -4,6 +4,7 @@ import PageTransition from '@/components/PageTransition';
 import Hero from '@/components/Hero';
 import FeatureCard from '@/components/FeatureCard';
 import FaqItem from '@/components/FaqItem';
+import PricingTier from '@/components/PricingTier';
 import Link from 'next/link';
 
 import { Toaster } from '@/components/ui/toaster';
@@ -84,7 +85,7 @@ export default function Home() {
       },
       {
         question: "How much does Edvantage cost?",
-        answer: "Edvantage offers a freemium model. Basic features are available for free, with premium features accessible for ₦900/year - an affordable price designed specifically for students."
+        answer: "Edvantage offers a freemium model. Basic features are available for free, with premium features accessible for ₦1200/year - an affordable price designed specifically for students."
       },
       {
         question: "Can I use Edvantage on multiple devices?",
@@ -110,7 +111,8 @@ export default function Home() {
           ctaLink="/contact"
           secondaryCtaText="Learn More"
           secondaryCtaLink="/about"
-          backgroundImage="https://images.unsplash.com/photo-1557425955-df376b5903c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          backgroundImage=''
+          imageUrl="https://images.unsplash.com/photo-1557425955-df376b5903c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
         />
   
         {/* Features Section */}
@@ -136,6 +138,69 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* NEW Pricing Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-edvantage-blue mb-4">Simple, Transparent Pricing</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Choose the plan that suits your academic needs, with affordable options for every student.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <PricingTier
+                name="Basic"
+                price="Free"
+                period="forever"
+                description="Essential features for individual students"
+                features={[
+                  "Academic calendar",
+                  "Basic task management",
+                  "Access to study guides",
+                  "Email support"
+                ]}
+                ctaText="Get Started"
+                ctaLink="/contact"
+              />
+              
+              <PricingTier
+                name="Pro"
+                price="₦1200"
+                period="year"
+                description="Everything in Basic plus premium features"
+                features={[
+                  "Advanced task prioritization",
+                  "Study group collaboration",
+                  "AI study assistant",
+                  "Gamification rewards",
+                  "Priority support"
+                ]}
+                isPopular={true}
+                ctaText="Try Pro"
+                ctaLink="/contact"
+              />
+              
+              <PricingTier
+                name="Campus"
+                price="Custom"
+                period="year"
+                description="Enterprise solution for institutions"
+                features={[
+                  "Everything in Pro",
+                  "Campus-wide deployment",
+                  "Admin dashboard",
+                  "API integration",
+                  "Dedicated support",
+                  "Custom branding"
+                ]}
+                ctaText="Contact Us"
+                ctaLink="/contact"
+              />
+            </div>
+          </div>
+        </section>
   
         {/* Stats Section */}
         <section className="py-20 bg-edvantage-blue text-white">
@@ -150,7 +215,7 @@ export default function Home() {
                 <p className="text-xl opacity-80">Mobile Adoption</p>
               </div>
               <div className="p-6">
-                <div className="text-5xl font-bold mb-2">₦900</div>
+                <div className="text-5xl font-bold mb-2">₦1200</div>
                 <p className="text-xl opacity-80">Per Year</p>
               </div>
             </div>
