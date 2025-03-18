@@ -165,7 +165,7 @@ export default function Contact() {
                           </div>
                           <div className="ml-4">
                             <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                            <p className="mt-1 text-gray-600">+234 801 234 5678</p>
+                            <p className="mt-1 text-gray-600">+234 802 828 9332</p>
                           </div>
                         </div>
                         
