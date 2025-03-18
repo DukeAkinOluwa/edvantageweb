@@ -59,11 +59,11 @@ const Navbar = () => {
             About
           </Link>
           <Link
-            href="/team"
+            href="/leadership"
             className={`nav-link`}
-            // className={`nav-link ${ location.pathname === "/team" ? "active" : ""}`}
+            // className={`nav-link ${ location.pathname === "/leadership" ? "active" : ""}`}
           >
-            Team
+            Leadership Team
           </Link>
           <Link
             href="/blog"
@@ -119,9 +119,9 @@ const Navbar = () => {
             About
           </Link>
           <Link
-            href="/team" className="text-xl font-medium py-2 border-b border-gray-100"
+            href="/leadership" className="text-xl font-medium py-2 border-b border-gray-100"
           >
-            Team
+            Leadership Team
           </Link>
           <Link
             href="/blog" className="text-xl font-medium py-2 border-b border-gray-100"

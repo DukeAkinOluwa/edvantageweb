@@ -167,8 +167,8 @@ export default function About() {
                         <div className="bg-edvantage-light-blue/20 p-4 rounded-lg italic text-gray-700 border-l-4 border-edvantage-blue">
                           &quot;We created Edvantage because we believe every student deserves tools that work as hard as they do.&quot;
                         </div>
-                        <Link href="/team" className="inline-flex items-center text-edvantage-blue font-medium mt-6 hover:underline">
-                          Meet our team
+                        <Link href="/leadership" className="inline-flex items-center text-edvantage-blue font-medium mt-6 hover:underline">
+                          Meet our Leadership Team
                           <ArrowRight size={16} className="ml-1" />
                         </Link>
                       </div>

@@ -81,10 +81,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/team"
+                  href="/leadership"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
-                  Our Team
+                  Our Leadership Team
                 </Link>
               </li>
               <li>
