@@ -64,7 +64,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "An in-depth look at how Edvantage addresses the specific productivity and communication challenges faced by students in Nigerian universities and polytechnics.",
     date: "October 12, 2023",
     author: "Akinduko AkinOluwa",
-    imageUrl: "/Images/edvantagewebicon.jpg",
+    imageUrl: "/Images/edvantagewebicon.png",
     category: "Nigerian Education",
     tags: ["Nigerian Education", "Local Solutions", "Academic Challenges"]
   },

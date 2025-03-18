@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     siteName: "Edvantage Hub",
     images: [
       {
-        url: "./Images/edvantagewebicon.jpg",
-        width: 3696,
-        height: 3696,
+        url: "./Images/edvantagewebicon.png",
+        width: 500,
+        height: 500,
       },
     ],
   },
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     site: "@Edvantage",
     title: "Edvantage - Your go-to Student Hub",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
-    images: "./Images/edvantagewebicon.jpg",
+    images: "./Images/edvantagewebicon.png",
   },
-  icons: './Images/edvantagewebicon.jpg',
+  icons: './Images/edvantagewebicon.png',
 };
 
 export default function RootLayout({
