@@ -63,7 +63,7 @@ const Navbar = () => {
             className={`nav-link`}
             // className={`nav-link ${ location.pathname === "/leadership" ? "active" : ""}`}
           >
-            Leadership Team
+            Leadership
           </Link>
           <Link
             href="/blog"
@@ -121,7 +121,7 @@ const Navbar = () => {
           <Link
             href="/leadership" className="text-xl font-medium py-2 border-b border-gray-100"
           >
-            Leadership Team
+            Leadership
           </Link>
           <Link
             href="/blog" className="text-xl font-medium py-2 border-b border-gray-100"
