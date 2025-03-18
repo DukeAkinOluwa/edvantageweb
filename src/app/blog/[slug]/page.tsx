@@ -24,6 +24,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: `Edvantage Blog | ${post.title}`,
       description: `${post.excerpt}`,
     },
+    twitter:{
+      title: `Edvantage Blog | ${post.title}`,
+      description: `${post.excerpt}`,
+    }
   };
 }
 

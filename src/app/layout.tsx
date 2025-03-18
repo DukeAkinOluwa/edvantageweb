@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://edvantage.com.ng'),
   openGraph: {
     url: ".",
-    title: "Edvantage - Your go-to Student Hub",
+    title: "Edvantage Student Hub",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
     siteName: "Edvantage Hub",
     images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@Edvantage",
-    title: "Edvantage - Your go-to Student Hub",
+    title: "Edvantage Student Hub",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
     images: "./Images/edvantagewebicon.png",
   },
