@@ -174,9 +174,9 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-200 pt-8 mt-8 text-center">
-          <p className="text-sm text-edvantage-dark-gray">
+          <Link href="/dashboard" className="text-sm text-edvantage-dark-gray">
             &copy; {currentYear} Edvantage. All rights reserved.
-          </p>
+          </Link>
         </div>
       </div>
     </footer>
