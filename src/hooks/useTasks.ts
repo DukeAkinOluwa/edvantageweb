@@ -4,8 +4,8 @@ import { useAuth } from '@/contexts/AuthContext';
 import { 
   generateDummyTasks, 
   generateTasksForStudent, 
-  generateUpcomingTasks, 
-  generateCompletedTasksHistory 
+  // generateUpcomingTasks, 
+  // generateCompletedTasksHistory 
 } from '@/utils/dummyTasks';
 import { db, getLocalStorageItem, setLocalStorageItem } from '@/utils/storage';
 

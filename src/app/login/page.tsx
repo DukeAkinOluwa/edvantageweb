@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from "next/link"
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -32,7 +32,6 @@ const Login = () => {
   const { login } = useAuth();
   const { toast } = useToast();
   const router = useRouter();
-  const pathname = usePathname();
 
   // Set redirect path based on account type
   const redirectPath = accountType === 'organization' ? '/admin/SchoolDashboard' : '/dashboard';
@@ -63,7 +62,7 @@ const Login = () => {
       // Redirect based on account type
       router.push(redirectPath);
       
-    } catch (error) {
+    } catch{
       toast({
         title: "Login failed",
         description: "Please check your credentials and try again.",

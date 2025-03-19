@@ -1,20 +1,21 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'next/navigation';
 import { 
   Users, BookOpen, Briefcase, Settings, MessageSquare, 
   Calendar, FileText, PlusCircle, Send, Paperclip,
   Download, ExternalLink, UserPlus, ChevronLeft
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+// import { Input } from '@/components/ui/input';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Group, groups, events, resources, Task } from '@/data/dummyData';
+import { groups, events, resources, Task } from '@/data/dummyData';
+import Link from 'next/link';
 
 // Mock messages
 interface Message {
@@ -120,10 +121,11 @@ const mockGroupTasks: Task[] = [
 ];
 
 const GroupDetailPage = () => {
-  const { groupId } = useParams<{ groupId: string }>();
+  const params = useParams();
+  const groupId = params?.groupId || '';
   const [newMessage, setNewMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>(mockMessages);
-  const [groupTasks, setGroupTasks] = useState<Task[]>(mockGroupTasks);
+  const [groupTasks] = useState<Task[]>(mockGroupTasks);
   const { toast } = useToast();
   
   // Find the group by id
@@ -134,7 +136,7 @@ const GroupDetailPage = () => {
       <div className="text-center py-20">
         <h2 className="text-xl font-semibold">Group not found</h2>
         <p className="text-muted-foreground mt-2">
-          The group you're looking for doesn't exist or you don't have access to it.
+          The group you&apos;re looking for doesn&apos;t exist or you don&apos;t have access to it.
         </p>
         <Button asChild className="mt-4">
           <Link href="/dashboard/groups">

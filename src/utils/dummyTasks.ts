@@ -43,7 +43,7 @@ const taskTitles = [
 ];
 
 function generateRandomDate(year = 2025, startMonth = 0, endMonth = 11) {
-  const date = new Date();
+  // const date = new Date();
   const month = Math.floor(Math.random() * (endMonth - startMonth + 1)) + startMonth;
   const day = Math.floor(Math.random() * 28) + 1; // Avoiding edge cases with month lengths
   

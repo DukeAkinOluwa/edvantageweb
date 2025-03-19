@@ -2,46 +2,6 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { 
-  Plus, 
-  Calendar, 
-  Clock, 
-  Users, 
-  FileText, 
-  CheckCircle, 
-  AlertCircle, 
-  MoreHorizontal,
-  Search,
-  Filter,
-  SortAsc,
-  ExternalLink,
-  UserPlus,
-  FolderOpen,
-  CalendarDays,
-  ChevronDown,
-  Edit,
-  Trash2
-} from 'lucide-react';
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ProjectHeader } from '@/components/projects/ProjectHeader';
@@ -49,7 +9,20 @@ import { ProjectFilters } from '@/components/projects/ProjectFilters';
 import { ProjectList } from '@/components/projects/ProjectList';
 import { CreateProjectDialog } from '@/components/projects/CreateProjectDialog';
 import { EmptyProjectsState } from '@/components/projects/EmptyProjectsState';
-import { Project, ProjectStatus, ProjectPriority, mockProjects } from '@/types/project';
+import { Project, mockProjects, ProjectPriority } from '@/types/project';
+
+interface NewTask {
+  title: string;
+  dueDate?: string;
+}
+
+interface NewProject {
+  title: string;
+  description: string;
+  priority: ProjectPriority;
+  dueDate: string;
+  tasks: NewTask[];
+}
 
 const getStatusOptions = [
   { value: 'all', label: 'All Projects' },
@@ -70,19 +43,20 @@ const ProjectsPage: React.FC = () => {
   const { toast } = useToast();
 
   const filteredProjects = projects.filter(project => {
-    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         project.description.toLowerCase().includes(searchQuery.toLowerCase());
-    
+    const matchesSearch =
+      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchQuery.toLowerCase());
+
     const matchesStatus = activeTab === 'all' || project.status === activeTab;
-    
+
     const matchesPriority = !filterPriority || project.priority === filterPriority;
-    
+
     return matchesSearch && matchesStatus && matchesPriority;
   });
 
   const sortedProjects = [...filteredProjects].sort((a, b) => {
     if (!sortBy) return 0;
-    
+
     switch (sortBy) {
       case 'title-asc':
         return a.title.localeCompare(b.title);
@@ -101,10 +75,10 @@ const ProjectsPage: React.FC = () => {
     }
   });
 
-  const handleCreateProject = (newProject: any) => {
+  const handleCreateProject = (newProject: NewProject) => {
     const id = `project-${Date.now()}`;
     const startDate = new Date().toISOString().split('T')[0];
-    
+
     const createdProject: Project = {
       id,
       title: newProject.title,
@@ -115,23 +89,23 @@ const ProjectsPage: React.FC = () => {
       startDate,
       dueDate: newProject.dueDate,
       team: [
-        { id: 'user-1', name: 'John Doe', role: 'Creator', avatar: 'https://i.pravatar.cc/150?img=1' }
+        { id: 'user-1', name: 'John Doe', role: 'Creator', avatar: 'https://i.pravatar.cc/150?img=1' },
       ],
-      tasks: newProject.tasks.map((task: any, index: number) => ({
+      tasks: newProject.tasks.map((task: NewTask, index: number) => ({
         id: `task-${Date.now()}-${index}`,
         title: task.title,
         completed: false,
-        dueDate: task.dueDate
-      }))
+        dueDate: task.dueDate,
+      })),
     };
-    
+
     setProjects([createdProject, ...projects]);
-    
+
     toast({
-      title: "Project created",
+      title: 'Project created',
       description: `Your new project "${createdProject.title}" has been created successfully.${
         createdProject.tasks.length ? ` Added ${createdProject.tasks.length} tasks.` : ''
-      }`
+      }`,
     });
   };
 
@@ -144,22 +118,20 @@ const ProjectsPage: React.FC = () => {
     setSortBy(null);
     setSearchQuery('');
   };
-  
+
   const applySort = (sortValue: string) => {
     setSortBy(sortValue);
     toast({
-      title: "Sorting applied",
-      description: `Projects are now sorted by ${sortValue.replace('-', ' ')}`
+      title: 'Sorting applied',
+      description: `Projects are now sorted by ${sortValue.replace('-', ' ')}`,
     });
   };
 
   return (
     <div className="space-y-6">
-      <ProjectHeader 
-        onCreateProject={() => setIsCreateDialogOpen(true)} 
-      />
-      
-      <ProjectFilters 
+      <ProjectHeader onCreateProject={() => setIsCreateDialogOpen(true)} />
+
+      <ProjectFilters
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         filterPriority={filterPriority}
@@ -168,7 +140,7 @@ const ProjectsPage: React.FC = () => {
         applySort={applySort}
         clearFilters={clearFilters}
       />
-      
+
       <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="mb-6">
           {getStatusOptions.map(option => (
@@ -177,15 +149,12 @@ const ProjectsPage: React.FC = () => {
             </TabsTrigger>
           ))}
         </TabsList>
-        
+
         <TabsContent value={activeTab}>
           {sortedProjects.length > 0 ? (
-            <ProjectList 
-              projects={sortedProjects}
-              onOpenProject={handleOpenProject}
-            />
+            <ProjectList projects={sortedProjects} onOpenProject={handleOpenProject} />
           ) : (
-            <EmptyProjectsState 
+            <EmptyProjectsState
               hasFilters={!!(searchQuery || filterPriority || sortBy)}
               onClearFilters={clearFilters}
               onCreateProject={() => setIsCreateDialogOpen(true)}

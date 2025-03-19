@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   Users, School, ChevronDown, BarChart3, Book, User,
-  GraduationCap, Settings, Calendar, LogOut, Bell, 
-  Search, ChevronRight, PieChart, Activity, HelpCircle,
+  GraduationCap, Settings, LogOut, Bell, 
+  Search, ChevronRight, Activity, HelpCircle,
   Download, ArrowUpRight, FileText, CreditCard, Menu, Plus
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';

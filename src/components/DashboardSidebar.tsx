@@ -4,13 +4,13 @@ import { usePathname, useRouter } from 'next/navigation';
 import { 
   Calendar, BookOpen, Users, Briefcase, 
   Brain, Award, Bell, Settings, LogOut,
-  Menu, X, ChevronRight, Home, Download,
+  X, ChevronRight, Home, Download,
   Sun, Moon, User, MessageCircle
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+// import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { collectUserData, generateUserDataPDF } from '@/utils/pdfExport';
 import { DashboardSidebarLink } from './sidebar/DashboardSidebarLink';
 import { DashboardSidebarAction } from './sidebar/DashboardSidebarAction';

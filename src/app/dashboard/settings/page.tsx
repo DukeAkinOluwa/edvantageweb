@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Bell, User, Lock, LogOut, Moon, Sun, Globe, Shield, Trash2, Download, Check } from 'lucide-react';
+import { Bell, User, Lock, LogOut, Moon, Sun, Shield, Trash2, Download, Check } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -644,7 +644,7 @@ const SettingsPage = () => {
                   <div className="space-y-0.5">
                     <Label htmlFor="online-status" className="text-base font-medium">Show Online Status</Label>
                     <p className="text-sm text-muted-foreground">
-                      Allow others to see when you're active on the platform.
+                      Allow others to see when you&apos;re active on the platform.
                     </p>
                   </div>
                   <Switch 

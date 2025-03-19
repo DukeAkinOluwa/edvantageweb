@@ -1,22 +1,19 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useRouter, useParams } from 'next/navigation';
 import { 
-  ArrowLeft, 
-  Calendar, 
+  ArrowLeft,
+  Calendar,
   Clock, 
-  Users, 
-  FileText, 
-  PlusCircle, 
-  CheckCircle, 
-  Circle, 
-  Edit, 
-  Trash2, 
+  Users,
+  FileText,
+  PlusCircle,
+  Edit,
   UserPlus,
   MessageSquare 
 } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
@@ -126,7 +123,7 @@ const getPriorityColor = (priority: ProjectPriority): string => {
 
 const ProjectDetailPage: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
-  const navigate = useNavigate();
+  const router = useRouter();
   const { toast } = useToast();
   
   const [project, setProject] = useState<Project | null>(null);
@@ -177,8 +174,8 @@ const ProjectDetailPage: React.FC = () => {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold mb-2">Project Not Found</h2>
-        <p className="mb-6 text-muted-foreground">The project you are looking for doesn't exist or has been removed.</p>
-        <Button onClick={() => navigate('/dashboard/projects')}>
+        <p className="mb-6 text-muted-foreground">The project you are looking for doesn&apos;t exist or has been removed.</p>
+        <Button onClick={() => router.push('/dashboard/projects')}>
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
         </Button>
       </div>
@@ -186,7 +183,7 @@ const ProjectDetailPage: React.FC = () => {
   }
   
   const handleGoBack = () => {
-    navigate('/dashboard/projects');
+    router.push('/dashboard/projects');
   };
   
   const handleAddTask = () => {

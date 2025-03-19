@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   Search, Plus, Users, BookOpen, Briefcase, 
-  UserPlus, Copy, Settings, Calendar, FileText 
+  UserPlus, Copy,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -186,7 +186,7 @@ const GroupsPage = () => {
       </div>
       <h3 className="text-lg font-medium">No {type} Groups</h3>
       <p className="text-sm text-muted-foreground mt-2 mb-4">
-        You don't have any {type.toLowerCase()} groups yet.
+        You don&apos;t have any {type.toLowerCase()} groups yet.
       </p>
       <Button onClick={onCreateClick}>
         <Plus className="h-4 w-4 mr-2" />
@@ -350,7 +350,7 @@ const GroupsPage = () => {
           <DialogHeader>
             <DialogTitle>Invite Members</DialogTitle>
             <DialogDescription>
-              Invite others to join "{selectedGroup?.name}"
+              Invite others to join &quot;{selectedGroup?.name}&quot;
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-4">

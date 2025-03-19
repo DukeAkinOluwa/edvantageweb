@@ -213,7 +213,7 @@ const NotificationsPage = () => {
               ) : (
                 <div className="text-center py-10 text-muted-foreground">
                   <Check className="h-10 w-10 mx-auto mb-3 text-green-500" />
-                  <p>You're all caught up!</p>
+                  <p>You&apos;re all caught up!</p>
                 </div>
               )}
             </TabsContent>

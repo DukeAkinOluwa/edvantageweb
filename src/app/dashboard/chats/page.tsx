@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -144,7 +143,7 @@ const ChatsPage: React.FC = () => {
   const [activeGroup, setActiveGroup] = useState<Group | null>(null);
   const [message, setMessage] = useState('');
   const [chats, setChats] = useState<Chat[]>(mockChats);
-  const [groups, setGroups] = useState<Group[]>(mockGroups);
+  const [groups] = useState<Group[]>(mockGroups);
   const [activeTab, setActiveTab] = useState('direct');
   const [searchQuery, setSearchQuery] = useState('');
 

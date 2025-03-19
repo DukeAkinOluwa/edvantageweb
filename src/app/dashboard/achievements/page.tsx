@@ -3,13 +3,9 @@
 import React, { useState } from 'react';
 import { 
   Award, 
-  TrendingUp, 
   Trophy, 
-  Users, 
-  Calendar, 
-  BookOpen, 
-  Brain, 
-  CheckSquare, 
+  Users,
+  BookOpen,
   Clock, 
   ArrowUpRight,
   Share2,
@@ -25,7 +21,7 @@ import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useToast } from '@/hooks/use-toast';
-import { useAuth } from '@/contexts/AuthContext';
+// import { useAuth } from '@/contexts/AuthContext';
 import { 
   achievements, 
   leaderboard, 
@@ -36,7 +32,7 @@ import {
 const AchievementsPage = () => {
   const [userPoints, setUserPoints] = useState(820); // Mock user points
   const { toast } = useToast();
-  const { user } = useAuth();
+  // const { user } = useAuth();
   
   // Sort achievements by earned first, then by progress percentage
   const sortedAchievements = [...achievements].sort((a, b) => {
@@ -54,9 +50,9 @@ const AchievementsPage = () => {
   const earnedAchievements = achievements.filter(a => a.earnedAt).length;
   
   // Get total achievement points
-  const totalPoints = achievements.reduce((sum, achievement) => {
-    return achievement.earnedAt ? sum + achievement.points : sum;
-  }, 0);
+  // const totalPoints = achievements.reduce((sum, achievement) => {
+  //   return achievement.earnedAt ? sum + achievement.points : sum;
+  // }, 0);
   
   // Get completed tasks count - using 3 as a mock value since 'tasks' is undefined
   const completedTasks = 3;
@@ -418,7 +414,7 @@ const AchievementsPage = () => {
                 <CardContent>
                   <div className="text-center py-6">
                     <Award className="h-16 w-16 text-yellow-500 mx-auto mb-4" />
-                    <div className="text-lg font-medium mb-1">"Productivity Master"</div>
+                    <div className="text-lg font-medium mb-1">&quot;Productivity Master&quot;</div>
                     <div className="text-sm text-muted-foreground mb-4">
                       Display this exclusive badge on your profile and in groups
                     </div>

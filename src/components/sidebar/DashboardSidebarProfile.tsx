@@ -1,8 +1,13 @@
-
 import React from 'react';
 
+interface User {
+  name: string;
+  email: string;
+  // Add other properties if your user object has them
+}
+
 interface DashboardSidebarProfileProps {
-  user: any;
+  user: User;
   onClick: () => void;
 }
 
@@ -11,10 +16,10 @@ export const DashboardSidebarProfile: React.FC<DashboardSidebarProfileProps> = (
   onClick
 }) => {
   if (!user) return null;
-  
+
   return (
     <div className="px-4 pb-4">
-      <div 
+      <div
         className="flex items-center space-x-3 p-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         onClick={onClick}
       >

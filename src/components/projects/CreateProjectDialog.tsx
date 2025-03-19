@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Plus, AlertCircle, CalendarDays, FileText } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -11,10 +10,23 @@ import { Separator } from '@/components/ui/separator';
 import { useToast } from '@/hooks/use-toast';
 import { ProjectPriority } from '@/types/project';
 
+interface Task {
+  title: string;
+  dueDate?: string;
+}
+
+interface Project {
+  title: string;
+  description: string;
+  dueDate: string;
+  priority: ProjectPriority;
+  tasks: Task[];
+}
+
 interface CreateProjectDialogProps {
   isOpen: boolean;
   onClose: () => void;
-  onCreateProject: (project: any) => void;
+  onCreateProject: (project: Project) => void;
 }
 
 export const CreateProjectDialog: React.FC<CreateProjectDialogProps> = ({
@@ -22,14 +34,14 @@ export const CreateProjectDialog: React.FC<CreateProjectDialogProps> = ({
   onClose,
   onCreateProject
 }) => {
-  const [newProject, setNewProject] = useState({
+  const [newProject, setNewProject] = useState<Project>({
     title: '',
     description: '',
     dueDate: '',
-    priority: 'medium' as ProjectPriority,
-    tasks: [] as { title: string; dueDate?: string }[]
+    priority: 'medium',
+    tasks: []
   });
-  
+
   const { toast } = useToast();
 
   const handleAddTaskToNewProject = () => {
@@ -48,7 +60,7 @@ export const CreateProjectDialog: React.FC<CreateProjectDialogProps> = ({
       ...updatedTasks[index],
       [field]: value
     };
-    
+
     setNewProject({
       ...newProject,
       tasks: updatedTasks
@@ -58,7 +70,7 @@ export const CreateProjectDialog: React.FC<CreateProjectDialogProps> = ({
   const handleRemoveNewProjectTask = (index: number) => {
     const updatedTasks = [...newProject.tasks];
     updatedTasks.splice(index, 1);
-    
+
     setNewProject({
       ...newProject,
       tasks: updatedTasks
@@ -86,7 +98,7 @@ export const CreateProjectDialog: React.FC<CreateProjectDialogProps> = ({
     }
 
     onCreateProject(newProject);
-    
+
     setNewProject({
       title: '',
       description: '',
@@ -94,7 +106,7 @@ export const CreateProjectDialog: React.FC<CreateProjectDialogProps> = ({
       priority: 'medium',
       tasks: []
     });
-    
+
     onClose();
   };
 

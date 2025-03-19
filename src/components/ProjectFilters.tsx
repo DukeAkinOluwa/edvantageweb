@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, Filter, SortAsc, Calendar, BarChart3 } from 'lucide-react';
+import { Search, Filter, SortAsc, Calendar } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';

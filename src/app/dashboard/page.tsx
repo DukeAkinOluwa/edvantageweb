@@ -56,7 +56,7 @@ const Dashboard = () => {
             <CardHeader className="pb-2">
               <CardTitle className="text-lg flex items-center">
                 <CheckCircle className="mr-2 h-5 w-5 text-green-500" />
-                Today's Tasks
+                Today&apos;s Tasks
               </CardTitle>
             </CardHeader>
             <CardContent>

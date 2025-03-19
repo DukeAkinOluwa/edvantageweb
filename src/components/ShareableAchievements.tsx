@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Award, Copy, Share2, Check, Twitter, Facebook, Linkedin } from 'lucide-react';
@@ -13,7 +13,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  // DialogTrigger,
 } from '@/components/ui/dialog';
 
 const ShareableAchievements: React.FC = () => {

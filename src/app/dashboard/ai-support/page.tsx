@@ -3,13 +3,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { 
   Send, Upload, Image as ImageIcon, RefreshCw, 
-  Download, ExternalLink, FileText, Lightbulb, 
+  FileText, Lightbulb, 
   Sparkles, Info, ThumbsUp, ThumbsDown 
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Tabs, TabsContent } from '@/components/ui/tabs';
 import {
   Select,
   SelectContent,
@@ -618,7 +618,7 @@ const AiSupportPage = () => {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start">
                   <Lightbulb className="h-4 w-4 mr-2 text-amber-500 flex-shrink-0 mt-0.5" />
-                  <span>Use AI to explain concepts in simpler terms when you're stuck</span>
+                  <span>Use AI to explain concepts in simpler terms when you&apos;re stuck</span>
                 </li>
                 <li className="flex items-start">
                   <Lightbulb className="h-4 w-4 mr-2 text-amber-500 flex-shrink-0 mt-0.5" />

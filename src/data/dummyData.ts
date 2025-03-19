@@ -1,5 +1,6 @@
 
 import { BookOpen, Users, Briefcase, Brain, Award, CalendarClock } from 'lucide-react';
+import React from 'react'; // Import Reactyy
 
 // Task types
 export type TaskPriority = 'low' | 'medium' | 'high';
@@ -101,7 +102,7 @@ export type DashboardFeature = {
   id: string;
   title: string;
   description: string;
-  icon: any;
+  icon: React.FC; // Use React.FC as the type
   path: string;
   color: string;
 };
