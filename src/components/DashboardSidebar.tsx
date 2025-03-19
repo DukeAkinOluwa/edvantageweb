@@ -172,7 +172,7 @@ const DashboardSidebar = ({ onToggleCollapse }: DashboardSidebarProps) => {
       </div>
       
       {!isCollapsed && (
-        <DashboardSidebarProfile user={user} onClick={viewProfile} />
+        <DashboardSidebarProfile user={user ? user : { name: '', email: '' }} onClick={viewProfile} />
       )}
       
       <div className="space-y-1 px-2 mt-2">

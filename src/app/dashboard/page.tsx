@@ -182,7 +182,9 @@ const Dashboard = () => {
               <Card className="h-full transition-all hover:shadow-md hover:border-edvantage-blue">
                 <CardHeader className="pb-2">
                   <div className={`p-2 rounded-lg w-fit ${feature.color}`}>
-                    <feature.icon className="h-5 w-5" />
+                  <div className="h-5 w-5">
+                    <feature.icon />
+                  </div>
                   </div>
                   <CardTitle className="text-lg mt-2">{feature.title}</CardTitle>
                   <CardDescription>{feature.description}</CardDescription>
