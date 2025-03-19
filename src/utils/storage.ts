@@ -50,7 +50,9 @@ export class IndexedDBService {
     this.dbName = options.name;
     this.dbVersion = options.version;
     this.stores = options.stores;
-    this.init();
+    if (typeof window !== 'undefined' && typeof indexedDB !== 'undefined'){
+        this.init();
+    }
   }
 
   private init(): Promise<IDBDatabase> {

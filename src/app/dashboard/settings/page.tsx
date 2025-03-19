@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Bell, User, Lock, LogOut, Moon, Sun, Shield, Trash2, Download, Check } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -59,9 +59,20 @@ const SettingsPage = () => {
   
   // Theme settings state
   const [themeSettings, setThemeSettings] = useState({
-    theme: localStorage.getItem('theme') || 'light',
+    theme: 'light', // Initialize with a default value
     language: 'english',
   });
+
+  useEffect(() => {
+    // Check if localStorage is defined (browser environment)
+    if (typeof localStorage !== 'undefined') {
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        setThemeSettings(prev => ({
+            ...prev,
+            theme: storedTheme,
+        }));
+    }
+  }, []);
   
   // Privacy settings state
   const [privacySettings, setPrivacySettings] = useState({
@@ -98,13 +109,17 @@ const SettingsPage = () => {
   // Handle theme change
   const handleDarkModeToggle = (isDark: boolean) => {
     setThemeSettings(prev => ({
-      ...prev,
-      theme: isDark ? 'dark' : 'light'
+        ...prev,
+        theme: isDark ? 'dark' : 'light',
     }));
-    
+
+    if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
     toast({
-      title: `${isDark ? 'Dark' : 'Light'} mode activated`,
-      description: `Interface has been switched to ${isDark ? 'dark' : 'light'} mode.`,
+        title: `${isDark ? 'Dark' : 'Light'} mode activated`,
+        description: `Interface has been switched to ${isDark ? 'dark' : 'light'} mode.`,
     });
   };
   

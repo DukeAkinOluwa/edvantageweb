@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -39,11 +39,17 @@ const SchoolDashboard: React.FC = () => {
   const { user, logout } = useAuth();
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState('overview');
-  const [isDarkMode, setIsDarkMode] = useState(() => 
-    document.documentElement.classList.contains('dark')
-  );
   const [showProfile, setShowProfile] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(false); // Initialize with a default value
+
+  useEffect(() => {
+      // Check if document is defined (browser environment)
+      if (typeof document !== 'undefined') {
+          const initialDarkMode = document.documentElement.classList.contains('dark');
+          setIsDarkMode(initialDarkMode);
+      }
+  }, []); // Run only once after the initial render
 
   if (!user) {
     return (
@@ -72,16 +78,18 @@ const SchoolDashboard: React.FC = () => {
   };
 
   const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    if (newMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+    if (typeof document !== 'undefined') {
+        const newMode = !isDarkMode;
+        if (newMode) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+        setIsDarkMode(newMode);
     }
-    setIsDarkMode(newMode);
-  };
+};
 
   // Filter departments based on search query
   const filteredDepartments = nigerianDepartments.filter(
