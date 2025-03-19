@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { AchievementProvider } from "@/contexts/AchievementContext";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Edvantage",
@@ -39,7 +42,13 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        {children}
+        <AuthProvider>
+          <AchievementProvider>
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </AchievementProvider>
+        </AuthProvider>
         <Analytics />
       </body>
     </html>
