@@ -24,7 +24,7 @@ const ProtectedRoute = ({ children, allowedAccountTypes }: ProtectedRouteProps) 
   // If allowedAccountTypes is specified, check if user has the right account type
   if (allowedAccountTypes && user.accountType && !allowedAccountTypes.includes(user.accountType)) {
     // Redirect to appropriate dashboard based on account type
-    const redirectTo = user.accountType === 'organization' ? '/school-admin' : '/dashboard';
+    const redirectTo = user.accountType === 'organization' ? '/admin/SchoolDashboard' : '/dashboard';
     return <Navigate to={redirectTo} replace />;
   }
 
