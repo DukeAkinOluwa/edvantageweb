@@ -6,17 +6,17 @@ import { AchievementProvider } from "@/contexts/AchievementContext";
 import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Edvantage",
+  title: "Dashboard - Edvantage",
   description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
   metadataBase: new URL('https://edvantage.com.ng'),
   openGraph: {
     url: ".",
-    title: "Edvantage Student Hub",
+    title: "Dashboard - Edvantage",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
     siteName: "Edvantage Hub",
     images: [
       {
-        url: "./Images/edvantagewebicon.png",
+        url: "/Images/edvantagewebicon.png",
         width: 500,
         height: 500,
       },
@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@Edvantage",
-    title: "Edvantage Student Hub",
+    title: "Dashboard - Edvantage",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
-    images: "./Images/edvantagewebicon.png",
+    images: "/Images/edvantagewebicon.png",
   },
-  icons: './Images/edvantagewebicon.png',
+  icons: '/Images/edvantagewebicon.png',
 };
 
 export default function RootLayout({
