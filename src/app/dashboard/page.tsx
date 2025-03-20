@@ -114,7 +114,7 @@ const Dashboard = () => {
                     <CardTitle className="text-lg flex items-center justify-between">
                     <div className="flex items-center">
                         <CheckCircle className="mr-2 h-5 w-5 text-green-500" />
-                        Today's Tasks
+                        Today&apos;s Tasks
                     </div>
                     <span className="text-sm bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 py-1 px-2 rounded-full">
                         {todayTasks.length}
@@ -145,7 +145,7 @@ const Dashboard = () => {
                             </DrawerTrigger>
                             <DrawerContent>
                             <DrawerHeader>
-                                <DrawerTitle>Today's Tasks</DrawerTitle>
+                                <DrawerTitle>Today&apos;s Tasks</DrawerTitle>
                             </DrawerHeader>
                             <div className="px-4 py-2">
                                 <ul className="space-y-3">
@@ -334,7 +334,7 @@ const Dashboard = () => {
                     <CardHeader className="pb-2">
                     <CardTitle className="text-lg flex items-center">
                         <CheckCircle className="mr-2 h-5 w-5 text-green-500" />
-                        Today's Tasks
+                        Today&apos;s Tasks
                     </CardTitle>
                     </CardHeader>
                     <CardContent>

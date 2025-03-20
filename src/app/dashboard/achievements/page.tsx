@@ -165,10 +165,10 @@ const AchievementsPage = () => {
     achievements: contextAchievements, 
     userPoints, 
     getShareableLink, 
-    updateAchievementProgress 
+    // updateAchievementProgress 
   } = useAchievements();
   
-  const [achievements, setAchievements] = useState<Achievement[]>(
+  const [achievements] = useState<Achievement[]>(
     contextAchievements.length > 0 ? contextAchievements : mockAchievements
   );
   
@@ -178,6 +178,8 @@ const AchievementsPage = () => {
   const [isShareDialogOpen, setIsShareDialogOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [showStats, setShowStats] = useState(!isMobile); // Initially expanded on desktop, collapsed on mobile
+
+  console.log(selectedAchievement)
   
   const handleShare = () => {
     try {
@@ -191,6 +193,7 @@ const AchievementsPage = () => {
       
       setIsShareDialogOpen(false);
     } catch (error) {
+      console.error("Error creating shareable link:", error);
       toast({
         title: "Error creating shareable link",
         description: "Please try again later",
@@ -209,11 +212,11 @@ const AchievementsPage = () => {
   const levelProgress = (userPoints % 100);
   
   // Simulate progress update
-  const handleIncrementProgress = (achievement: Achievement) => {
-    if (achievement.progress < achievement.maxProgress) {
-      updateAchievementProgress(achievement.id, achievement.progress + 1);
-    }
-  };
+  // const handleIncrementProgress = (achievement: Achievement) => {
+  //   if (achievement.progress < achievement.maxProgress) {
+  //     updateAchievementProgress(achievement.id, achievement.progress + 1);
+  //   }
+  // };
 
   // Filter achievements by category
   const filteredAchievements = activeFilter 
@@ -490,7 +493,7 @@ const AchievementsPage = () => {
                 <Star className="h-12 w-12 text-gray-400 mx-auto mb-2" />
                 <h3 className="text-lg font-medium mb-1">All achievements completed!</h3>
                 <p className="text-sm text-muted-foreground">
-                  You've earned all available achievements
+                  You&apos;ve earned all available achievements
                 </p>
               </div>
             )}
@@ -646,7 +649,7 @@ const AchievementsPage = () => {
                         <Star className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                         <h3 className="text-xl font-medium mb-2">All achievements completed!</h3>
                         <p className="text-muted-foreground">
-                          You've earned all available achievements
+                          You&apos;ve earned all available achievements
                         </p>
                       </div>
                     )}

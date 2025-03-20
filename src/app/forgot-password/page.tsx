@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,9 +13,7 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => 
-    document.documentElement.classList.contains('dark')
-  );
+  const [isDarkMode, setIsDarkMode] = useState(false);
   
   const { toast } = useToast();
 
@@ -29,6 +27,12 @@ const ForgotPassword = () => {
     }
     setIsDarkMode(!isDarkMode);
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,6 +49,7 @@ const ForgotPassword = () => {
       
       setIsSuccess(true);
     } catch (error) {
+      console.error("Error submitting form:", error);
       toast({
         title: "Something went wrong",
         description: "Please try again later.",
@@ -70,7 +75,7 @@ const ForgotPassword = () => {
         )}
       </Button>
       
-      <Link to="/login" className="absolute top-4 left-4">
+      <Link href="/login" className="absolute top-4 left-4">
         <Button variant="ghost" size="icon" className="rounded-full">
           <ArrowLeft className="h-5 w-5" />
         </Button>
@@ -125,7 +130,7 @@ const ForgotPassword = () => {
         </CardContent>
         <CardFooter className="flex flex-col space-y-4">
           <div className="text-center text-sm">
-            <Link to="/login" className="text-edvantage-blue dark:text-edvantage-light-blue hover:underline">
+            <Link href="/login" className="text-edvantage-blue dark:text-edvantage-light-blue hover:underline">
               Return to sign in
             </Link>
           </div>
