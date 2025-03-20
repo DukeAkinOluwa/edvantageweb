@@ -51,7 +51,7 @@
   --foreground: 222 47% 11%;
 
   --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card-foreground: 210 45% 98%;
 
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
@@ -277,6 +277,10 @@
 .staggered-item {
   opacity: 0;
   animation: staggered-fade-in 0.5s ease forwards;
+}
+
+.dashboard-card{
+  background-color: white;
 }
 
 .staggered-item:nth-child(1) { animation-delay: 0.1s; }
