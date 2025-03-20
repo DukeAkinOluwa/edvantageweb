@@ -233,6 +233,10 @@
   color: rgb(42 82 190 / var(--tw-text-opacity, 1));
 }
 
+.bg-background{
+  background-color: white;
+}
+
 .bg-edvantage-light-blue {
   --tw-bg-opacity: 1;
   background-color: rgb(230 242 255 / var(--tw-bg-opacity, 1));
