@@ -56,7 +56,7 @@ const DashboardSidebar = ({ onToggleCollapse }: DashboardSidebarProps) => {
     { title: 'Dashboard', icon: Home, path: '/dashboard' },
     { title: 'Schedule & Tasks', icon: Calendar, path: '/dashboard/calendar' },
     { title: 'Resources', icon: BookOpen, path: '/dashboard/resources' },
-    { title: 'Study Groups', icon: Users, path: '/dashboard/groups' },
+    { title: 'Study Groups', icon: Users, path: '/dashboard/communication' },
     { title: 'Projects', icon: Briefcase, path: '/dashboard/projects' },
     { title: 'AI Study Support', icon: Brain, path: '/dashboard/ai-support' },
     { title: 'Achievements', icon: Award, path: '/dashboard/achievements' },

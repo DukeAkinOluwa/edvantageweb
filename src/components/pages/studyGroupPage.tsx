@@ -168,7 +168,7 @@ const GroupsPage = () => {
       </CardContent>
       <CardFooter className="flex justify-between pt-2">
         <Button variant="outline" size="sm" asChild>
-          <Link href={`/dashboard/groups/${group.id}`}>View</Link>
+          <Link href={`/dashboard/communication/${group.id}`}>View</Link>
         </Button>
         <Button variant="ghost" size="sm" onClick={() => openInviteDialog(group)}>
           <UserPlus className="h-4 w-4 mr-1" />

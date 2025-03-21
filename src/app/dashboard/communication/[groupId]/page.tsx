@@ -139,7 +139,7 @@ const GroupDetailPage = () => {
           The group you&apos;re looking for doesn&apos;t exist or you don&apos;t have access to it.
         </p>
         <Button asChild className="mt-4">
-          <Link href="/dashboard/groups">
+          <Link href="/dashboard/communication">
             <ChevronLeft className="mr-2 h-4 w-4" />
             Back to Groups
           </Link>
@@ -206,7 +206,7 @@ const GroupDetailPage = () => {
             className="mr-2 md:mr-4" 
             asChild
           >
-            <Link href="/dashboard/groups">
+            <Link href="/dashboard/communication">
               <ChevronLeft className="h-5 w-5" />
             </Link>
           </Button>

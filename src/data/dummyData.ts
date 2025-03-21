@@ -385,7 +385,7 @@ export const notifications: Notification[] = [
     message: 'Alex Wu has joined "CS 301 Study Group".',
     time: '2025-06-07T14:15:00',
     read: false,
-    actionUrl: '/dashboard/groups/group-1'
+    actionUrl: '/dashboard/communication/group-1'
   },
   {
     id: 'notif-4',
@@ -530,7 +530,7 @@ export const dashboardFeatures: DashboardFeature[] = [
     title: 'Study Groups',
     description: 'Collaborate with peers in study groups',
     icon: Users,
-    path: '/dashboard/groups',
+    path: '/dashboard/communication',
     color: 'bg-purple-100 text-purple-600'
   },
   {

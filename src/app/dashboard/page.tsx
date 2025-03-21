@@ -209,7 +209,7 @@ const Dashboard = () => {
                     </Link>
                 </Button>
                 <Button variant="outline" size="sm" className="h-auto py-3 px-2 justify-start" asChild>
-                    <Link href="/dashboard/groups/create" className="flex flex-col items-center">
+                    <Link href="/dashboard/communication/create" className="flex flex-col items-center">
                     <Users className="h-5 w-5 mb-1 text-purple-500" />
                     <span>Study Group</span>
                     </Link>
@@ -440,7 +440,7 @@ const Dashboard = () => {
                         <Link href="/dashboard/calendar/new-event">+ Add Event</Link>
                         </Button>
                         <Button variant="outline" size="sm" className="w-full justify-start" asChild>
-                        <Link href="/dashboard/groups/create">+ Create Study Group</Link>
+                        <Link href="/dashboard/communication/create">+ Create Study Group</Link>
                         </Button>
                         <Button variant="outline" size="sm" className="w-full justify-start" asChild>
                         <Link href="/dashboard/ai-support">Get AI Study Help</Link>

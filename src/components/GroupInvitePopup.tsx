@@ -36,7 +36,7 @@ const GroupInvitePopup: React.FC<GroupInvitePopupProps> = ({
 }) => {
   const [usernameSearch, setUsernameSearch] = useState('');
   const [emailSearch, setEmailSearch] = useState('');
-  const [inviteLink, setInviteLink] = useState(`https://edvantage.example.com/groups/join/${groupId}`);
+  const [inviteLink, setInviteLink] = useState(`https://edvantage.example.com/communication/join/${groupId}`);
   const [copied, setCopied] = useState(false);
   const [searchResults, setSearchResults] = useState<User[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -302,7 +302,7 @@ const GroupInvitePopup: React.FC<GroupInvitePopupProps> = ({
                 className="w-full"
                 onClick={() => {
                   // Generate a new link
-                  setInviteLink(`https://edvantage.example.com/groups/join/${groupId}?t=${Date.now()}`);
+                  setInviteLink(`https://edvantage.example.com/communication/join/${groupId}?t=${Date.now()}`);
                   
                   toast({
                     title: "New link generated",
