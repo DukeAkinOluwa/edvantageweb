@@ -1,61 +1,87 @@
-import * as React from "react";
-// import { ChevronLeft, ChevronRight } from "lucide-react";
-import { DayPicker, type DayPickerProps } from "react-day-picker";
+'use client';
 
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import React, { useState } from 'react';
+// import "./calendar.css"; // Ensure you have this CSS file
 
-export type CalendarProps = DayPickerProps;
-
-function Calendar({
-  className,
-  classNames,
-  showOutsideDays = true,
-  ...props
-}: CalendarProps) {
-  return (
-    <DayPicker
-      showOutsideDays={showOutsideDays}
-      className={cn("p-3", className)}
-      classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4",
-        caption: "flex justify-center pt-1 relative items-center",
-        caption_label: "text-sm font-medium",
-        nav: "space-x-1 flex items-center",
-        nav_button: cn(
-          buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
-        ),
-        nav_button_previous: "absolute left-1 [&>svg]:w-4 [&>svg]:h-4",
-        nav_button_next: "absolute right-1 [&>svg]:w-4 [&>svg]:h-4",
-        table: "w-full border-collapse space-y-1",
-        head_row: "flex",
-        head_cell:
-          "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
-        row: "flex w-full mt-2",
-        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
-        day: cn(
-          buttonVariants({ variant: "ghost" }),
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
-        ),
-        day_range_end: "day-range-end",
-        day_selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        day_today: "bg-accent text-accent-foreground",
-        day_outside:
-          "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
-        day_disabled: "text-muted-foreground opacity-50",
-        day_range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-foreground",
-        day_hidden: "invisible",
-        ...classNames,
-      }}
-      {...props}
-    />
-  );
+interface CalendarProps {
+  selected?: Date | null;
+  onSelect?: (date: Date) => void;
 }
 
-Calendar.displayName = "Calendar";
+const Calendar: React.FC<CalendarProps> = ({ selected, onSelect }) => {
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const today = new Date();
 
-export { Calendar };
+  const daysInMonth = (year: number, month: number) => new Date(year, month + 1, 0).getDate();
+  const firstDayOfMonth = (year: number, month: number) => new Date(year, month, 1).getDay();
+
+  const handlePrevMonth = () => {
+    setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1));
+  };
+
+  const handleNextMonth = () => {
+    setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1));
+  };
+
+  const handleDateClick = (day: number, offset: number) => {
+    const newSelectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + offset, day);
+    onSelect?.(newSelectedDate);
+  };
+
+  const renderDays = () => {
+    const days = [];
+    const totalDays = daysInMonth(currentDate.getFullYear(), currentDate.getMonth());
+    const prevMonthDays = daysInMonth(currentDate.getFullYear(), currentDate.getMonth() - 1);
+    const firstDay = firstDayOfMonth(currentDate.getFullYear(), currentDate.getMonth());
+    const totalCells = Math.ceil((firstDay + totalDays) / 7) * 7;
+
+    for (let i = firstDay - 1; i >= 0; i--) {
+      days.push(
+        <div key={`prev-${i}`} className="calendar-cell prev-month" onClick={() => handleDateClick(prevMonthDays - i, -1)}>
+          {prevMonthDays - i}
+        </div>
+      );
+    }
+
+    for (let day = 1; day <= totalDays; day++) {
+      const isSelected = selected && selected.getDate() === day && selected.getMonth() === currentDate.getMonth();
+      const isToday = today.getDate() === day && today.getMonth() === currentDate.getMonth() && today.getFullYear() === currentDate.getFullYear();
+      days.push(
+        <div
+          key={day}
+          className={`calendar-cell day ${isSelected ? 'selected' : isToday ? 'today' : ''}`}
+          onClick={() => handleDateClick(day, 0)}
+        >
+          {day}
+        </div>
+      );
+    }
+
+    for (let i = totalDays + firstDay; i < totalCells; i++) {
+      days.push(
+        <div key={`next-${i}`} className="calendar-cell next-month" onClick={() => handleDateClick(i - totalDays - firstDay + 1, 1)}>
+          {i - totalDays - firstDay + 1}
+        </div>
+      );
+    }
+    return days;
+  };
+
+  return (
+    <div className="calendar">
+      <div className="calendar-header">
+        <button onClick={handlePrevMonth}>&lt;</button>
+        <span>{currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</span>
+        <button onClick={handleNextMonth}>&gt;</button>
+      </div>
+      <div className="calendar-grid">
+        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+          <div key={day} className="calendar-cell header">{day}</div>
+        ))}
+        {renderDays()}
+      </div>
+    </div>
+  );
+};
+
+export default Calendar;

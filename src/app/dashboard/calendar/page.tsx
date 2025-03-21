@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Calendar as CalendarIcon, Clock, Plus, CheckCircle2, Edit, Trash2 } from 'lucide-react';
-import { Calendar } from '@/components/ui/calendar';
+import Calendar from '@/components/ui/calendar';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -293,10 +293,8 @@ const CalendarPage = () => {
           </CardHeader>
           <CardContent>
             <Calendar
-              mode="single"
               selected={date}
               onSelect={setDate}
-              className="w-full"
             />
           </CardContent>
         </Card>
