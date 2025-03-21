@@ -1,3 +1,11 @@
+$edvantageBlue: #2A52BE;
+$edvantageWhite: #FAFBFD;
+$edvantageLightBlue: #dee7fa;
+
+@function edvantageBlueOpacity($opacity) {
+    @return rgba($edvantageBlue, $opacity);
+}
+
 .calendar {
     width: 100%;
     max-width: 320px;
@@ -7,7 +15,7 @@
 
 .calendar-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: spaceBetween;
     align-items: center;
     font-size: 18px;
     color: #0f1729;
@@ -53,13 +61,13 @@
     transition: background 0.3s, color 0.3s;
 
     &:hover {
-    background: #2a52be;
+    background: $edvantageBlue;
     color: #fafbfd;
     }
 }
 
 .selected {
-    background: #2a52be !important;
+    background: $edvantageBlue !important;
     color: #fafbfd !important;
 }
 
@@ -69,7 +77,16 @@
 
 .today:not(.selected) {
     background: rgba(42, 82, 190, 0.2); // Light blue highlight
-    color: #2a52be;
+    color: $edvantageBlue;
     border-radius: 4px;
 }
-    
+
+.tabsList{
+    background-color: $edvantageLightBlue;
+    color: black;
+}
+
+.tabsTrigger{
+    background-color: edvantageBlueOpacity(.2);
+    color: $edvantageBlue;
+}

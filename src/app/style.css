@@ -7,7 +7,7 @@
 
 .calendar-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: spaceBetween;
   align-items: center;
   font-size: 18px;
   color: #0f1729;
@@ -51,12 +51,12 @@
   transition: background 0.3s, color 0.3s;
 }
 .day:hover {
-  background: #2a52be;
+  background: #2A52BE;
   color: #fafbfd;
 }
 
 .selected {
-  background: #2a52be !important;
+  background: #2A52BE !important;
   color: #fafbfd !important;
 }
 
@@ -66,8 +66,18 @@
 
 .today:not(.selected) {
   background: rgba(42, 82, 190, 0.2);
-  color: #2a52be;
+  color: #2A52BE;
   border-radius: 4px;
+}
+
+.tabsList {
+  background-color: #dee7fa;
+  color: black;
+}
+
+.tabsTrigger {
+  background-color: rgba(42, 82, 190, 0.2);
+  color: #2A52BE;
 }
 
 /*# sourceMappingURL=style.css.map */
