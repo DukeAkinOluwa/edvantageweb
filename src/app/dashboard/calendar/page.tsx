@@ -531,7 +531,7 @@ const CalendarPage = () => {
       
       {/* New Task Dialog */}
       <Dialog open={isNewTaskDialogOpen} onOpenChange={setIsNewTaskDialogOpen}>
-        <DialogContent className="sm:max-w-[500px]">
+        <DialogContent>
           <DialogHeader>
             <DialogTitle>{taskToEdit ? 'Edit Task' : 'Add New Task'}</DialogTitle>
             <DialogDescription>
