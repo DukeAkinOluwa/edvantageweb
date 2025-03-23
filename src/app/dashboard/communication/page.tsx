@@ -19,7 +19,7 @@ const CommunicationPage: React.FC = () => {
             <TabsList className="bg-transparent p-1 h-auto rounded-lg">
               <TabsTrigger 
                 value="chats" 
-                className={`flex items-center gap-2 rounded-md px-4 py-2 transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md ${activeTab === 'chats' ? 'tabsTrigger' : ''}`}
+                className={`flex items-center gap-2 rounded-md px-4 py-2 transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md ${activeTab === 'chats' ? 'activeTabsTrigger' : ''}`}
                 onClick={() => setActiveTab('chats')}
               >
                 <MessageCircle className="h-4 w-4" />
@@ -30,7 +30,7 @@ const CommunicationPage: React.FC = () => {
               </div>
               <TabsTrigger 
                 value="groups" 
-                className={`flex items-center gap-2 rounded-md px-4 py-2 transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md ${activeTab === 'groups' ? 'tabsTrigger' : ''}`}
+                className={`flex items-center gap-2 rounded-md px-4 py-2 transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md ${activeTab === 'groups' ? 'activeTabsTrigger' : ''}`}
                 onClick={() => setActiveTab('groups')}
               >
                 <Users className="h-4 w-4" />

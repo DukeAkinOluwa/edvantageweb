@@ -1,0 +1,5 @@
+@use "./variables.scss" as vars;
+
+@function edvantageBlueOpacity($opacity) {
+    @return rgba(vars.$edvantageBlue, $opacity);
+}

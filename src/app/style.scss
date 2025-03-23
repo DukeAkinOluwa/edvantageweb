@@ -1,8 +1,5 @@
 @import "../styles/variables.scss";
-
-@function edvantageBlueOpacity($opacity) {
-    @return rgba($edvantageBlue, $opacity);
-}
+@import "../styles/functions.scss";
 
 .calendar {
     width: 100%;
@@ -13,7 +10,7 @@
 
 .calendar-header {
     display: flex;
-    justify-content: spaceBetween;
+    justify-content: space-between;
     align-items: center;
     font-size: 18px;
     color: #0f1729;
@@ -79,15 +76,15 @@
     border-radius: 4px;
 }
 
-.tabsList{
-    background-color: $edvantageLightBlue;
-    color: black;
-}
+// .activeTabsTrigger{
+//     color: $edvantageBlue;
+//     background-color: edvantageBlueOpacity(.2);
+// }
 
-.tabsTrigger{
-    background-color: edvantageBlueOpacity(.2);
-    color: $edvantageBlue;
-}
+// .tabsList{
+//     background-color: $edvantageLightBlue;
+//     color: black;
+// }
 
 /* Animations */
   

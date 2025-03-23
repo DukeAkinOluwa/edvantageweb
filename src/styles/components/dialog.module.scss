@@ -1,15 +1,15 @@
-@import '../_variables.scss';
+@use "../_variables.scss" as vars;
 
 .dialogOverlay {
     position: fixed;
     inset: 0;
     z-index: 50;
     background: rgba(0, 0, 0, 0.8);
-  
+
     &[data-state="open"] {
         animation: fadeIn 0.3s ease-in;
     }
-  
+
     &[data-state="closed"] {
         animation: fadeOut 0.3s ease-out;
     }
@@ -25,14 +25,13 @@
     max-width: 32rem; // max-w-lg
     transform: translate(-50%, -50%);
     gap: 1rem;
-    border: 1px solid var(--border-color);
-    background: $edvantageWhite;
+    border: 1px solid vars.$border;
+    background: vars.$edvantageWhite;
     padding: 1.5rem;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     transition-duration: 200ms;
     border-radius: 8px;
 
-    /* Scoped attribute selectors */
     &[data-state="open"] {
         animation: fadeIn 200ms ease-out, zoomIn 200ms ease-out, slideIn 200ms ease-out;
     }
@@ -40,9 +39,9 @@
     &[data-state="closed"] {
         animation: fadeOut 200ms ease-in, zoomOut 200ms ease-in, slideOut 200ms ease-in;
     }
-  
+
     @media (min-width: 640px) {
-      max-width: 500px;
+        max-width: 500px;
     }
 
     @media screen and (max-width: 640px) {
@@ -57,23 +56,23 @@
     border-radius: 4px;
     opacity: 0.7;
     transition: opacity 0.2s ease-in-out;
-    
+
     &:hover {
-    opacity: 1;
+        opacity: 1;
     }
 
     &:focus {
-        outline: 2px solid var(--focus-ring); // Replaces 'ring'
-        outline-offset: 2px; // Replaces 'ring-offset'
+        outline: 2px solid vars.$ring;
+        outline-offset: 2px;
     }
 
     &:disabled {
-    pointer-events: none;
+        pointer-events: none;
     }
 
     &[data-state="open"] {
-    background: var(--accent-color);
-    color: var(--muted-foreground);
+        background: vars.$accent;
+        color: vars.$muted-foreground;
     }
 }
 
@@ -82,9 +81,9 @@
     flex-direction: column;
     gap: 6px; // Equivalent to space-y-1.5 (6px)
     text-align: center;
-  
+
     @media (min-width: 640px) {
-      text-align: left;
+        text-align: left;
     }
 }
 
@@ -93,9 +92,9 @@
     flex-direction: column-reverse;
 
     @media (min-width: 640px) {
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 8px; // Equivalent to space-x-2 (8px)
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 8px; // Equivalent to space-x-2 (8px)
     }
 }
 
@@ -108,7 +107,7 @@
 
 .dialogDescription {
     font-size: 0.875rem; // Equivalent to text-sm (14px)
-    color: var(--muted-foreground, #6b7280); // Equivalent to text-muted-foreground
+    color: vars.$muted-foreground;
 }
 
 .iconSize {
@@ -116,40 +115,39 @@
     height: 1rem;
 }
 
-
 @keyframes fadeIn {
     from {
-    opacity: 0;
+        opacity: 0;
     }
     to {
-    opacity: 1;
+        opacity: 1;
     }
 }
 
 @keyframes fadeOut {
     from {
-    opacity: 1;
+        opacity: 1;
     }
     to {
-    opacity: 0;
+        opacity: 0;
     }
 }
 
 @keyframes zoomIn {
     from {
-    transform: scale(0.95);
+        transform: scale(0.95);
     }
     to {
-    transform: scale(1);
+        transform: scale(1);
     }
 }
 
 @keyframes zoomOut {
     from {
-    transform: scale(1);
+        transform: scale(1);
     }
     to {
-    transform: scale(0.95);
+        transform: scale(0.95);
     }
 }
 

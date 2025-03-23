@@ -1,0 +1,54 @@
+@use "../_variables.scss" as var;
+@use "../_functions.scss" as func;
+
+.tabsList {
+    display: inline-flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: var.$muted;
+    padding: 4px;
+    color: var.$muted-foreground;
+}
+
+.tabsTrigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: 2px solid var.$ring;
+        outline-offset: 2px;
+    }
+
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    &[data-state="active"] {
+        color: var.$edvantageBlue;
+        background-color: func.edvantageBlueOpacity(0.2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.tabsContent {
+    margin-top: 8px;
+    outline: none;
+
+    &:focus-visible {
+        outline: 2px solid var.$ring;
+        outline-offset: 2px;
+    }
+}
