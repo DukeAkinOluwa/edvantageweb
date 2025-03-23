@@ -1,4 +1,5 @@
-import * as React from "react"
+import * as React from "react";
+import styles from '@/styles/components/card.module.scss';
 
 import { cn } from "@/lib/utils"
 
@@ -9,7 +10,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm generalCard",
+      `rounded-lg border bg-card text-card-foreground shadow-sm ${styles.generalCard}`,
       className
     )}
     {...props}

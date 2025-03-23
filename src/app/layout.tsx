@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
-import "./style.css"
+import "./style.scss"
 import { AuthProvider } from "@/contexts/AuthContext";
 import { AchievementProvider } from "@/contexts/AchievementContext";
 import PageTransition from "@/components/PageTransition";
