@@ -12,7 +12,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Calendar, CheckCircle, Clock, Award, Star, Users } from 'lucide-react';
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger, } from "@/components/ui/drawer";
 
-import styles from '@/styles/components/dashboard.module.scss'
+import styles from '@/styles/pages/dashboard.module.scss'
 
 const Dashboard = () => {
     const { user } = useAuth();
