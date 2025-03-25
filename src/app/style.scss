@@ -1,5 +1,5 @@
-@import "../styles/variables.scss";
-@import "../styles/functions.scss";
+@use "../styles/variables.scss" as vars;
+// @use "../styles/functions.scss" as func;
 
 .calendar {
     width: 100%;
@@ -56,14 +56,14 @@
     transition: background 0.3s, color 0.3s;
 
     &:hover {
-    background: $edvantageBlue;
-    color: #fafbfd;
+    background: vars.$edvantageBlue;
+    color: vars.$edvantageWhite;
     }
 }
 
 .selected {
-    background: $edvantageBlue !important;
-    color: #fafbfd !important;
+    background: vars.$edvantageBlue !important;
+    color: vars.$edvantageWhite !important;
 }
 
 .prev-month, .next-month {
@@ -72,19 +72,6 @@
 
 .today:not(.selected) {
     background: rgba(42, 82, 190, 0.2); // Light blue highlight
-    color: $edvantageBlue;
+    color: vars.$edvantageBlue;
     border-radius: 4px;
-}
-
-// .activeTabsTrigger{
-//     color: $edvantageBlue;
-//     background-color: edvantageBlueOpacity(.2);
-// }
-
-// .tabsList{
-//     background-color: $edvantageLightBlue;
-//     color: black;
-// }
-
-/* Animations */
-  
+}  
