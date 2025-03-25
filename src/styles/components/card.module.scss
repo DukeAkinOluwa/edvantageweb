@@ -1,7 +1,7 @@
 @use '../variables.scss' as vars;
 
 .generalCard{
-    background-color: white;
+    background-color: vars.$white;
     box-shadow: 0px 0px 5px .1px hsl(214 32% 91%);
     border: none;
 }

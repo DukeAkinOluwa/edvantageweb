@@ -1,0 +1,102 @@
+@use '../variables.scss' as vars;
+
+.dropdownMenuSubTrigger {
+    display: flex;
+    cursor: default;
+    user-select: none;
+    align-items: center;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 14px;
+    outline: none;
+    &:focus {
+      background-color: #f0f0f0;
+    }
+    .chevronIcon {
+      margin-left: auto;
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .dropdownMenuContent{
+    box-shadow: 0px 0px 5px .1px hsl(214 32% 91%);
+    border: none;
+  }
+  
+  .dropdownMenuSubContent,
+  .dropdownMenuContent {
+    z-index: 50;
+    min-width: 8rem;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid rgb(225, 231, 239);
+    background-color: vars.$white;
+    padding: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdownMenuItem {
+    display: flex;
+    cursor: default;
+    user-select: none;
+    align-items: center;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 14px;
+    outline: none;
+    transition: background-color 0.2s;
+    &:focus {
+      background-color: vars.$edvantageLightBlue;
+    }
+  }
+  
+  .dropdownMenuCheckboxItem,
+  .dropdownMenuRadioItem {
+    display: flex;
+    cursor: default;
+    user-select: none;
+    align-items: center;
+    padding: 6px 8px;
+    font-size: 14px;
+    outline: none;
+    transition: background-color 0.2s;
+    &:focus {
+      background-color: #f0f0f0;
+    }
+  
+    .indicatorWrapper {
+      position: absolute;
+      left: 8px;
+      display: flex;
+      height: 14px;
+      width: 14px;
+      align-items: center;
+      justify-content: center;
+    }
+    .checkIcon,
+    .circleIcon {
+      height: 16px;
+      width: 16px;
+    }
+  }
+  
+  .dropdownMenuLabel {
+    padding: 6px 8px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .dropdownMenuSeparator {
+    margin: 4px -4px;
+    height: 1px;
+    background-color: #ddd;
+  }
+  
+  .dropdownMenuShortcut {
+    margin-left: auto;
+    font-size: 12px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+  }
+  
