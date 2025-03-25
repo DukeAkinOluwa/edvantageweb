@@ -24,7 +24,7 @@ export default function DashboardShell({ children }: { children: React.ReactNode
         <DashboardSidebar onToggleCollapse={handleSidebarToggle} />
         <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarCollapsed ? "md:ml-16" : "md:ml-64"}`}>
             <DashboardHeader />
-            <main className="flex-1 p-4 sm:p-6 overflow-auto">{children}</main>
+            <main className="flex-1 p-4 sm:p-6 max-w-[100dvw] overflow-hidden">{children}</main>
         </div>
         </div>
     );
