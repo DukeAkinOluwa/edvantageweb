@@ -101,6 +101,7 @@
     font-family: var(--font-display);
     min-height: 100vh;
     overflow-x: hidden;
+    max-width: 100dvw;
   }
 }
 
