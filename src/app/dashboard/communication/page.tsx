@@ -14,7 +14,8 @@ const CommunicationPage: React.FC = () => {
     <div className="space-y-6">
       <Tabs defaultValue="chats" className="w-full">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-2xl font-bold">Communication</h1>
+          {/* <h1 className="text-2xl font-bold">Communication</h1> */}
+          <h1 className="text-2xl font-bold"></h1>
           <div className="flex items-center gap-2 bg-secondary/50 p-1 rounded-lg shadow-sm">
             <TabsList className="bg-transparent p-1 h-auto rounded-lg">
               <TabsTrigger 

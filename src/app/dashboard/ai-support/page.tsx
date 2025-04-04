@@ -385,9 +385,12 @@ const AiSupportPage = () => {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold flex items-center">
+          {/* <h1 className="text-2xl font-bold flex items-center">
             <Sparkles className="h-6 w-6 mr-2 text-edvantage-blue" />
             AI Study Support
+          </h1> */}
+          <h1 className="text-2xl font-bold flex items-center">
+            <Sparkles className="h-6 w-6 mr-2 text-edvantage-blue" />
           </h1>
           <p className="text-muted-foreground">
             Get help understanding complex topics, summarizing content, and more.

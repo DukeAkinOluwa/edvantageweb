@@ -263,7 +263,8 @@ const ResourcesPage = () => {
   return (
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <h1 className="text-2xl font-bold">Resource Library</h1>
+        {/* <h1 className="text-2xl font-bold">Resource Library</h1> */}
+        <h1 className="text-2xl font-bold"></h1>
         <div className="flex flex-wrap gap-2">
           <div className="relative w-full md:w-auto">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />

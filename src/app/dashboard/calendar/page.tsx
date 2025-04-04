@@ -260,7 +260,8 @@ const CalendarPage = () => {
   return (
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <h1 className="text-2xl font-bold">Schedule & Tasks</h1>
+        {/* <h1 className="text-2xl font-bold">Schedule & Tasks</h1> */}
+        <h1 className="text-2xl font-bold"></h1>
         <div className="flex flex-wrap gap-2">
           <Button 
             onClick={() => {

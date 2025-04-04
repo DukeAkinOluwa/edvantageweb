@@ -65,7 +65,8 @@ const Dashboard = () => {
         <div className="space-y-6">
         {/* Welcome Section with Achievement Level */}
         <section className={styles.userSection}>
-            <h1 className={styles.greeting}>{getGreeting()}, {user?.name.split(" ")[0]}</h1>
+            {/* <h1 className={styles.greeting}>{getGreeting()}, {user?.name.split(" ")[0]}</h1> */}
+            <h2 className={styles.greeting}>{getGreeting()}, {user?.name.split(" ")[0]}</h2>
             <p className="date">{today}</p>
 
             {/* User Achievement Level - Visible on all devices */}

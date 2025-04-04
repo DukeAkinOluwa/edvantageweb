@@ -10,7 +10,8 @@ interface ProjectHeaderProps {
 export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ onCreateProject }) => {
   return (
     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-1">
-      <h1 className="text-2xl font-bold">Projects</h1>
+      {/* <h1 className="text-2xl font-bold">Projects</h1> */}
+      <h1 className="text-2xl font-bold"></h1>
       
       <div className="flex items-center gap-2">
         <Button 
