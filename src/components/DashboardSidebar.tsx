@@ -159,7 +159,7 @@ const DashboardSidebar = ({ onToggleCollapse }: DashboardSidebarProps) => {
   return (
     <>
       <div
-        className={`fixed top-0 left-0 bottom-0 z-30 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 flex flex-col transition-all duration-300 ease-in-out md:translate-x-0 ${
+        className={`fixed top-0 left-0 bottom-0 z-30 bgwhite dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 flex flex-col transition-all duration-300 ease-in-out md:translate-x-0 ${
           isCollapsed ? 'w-16' : 'w-64'
         } ${isMobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}
       >

@@ -99,7 +99,7 @@ const NotificationsPage = () => {
   
   // Notification item component
   const NotificationItem = ({ notification }: { notification: Notification }) => (
-    <div className={`p-4 border-b last:border-b-0 ${notification.read ? 'bg-white' : 'bg-edvantage-light-blue'}`}>
+    <div className={`p-4 border-b last:border-b-0 ${notification.read ? 'bgwhite' : 'bg-edvantage-light-blue'}`}>
       <div className="flex items-start gap-3">
         <div className={`p-2 rounded-full ${getTypeColor(notification.type)}`}>
           <Bell className="h-4 w-4" />

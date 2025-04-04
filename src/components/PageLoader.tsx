@@ -13,7 +13,7 @@ const PageLoader = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
+    <div className="fixed inset-0 bgwhite flex flex-col items-center justify-center z-50">
       <div className="text-center space-y-6">
         <h2 className="text-2xl font-display font-bold text-edvantage-blue">Edvantage</h2>
         <div className="w-48 h-1 bg-gray-200 rounded-full overflow-hidden">

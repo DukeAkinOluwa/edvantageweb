@@ -58,7 +58,7 @@ const TeamMember = ({ name, role, bio, imageUrl, socialLinks = [], delay = 0 }: 
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-white/90 flex items-center justify-center text-edvantage-blue hover:bg-edvantage-blue hover:text-white transition-colors duration-300"
+                  className="w-9 h-9 rounded-full bgwhite/90 flex items-center justify-center text-edvantage-blue hover:bg-edvantage-blue hover:text-white transition-colors duration-300"
                   aria-label={`${name}'s ${link.platform}`}
                 >
                   {renderSocialIcon(link.platform)}

@@ -99,7 +99,7 @@ const SchoolDashboard: React.FC = () => {
   return (
     <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
       {/* Sidebar */}
-      <div className="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col">
+      <div className="w-64 bgwhite dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col">
         <div className="p-4 flex items-center gap-3 border-b border-gray-200 dark:border-gray-700">
           <div className="bg-edvantage-blue rounded-md p-2">
             <GraduationCap className="h-6 w-6 text-white" />
@@ -252,7 +252,7 @@ const SchoolDashboard: React.FC = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 h-16 flex items-center px-6">
+        <header className="bgwhite dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 h-16 flex items-center px-6">
           <div className="flex items-center gap-6 w-full">
             <h2 className="text-lg font-semibold">{user.university} Admin Dashboard</h2>
             <div className="flex-1 relative">
@@ -349,7 +349,7 @@ const SchoolDashboard: React.FC = () => {
 
         <main className="flex-1 overflow-auto bg-gray-50 dark:bg-gray-900 p-6">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-            <TabsList className="bg-white dark:bg-gray-800 p-1">
+            <TabsList className="bgwhite dark:bg-gray-800 p-1">
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="students">Students</TabsTrigger>
               <TabsTrigger value="departments">Departments</TabsTrigger>

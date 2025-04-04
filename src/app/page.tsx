@@ -291,7 +291,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-xl shadow-md">
+                <div className="bgwhite p-8 rounded-xl shadow-md">
                     <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-edvantage-light-blue rounded-full flex items-center justify-center text-edvantage-blue">
                         <svg
@@ -324,7 +324,7 @@ export default function Home() {
                     </p>
                 </div>
 
-                <div className="bg-white p-8 rounded-xl shadow-md">
+                <div className="bgwhite p-8 rounded-xl shadow-md">
                     <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-edvantage-light-blue rounded-full flex items-center justify-center text-edvantage-blue">
                         <svg
@@ -357,7 +357,7 @@ export default function Home() {
                     </p>
                 </div>
 
-                <div className="bg-white p-8 rounded-xl shadow-md">
+                <div className="bgwhite p-8 rounded-xl shadow-md">
                     <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-edvantage-light-blue rounded-full flex items-center justify-center text-edvantage-blue">
                         <svg
@@ -447,7 +447,7 @@ export default function Home() {
                     </Link>
                     <Link
                     href="/about"
-                    className="px-8 py-3 bg-white border border-edvantage-blue text-edvantage-blue rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                    className="px-8 py-3 bgwhite border border-edvantage-blue text-edvantage-blue rounded-lg font-medium hover:bg-gray-50 transition-colors"
                     >
                     Learn More
                     </Link>

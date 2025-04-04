@@ -317,7 +317,7 @@ const GroupDetailPage = () => {
                                       : 'bg-gray-100'
                                   }`}
                                 >
-                                  <div className="bg-white/20 p-1.5 rounded">
+                                  <div className="bgwhite/20 p-1.5 rounded">
                                     {attachment.type === 'pdf' ? (
                                       <FileText className="h-4 w-4" />
                                     ) : attachment.type === 'video' ? (

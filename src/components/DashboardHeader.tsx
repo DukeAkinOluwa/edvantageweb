@@ -40,7 +40,7 @@ const DashboardHeader: React.FC = () => {
   };
 
     return (
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-20">
+        <header className="bgwhite border-b border-gray-200 sticky top-0 z-20">
             <div className="flex h-16 items-center justify-between px-4 sm:px-6">
                 <div className="flex-1 min-w-0">
                     <h1 className="text-xl font-semibold text-gray-900 truncate">

@@ -27,7 +27,7 @@ const PricingTier = ({
     <div className={`rounded-2xl p-8 h-full flex flex-col ${
       isPopular 
         ? 'bg-edvantage-blue text-white shadow-lg scale-105 border-4 border-edvantage-light-blue' 
-        : 'bg-white border border-gray-200'
+        : 'bgwhite border border-gray-200'
     }`}>
       {isPopular && (
         <div className="py-1 px-4 bg-edvantage-light-blue text-edvantage-blue text-sm font-medium rounded-full w-fit mb-4">
@@ -56,7 +56,7 @@ const PricingTier = ({
         {features.map((feature, index) => (
           <div key={index} className="flex items-start">
             <div className={`mr-3 mt-1 rounded-full p-1 ${
-              isPopular ? 'bg-white/20' : 'bg-edvantage-light-blue/30'
+              isPopular ? 'bgwhite/20' : 'bg-edvantage-light-blue/30'
             }`}>
               <Check size={16} className={isPopular ? 'text-white' : 'text-edvantage-blue'} />
             </div>
@@ -70,7 +70,7 @@ const PricingTier = ({
       <Button 
         className={`w-full mt-auto ${
           isPopular 
-            ? 'bg-white hover:bg-gray-100 text-edvantage-blue' 
+            ? 'bgwhite hover:bg-gray-100 text-edvantage-blue' 
             : 'bg-edvantage-blue hover:bg-edvantage-dark-blue text-white'
         }`}
         asChild

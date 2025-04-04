@@ -47,11 +47,11 @@
 }
 
 :root {
-  --background: 210 45% 98%;
+  --background: 240, 17%, 99%;
   --foreground: 222 47% 11%;
 
   --card: 0 0% 100%;
-  --card-foreground: 210 45% 98%;
+  --card-foreground: 240, 17%, 99%;
 
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
@@ -78,7 +78,7 @@
 
   --edvantage-blue: #2A52BE;
   --edvantage-dark-blue: #014792;
-  --edvantage-light-blue: #FAFBFD;
+  --edvantage-light-blue: #FDFDFF;
   --edvantage-dark-gray: #374151;
 
   --font-display: 'Montserrat', sans-serif;
@@ -234,7 +234,7 @@
   color: rgb(42 82 190 / var(--tw-text-opacity, 1));
 }
 
-.bg-background{
+.bgbackground{
   background-color: white;
 }
 
@@ -286,6 +286,14 @@
 
 .dashboard-card{
   background-color: white;
+}
+
+.bgwhite{
+  background-color: #FDFDFF;
+}
+
+.bgbackground{
+  background-color: #FDFDFF;
 }
 
 .staggered-item:nth-child(1) { animation-delay: 0.1s; }

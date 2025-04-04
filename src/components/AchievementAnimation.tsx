@@ -52,7 +52,7 @@ const AchievementAnimation: React.FC<AchievementAnimationProps> = ({ achievement
     <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
       {showConfetti && <div className="confetti-container">{confettiElements}</div>}
       
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 max-w-sm w-full animate-bounce-in">
+      <div className="bgwhite dark:bg-gray-800 rounded-xl shadow-2xl p-6 max-w-sm w-full animate-bounce-in">
         <div className="text-center">
           <div className="mb-4 flex justify-center">
             <div className="relative">

@@ -342,7 +342,7 @@ const CalendarPage = () => {
                               className={`h-6 w-6 rounded-full ${
                                 task.status === 'completed' 
                                   ? 'bg-green-100 text-green-600 hover:bg-green-200 hover:text-green-700' 
-                                  : 'bg-white'
+                                  : 'bgwhite'
                               }`}
                               onClick={() => completeTask(task)}
                             >

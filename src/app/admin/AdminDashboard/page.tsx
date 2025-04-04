@@ -132,7 +132,7 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Admin Sidebar */}
-      <div className="hidden md:flex w-64 flex-col bg-white border-r border-gray-200 min-h-screen">
+      <div className="hidden md:flex w-64 flex-col bgwhite border-r border-gray-200 min-h-screen">
         <div className="p-4 border-b">
           <div className="flex items-center justify-center">
             <School className="h-8 w-8 text-edvantage-blue mr-2" />
@@ -225,7 +225,7 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Admin Header */}
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+        <header className="bgwhite border-b border-gray-200 sticky top-0 z-30">
           <div className="flex h-16 items-center justify-between px-4 sm:px-6">
             <div className="flex items-center md:hidden">
               <Button variant="ghost" size="icon">
@@ -299,7 +299,7 @@ const AdminDashboard = () => {
             <div className="flex items-center">
               <div className="relative w-full md:w-64">
                 <select 
-                  className="block w-full rounded-md border-input bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-edvantage-blue"
+                  className="block w-full rounded-md border-input bgbackground px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-edvantage-blue"
                   value={selectedDepartment}
                   onChange={(e) => setSelectedDepartment(e.target.value)}
                 >

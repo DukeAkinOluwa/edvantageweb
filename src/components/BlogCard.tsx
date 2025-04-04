@@ -33,7 +33,7 @@ const BlogCard = ({ title, excerpt, slug, date, category, imageUrl, delay = 0 }:
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
         />
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-edvantage-blue text-xs font-medium rounded-full">
+          <span className="px-3 py-1 bgwhite/90 backdrop-blur-sm text-edvantage-blue text-xs font-medium rounded-full">
             {category}
           </span>
         </div>
