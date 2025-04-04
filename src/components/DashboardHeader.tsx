@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/contexts/AuthContext';
+import Link from 'next/link';
 
 const DashboardHeader: React.FC = () => {
   const { user, logout } = useAuth();
@@ -68,9 +69,11 @@ const DashboardHeader: React.FC = () => {
                     <Search className="h-5 w-5" />
                 </Button>
                 
-                <Button variant="ghost" size="icon" aria-label="Notifications">
-                    <Bell className="h-5 w-5" />
-                </Button>
+                <Link href="/dashboard/notifications">
+                    <Button variant="ghost" size="icon" aria-label="Notifications">
+                        <Bell className="h-5 w-5" />
+                    </Button>
+                </Link>
                 
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
