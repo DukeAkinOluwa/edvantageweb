@@ -9,25 +9,14 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, } from "@/components/ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select";
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { resources, Resource, ResourceType } from '@/data/dummyData';
+
+import styles from "@/styles/pages/resources.module.scss"
 
 const ResourcesPage = () => {
   const [resourcesList, setResourcesList] = useState<Resource[]>(resources);
@@ -143,17 +132,17 @@ const ResourcesPage = () => {
   const getResourceIcon = (type: ResourceType) => {
     switch (type) {
       case 'pdf':
-        return <FileText className="h-5 w-5 text-red-500" />;
+        return <FileText className={`${styles.icon} ${styles.pdf}`} />;
       case 'video':
-        return <Film className="h-5 w-5 text-blue-500" />;
+        return <Film className={`${styles.icon} ${styles.video}`} />;
       case 'link':
-        return <LinkIcon className="h-5 w-5 text-green-500" />;
+        return <LinkIcon className={`${styles.icon} ${styles.link}`} />;
       case 'note':
-        return <Notebook className="h-5 w-5 text-amber-500" />;
+        return <Notebook className={`${styles.icon} ${styles.note}`} />;
       case 'image':
-        return <Image className="h-5 w-5 text-purple-500" />;
+        return <Image className={`${styles.icon} ${styles.image}`} />;
       default:
-        return <FileText className="h-5 w-5" />;
+        return <FileText className={styles.icon} />;
     }
   };
   
@@ -168,44 +157,40 @@ const ResourcesPage = () => {
   
   // Resource card component
   const ResourceCard = ({ resource }: { resource: Resource }) => (
-    <Card className="h-full">
-      <CardHeader className="pb-2">
-        <div className="flex items-start">
-          <div className="p-2 rounded-md bg-muted mr-3">
+    <Card className={styles.resourceCard}>
+      <CardHeader className={styles.cardHeader}>
+        <div className={styles.headerContent}>
+          <div className={styles.iconWrapper}>
             {getResourceIcon(resource.type)}
           </div>
           <div>
-            <CardTitle className="text-lg">{resource.title}</CardTitle>
-            <div className="text-xs text-muted-foreground mt-1">
+            <CardTitle className={styles.cardTitle}>{resource.title}</CardTitle>
+            <div className={styles.uploadInfo}>
               Uploaded by {resource.uploadedBy} on {formatDate(resource.uploadedAt)}
             </div>
           </div>
         </div>
       </CardHeader>
-      <CardContent className="pb-2">
-        <p className="text-sm text-muted-foreground line-clamp-2">
-          {resource.description}
-        </p>
+      <CardContent className={styles.cardContent}>
+        <p className={styles.description}>{resource.description}</p>
         {resource.category && (
-          <div className="mt-3">
-            <span className="px-2 py-1 rounded-full text-xs bg-muted">
-              {resource.category}
-            </span>
+          <div className={styles.categoryWrapper}>
+            <span className={styles.category}>{resource.category}</span>
           </div>
         )}
       </CardContent>
-      <CardFooter className="flex justify-between pt-2">
-        <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+      <CardFooter className={styles.cardFooter}>
+        <div className={styles.statsWrapper}>
           <Button 
             variant="ghost" 
             size="sm" 
-            className="h-8 px-2"
+            className={styles.likeButton}
             onClick={() => likeResource(resource)}
           >
             👍 {resource.likes}
           </Button>
-          <div className="flex items-center">
-            <Download className="h-3.5 w-3.5 mr-1" />
+          <div className={styles.downloadInfo}>
+            <Download className={styles.smallIcon} />
             {resource.downloads}
           </div>
         </div>
@@ -216,12 +201,12 @@ const ResourcesPage = () => {
         >
           {resource.type === 'link' ? (
             <>
-              <ExternalLink className="h-4 w-4 mr-1" />
+              <ExternalLink className={styles.actionIcon} />
               Open
             </>
           ) : (
             <>
-              <Download className="h-4 w-4 mr-1" />
+              <Download className={styles.actionIcon} />
               Download
             </>
           )}
@@ -231,58 +216,56 @@ const ResourcesPage = () => {
   );
   
   // Empty state component
-  const EmptyState = ({ type, onAddClick }: { type: string, onAddClick: () => void }) => (
-    <div className="text-center py-10">
-      <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-muted mb-4">
-        {type === 'All' ? (
-          <FileText className="h-6 w-6 text-muted-foreground" />
-        ) : type === 'PDFs' ? (
-          <FileText className="h-6 w-6 text-red-500" />
-        ) : type === 'Videos' ? (
-          <Film className="h-6 w-6 text-blue-500" />
-        ) : type === 'Links' ? (
-          <LinkIcon className="h-6 w-6 text-green-500" />
+  const EmptyState = ({ type, onAddClick, searchQuery }: { type: string; onAddClick: () => void; searchQuery?: string; }) => (
+    <div className={styles.emptyStateWrapper}>
+      <div className={styles.emptyStateIconWrapper}>
+        {type === "All" ? (
+          <FileText className={styles.defaultIcon} />
+        ) : type === "PDFs" ? (
+          <FileText className={styles.pdfIcon} />
+        ) : type === "Videos" ? (
+          <Film className={styles.videoIcon} />
+        ) : type === "Links" ? (
+          <LinkIcon className={styles.linkIcon} />
         ) : (
-          <Notebook className="h-6 w-6 text-amber-500" />
+          <Notebook className={styles.noteIcon} />
         )}
       </div>
-      <h3 className="text-lg font-medium">No {type} Resources</h3>
-      <p className="text-sm text-muted-foreground mt-2 mb-4">
-        {searchQuery 
-          ? `No ${type.toLowerCase()} resources match your search criteria.` 
-          : `You don't have any ${type.toLowerCase()} resources yet.`
-        }
+      <h3 className={styles.emptyStateTitle}>No {type} Resources</h3>
+      <p className={styles.emptyStateText}>
+        {searchQuery
+          ? `No ${type.toLowerCase()} resources match your search criteria.`
+          : `You don't have any ${type.toLowerCase()} resources yet.`}
       </p>
       <Button onClick={onAddClick}>
-        <Plus className="h-4 w-4 mr-2" />
+        <Plus className={styles.addIcon} />
         Add a Resource
       </Button>
     </div>
   );
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        {/* <h1 className="text-2xl font-bold">Resource Library</h1> */}
-        <h1 className="text-2xl font-bold"></h1>
-        <div className="flex flex-wrap gap-2">
-          <div className="relative w-full md:w-auto">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+    <div className={styles.pageWrapper}>
+      <div className={styles.resourceHeaderWrapper}>
+        <h1 className={styles.resourceTitle}></h1>
+        <div className={styles.resourceActions}>
+          <div className={styles.searchWrapper}>
+            <Search className={styles.searchIcon} />
             <Input 
               type="search" 
               placeholder="Search resources..." 
-              className="pl-8 w-full md:w-64" 
+              className={styles.searchInput} 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
           <Button onClick={() => setIsAddingResource(true)}>
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className={styles.plusIcon} />
             Add Resource
           </Button>
         </div>
       </div>
-      
+
       <Tabs defaultValue="all">
         <TabsList>
           <TabsTrigger value="all">All Resources</TabsTrigger>
@@ -291,10 +274,10 @@ const ResourcesPage = () => {
           <TabsTrigger value="links">Links</TabsTrigger>
           <TabsTrigger value="notes">Notes</TabsTrigger>
         </TabsList>
-        
-        <TabsContent value="all" className="mt-6">
+
+        <TabsContent value="all" className={styles.tabsContent}>
           {filteredResources.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={styles.gridWrapper}>
               {filteredResources.map(resource => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}
@@ -303,10 +286,10 @@ const ResourcesPage = () => {
             <EmptyState type="All" onAddClick={() => setIsAddingResource(true)} />
           )}
         </TabsContent>
-        
-        <TabsContent value="pdfs" className="mt-6">
+
+        <TabsContent value="pdfs" className={styles.tabsContent}>
           {pdfResources.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={styles.gridWrapper}>
               {pdfResources.map(resource => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}
@@ -318,10 +301,10 @@ const ResourcesPage = () => {
             }} />
           )}
         </TabsContent>
-        
-        <TabsContent value="videos" className="mt-6">
+
+        <TabsContent value="videos" className={styles.tabsContent}>
           {videoResources.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={styles.gridWrapper}>
               {videoResources.map(resource => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}
@@ -333,10 +316,10 @@ const ResourcesPage = () => {
             }} />
           )}
         </TabsContent>
-        
-        <TabsContent value="links" className="mt-6">
+
+        <TabsContent value="links" className={styles.tabsContent}>
           {linkResources.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={styles.gridWrapper}>
               {linkResources.map(resource => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}
@@ -348,10 +331,10 @@ const ResourcesPage = () => {
             }} />
           )}
         </TabsContent>
-        
-        <TabsContent value="notes" className="mt-6">
+
+        <TabsContent value="notes" className={styles.tabsContent}>
           {noteResources.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={styles.gridWrapper}>
               {noteResources.map(resource => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}
@@ -367,15 +350,15 @@ const ResourcesPage = () => {
       
       {/* Add Resource Dialog */}
       <Dialog open={isAddingResource} onOpenChange={setIsAddingResource}>
-        <DialogContent className="sm:max-w-[500px]">
+        <DialogContent className={styles.dialogContent}>
           <DialogHeader>
             <DialogTitle>Add New Resource</DialogTitle>
             <DialogDescription>
               Add a resource to your library.
             </DialogDescription>
           </DialogHeader>
-          <div className="space-y-4 py-4">
-            <div className="space-y-2">
+          <div className={styles.formSection}>
+            <div className={styles.formGroup}>
               <Label htmlFor="resource-title">Resource Title</Label>
               <Input 
                 id="resource-title" 
@@ -384,7 +367,7 @@ const ResourcesPage = () => {
                 placeholder="E.g., Data Structures Cheat Sheet"
               />
             </div>
-            <div className="space-y-2">
+            <div className={styles.formGroup}>
               <Label htmlFor="resource-description">Description</Label>
               <Textarea 
                 id="resource-description" 
@@ -394,8 +377,8 @@ const ResourcesPage = () => {
                 rows={3}
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
+            <div className={styles.gridContainer}>
+              <div className={styles.formGroup}>
                 <Label htmlFor="resource-type">Resource Type</Label>
                 <Select 
                   value={newResource.type}
@@ -413,7 +396,7 @@ const ResourcesPage = () => {
                   </SelectContent>
                 </Select>
               </div>
-              <div className="space-y-2">
+              <div className={styles.formGroup}>
                 <Label htmlFor="resource-category">Category</Label>
                 <Input 
                   id="resource-category" 
@@ -423,7 +406,7 @@ const ResourcesPage = () => {
                 />
               </div>
             </div>
-            <div className="space-y-2">
+            <div className={styles.formGroup}>
               <Label htmlFor="resource-url">
                 {newResource.type === 'link' ? 'URL' : 'File URL/Path'}
               </Label>
@@ -434,9 +417,9 @@ const ResourcesPage = () => {
                 placeholder={newResource.type === 'link' ? 'https://example.com/resource' : 'Upload or enter URL'}
               />
               {newResource.type !== 'link' && (
-                <div className="flex justify-center mt-2">
-                  <Button variant="outline" type="button" className="w-full">
-                    <Plus className="h-4 w-4 mr-2" />
+                <div className={styles.uploadButtonContainer}>
+                  <Button variant="outline" type="button" className={styles.uploadButton}>
+                    <Plus className={styles.icon} />
                     {`Upload ${newResource.type.toUpperCase()} File`}
                   </Button>
                 </div>
@@ -448,7 +431,7 @@ const ResourcesPage = () => {
               Cancel
             </Button>
             <Button 
-              className="bg-edvantage-blue hover:bg-edvantage-dark-blue" 
+              className={styles.addResourceButton} 
               onClick={addResource}
               disabled={!newResource.title || !newResource.url}
             >
