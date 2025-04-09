@@ -6,46 +6,45 @@ import ChatsPage from '@/components/pages/chatsPage';
 import GroupsPage from '@/components/pages/studyGroupPage';
 import { MessageCircle, Users, ArrowLeftRight } from 'lucide-react';
 
+import styles from "@/styles/pages/communication.module.scss"
+
 const CommunicationPage: React.FC = () => {
 
-  const [activeTab, setActiveTab] = React.useState('chats');
-
   return (
-    <div className="space-y-6">
-      <Tabs defaultValue="chats" className="w-full">
-        <div className="flex justify-between items-center mb-4">
-          {/* <h1 className="text-2xl font-bold">Communication</h1> */}
-          <h1 className="text-2xl font-bold"></h1>
-          <div className="flex items-center gap-2 bg-secondary/50 p-1 rounded-lg shadow-sm">
-            <TabsList className="bg-transparent p-1 h-auto rounded-lg">
-              <TabsTrigger 
-                value="chats" 
-                className={`flex items-center gap-2 rounded-md px-4 py-2 transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md ${activeTab === 'chats' ? 'activeTabsTrigger' : ''}`}
-                onClick={() => setActiveTab('chats')}
+    <div className={styles.wrapper}>
+      <Tabs defaultValue="chats" className={styles.tabsWrapper}>
+        <div className={styles.tabsHeader}>
+          <h1 className={styles.tabsTitle}></h1>
+          <div className={styles.tabsControls}>
+            <TabsList className={styles.tabsList}>
+              <TabsTrigger
+                value="chats"
+                className={`${styles.tabTrigger}`}
               >
-                <MessageCircle className="h-4 w-4" />
-                <span className="hidden sm:inline">Chats</span>
+                <MessageCircle className={styles.icon} />
+                <span className={styles.tabLabel}>Chats</span>
               </TabsTrigger>
-              <div className="flex items-center px-1 text-muted-foreground">
-                <ArrowLeftRight className="h-4 w-4" />
+
+              <div className={styles.tabDivider}>
+                <ArrowLeftRight className={styles.icon} />
               </div>
-              <TabsTrigger 
-                value="groups" 
-                className={`flex items-center gap-2 rounded-md px-4 py-2 transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md ${activeTab === 'groups' ? 'activeTabsTrigger' : ''}`}
-                onClick={() => setActiveTab('groups')}
+
+              <TabsTrigger
+                value="groups"
+                className={`${styles.tabTrigger}`}
               >
-                <Users className="h-4 w-4" />
-                <span className="hidden sm:inline">Study Groups</span>
+                <Users className={styles.icon} />
+                <span className={styles.tabLabel}>Study Groups</span>
               </TabsTrigger>
             </TabsList>
           </div>
         </div>
-        
-        <TabsContent value="chats" className="m-0">
+
+        <TabsContent value="chats" className={styles.tabsContent}>
           <ChatsPage />
         </TabsContent>
-        
-        <TabsContent value="groups" className="m-0">
+
+        <TabsContent value="groups" className={styles.tabsContent}>
           <GroupsPage />
         </TabsContent>
       </Tabs>

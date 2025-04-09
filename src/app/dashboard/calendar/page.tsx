@@ -6,26 +6,15 @@ import Calendar from '@/components/ui/calendar';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { 
-  Dialog,
-  DialogContent, 
-  DialogHeader, 
-  DialogTitle, 
-  DialogDescription,
-  DialogFooter
-} from '@/components/ui/dialog';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Dialog, DialogContent,  DialogHeader,  DialogTitle,  DialogDescription, DialogFooter } from '@/components/ui/dialog';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select";
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { events, tasks, Task, Event, TaskPriority } from '@/data/dummyData';
 import { useToast } from '@/hooks/use-toast';
+
+import styles from "@/styles/pages/calendar.module.scss"
 
 const CalendarPage = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -259,18 +248,18 @@ const CalendarPage = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        {/* <h1 className="text-2xl font-bold">Schedule & Tasks</h1> */}
-        <h1 className="text-2xl font-bold"></h1>
-        <div className="flex flex-wrap gap-2">
+      <div className={styles.taskHeaderWrapper}>
+        {/* <h1 className="taskHeaderTitle">Schedule & Tasks</h1> */}
+        <h1 className={styles.taskHeaderTitle}></h1>
+        <div className={styles.taskHeaderButtons}>
           <Button 
             onClick={() => {
               setTaskToEdit(null);
               setIsNewTaskDialogOpen(true);
             }}
-            className="bg-edvantage-blue hover:bg-edvantage-dark-blue"
+            className={styles.addTaskButton}
           >
-            <Plus className="mr-2 h-4 w-4" />
+            <Plus className={styles.plusIcon} />
             Add Task
           </Button>
           <Button 
@@ -279,34 +268,32 @@ const CalendarPage = () => {
               setIsNewEventDialogOpen(true);
             }}
             variant="outline"
+            className={styles.addEventButton}
           >
-            <CalendarIcon className="mr-2 h-4 w-4" />
+            <CalendarIcon className={styles.calendarIcony} />
             Add Event
           </Button>
         </div>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className={styles.container}>
         {/* Calendar */}
-        <Card className="lg:col-span-1">
+        <Card className={styles.calendarCard}>
           <CardHeader>
             <CardTitle>Calendar</CardTitle>
           </CardHeader>
           <CardContent>
-            <Calendar
-              selected={date}
-              onSelect={setDate}
-            />
+            <Calendar selected={date} onSelect={setDate} />
           </CardContent>
         </Card>
-        
+
         {/* Tasks and Events for Selected Date */}
-        <Card className="lg:col-span-2">
-          <CardHeader className="pb-3">
+        <Card className={styles.taskCard}>
+          <CardHeader className={styles.cardHeader}>
             <CardTitle>
               {date ? date.toLocaleDateString('en-US', {
                 weekday: 'long',
-                month: 'long', 
+                month: 'long',
                 day: 'numeric',
                 year: 'numeric'
               }) : 'Select a date'}
@@ -314,88 +301,53 @@ const CalendarPage = () => {
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="tasks">
-              <TabsList className="mb-4">
+              <TabsList className={styles.tabsList}>
                 <TabsTrigger value="tasks">Tasks</TabsTrigger>
                 <TabsTrigger value="events">Events</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="tasks">
                 {getTasksForSelectedDate().length > 0 ? (
-                  <ul className="space-y-3">
+                  <ul className={styles.listSpacing}>
                     {getTasksForSelectedDate().map(task => (
-                      <li 
-                        key={task.id} 
-                        className={`p-3 border rounded-lg ${
-                          task.status === 'completed' 
-                            ? 'bg-gray-50 border-gray-200' 
-                            : task.priority === 'high'
-                              ? 'border-red-200 bg-red-50'
-                              : task.priority === 'medium'
-                                ? 'border-yellow-200 bg-yellow-50'
-                                : 'border-blue-200 bg-blue-50'
-                        }`}
-                      >
-                        <div className="flex items-start justify-between">
-                          <div className="flex items-start space-x-3">
+                      <li key={task.id} className={styles[`taskItem_${task.status}_${task.priority}`]}>
+                        <div className={styles.itemHeader}>
+                          <div className={styles.itemMain}>
                             <Button
                               variant="ghost"
                               size="icon"
-                              className={`h-6 w-6 rounded-full ${
-                                task.status === 'completed' 
-                                  ? 'bg-green-100 text-green-600 hover:bg-green-200 hover:text-green-700' 
-                                  : 'bgwhite'
-                              }`}
+                              className={styles[`completeButton_${task.status}`]}
                               onClick={() => completeTask(task)}
                             >
-                              <CheckCircle2 className="h-4 w-4" />
+                              <CheckCircle2 className={styles.iconSmall} />
                             </Button>
                             <div>
-                              <h3 className={`text-sm font-medium ${task.status === 'completed' ? 'line-through text-muted-foreground' : ''}`}>
+                              <h3 className={styles[`taskTitle_${task.status}`]}>
                                 {task.title}
                               </h3>
                               {task.description && (
-                                <p className="text-xs text-muted-foreground mt-1">
-                                  {task.description}
-                                </p>
+                                <p className={styles.taskDescription}>{task.description}</p>
                               )}
-                              <div className="mt-2 flex flex-wrap gap-2 items-center text-xs">
-                                <span className="flex items-center text-muted-foreground">
-                                  <Clock className="h-3 w-3 mr-1" />
+                              <div className={styles.taskMeta}>
+                                <span className={styles.taskTime}>
+                                  <Clock className={styles.clockIcon} />
                                   {formatDate(task.dueDate)}
                                 </span>
                                 {task.category && (
-                                  <span className="px-2 py-0.5 rounded-full bg-gray-100 text-gray-800">
-                                    {task.category}
-                                  </span>
+                                  <span className={styles.taskCategory}>{task.category}</span>
                                 )}
-                                <span className={`px-2 py-0.5 rounded-full ${
-                                  task.priority === 'high' 
-                                    ? 'bg-red-100 text-red-800' 
-                                    : task.priority === 'medium'
-                                      ? 'bg-yellow-100 text-yellow-800'
-                                      : 'bg-blue-100 text-blue-800'
-                                }`}>
+                                <span className={styles[`priority_${task.priority}`]}>
                                   {task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}
                                 </span>
                               </div>
                             </div>
                           </div>
-                          <div className="flex space-x-1">
-                            <Button 
-                              variant="ghost" 
-                              size="icon" 
-                              className="h-7 w-7"
-                              onClick={() => editTask(task)}
-                            >
-                              <Edit className="h-4 w-4" />
+                          <div className={styles.actionButtons}>
+                            <Button variant="ghost" size="icon" className={styles.iconButton} onClick={() => editTask(task)}>
+                              <Edit className={styles.iconSmall} />
                             </Button>
-                            <Button 
-                              variant="ghost" 
-                              size="icon" 
-                              className="h-7 w-7 text-red-500 hover:text-red-600"
-                              onClick={() => deleteTask(task)}
-                            >
-                              <Trash2 className="h-4 w-4" />
+                            <Button variant="ghost" size="icon" className={styles.deleteButton} onClick={() => deleteTask(task)}>
+                              <Trash2 className={styles.iconSmall} />
                             </Button>
                           </div>
                         </div>
@@ -403,106 +355,53 @@ const CalendarPage = () => {
                     ))}
                   </ul>
                 ) : (
-                  <div className="text-center py-10 text-muted-foreground">
+                  <div className={styles.emptyState}>
                     <p>No tasks for this date</p>
-                    <Button 
-                      variant="link" 
-                      onClick={() => {
-                        setTaskToEdit(null);
-                        setIsNewTaskDialogOpen(true);
-                      }}
-                      className="mt-2"
-                    >
+                    <Button variant="link" onClick={() => {
+                      setTaskToEdit(null);
+                      setIsNewTaskDialogOpen(true);
+                    }} className={styles.addButton}>
                       + Add a task
                     </Button>
                   </div>
                 )}
               </TabsContent>
-              
+
               <TabsContent value="events">
                 {getEventsForSelectedDate().length > 0 ? (
-                  <ul className="space-y-3">
+                  <ul className={styles.listSpacing}>
                     {getEventsForSelectedDate().map(event => (
-                      <li 
-                        key={event.id} 
-                        className={`p-3 border rounded-lg ${
-                          event.type === 'class'
-                            ? 'border-blue-200 bg-blue-50'
-                            : event.type === 'exam'
-                              ? 'border-red-200 bg-red-50'
-                              : event.type === 'study'
-                                ? 'border-green-200 bg-green-50'
-                                : event.type === 'group'
-                                  ? 'border-purple-200 bg-purple-50'
-                                  : 'border-gray-200 bg-gray-50'
-                        }`}
-                      >
-                        <div className="flex items-start justify-between">
+                      <li key={event.id} className={styles[`eventItem_${event.type}`]}>
+                        <div className={styles.itemHeader}>
                           <div>
-                            <div className="flex items-center">
-                              <div className={`h-6 w-6 rounded mr-2 flex-shrink-0 text-white flex items-center justify-center text-xs ${
-                                event.type === 'class' 
-                                  ? 'bg-blue-500' 
-                                  : event.type === 'exam'
-                                    ? 'bg-red-500'
-                                    : event.type === 'study'
-                                      ? 'bg-green-500'
-                                      : event.type === 'group'
-                                        ? 'bg-purple-500'
-                                        : 'bg-gray-500'
-                              }`}>
+                            <div className={styles.eventMain}>
+                              <div className={styles[`eventType_${event.type}`]}>
                                 {event.type.charAt(0).toUpperCase()}
                               </div>
-                              <h3 className="text-sm font-medium">
-                                {event.title}
-                              </h3>
+                              <h3 className={styles.eventTitle}>{event.title}</h3>
                             </div>
                             {event.description && (
-                              <p className="text-xs text-muted-foreground mt-1 ml-8">
-                                {event.description}
-                              </p>
+                              <p className={styles.eventDescription}>{event.description}</p>
                             )}
-                            <div className="mt-2 ml-8 flex flex-wrap gap-2 items-center text-xs">
-                              <span className="flex items-center text-muted-foreground">
-                                <Clock className="h-3 w-3 mr-1" />
+                            <div className={styles.eventMeta}>
+                              <span className={styles.eventTime}>
+                                <Clock className={styles.clockIcon} />
                                 {formatDate(event.startDate)} - {formatDate(event.endDate)}
                               </span>
                               {event.location && (
-                                <span className="px-2 py-0.5 rounded-full bg-gray-100 text-gray-800">
-                                  {event.location}
-                                </span>
+                                <span className={styles.eventLocation}>{event.location}</span>
                               )}
-                              <span className={`px-2 py-0.5 rounded-full ${
-                                event.type === 'class' 
-                                  ? 'bg-blue-100 text-blue-800' 
-                                  : event.type === 'exam'
-                                    ? 'bg-red-100 text-red-800'
-                                    : event.type === 'study'
-                                      ? 'bg-green-100 text-green-800'
-                                      : event.type === 'group'
-                                        ? 'bg-purple-100 text-purple-800'
-                                        : 'bg-gray-100 text-gray-800'
-                              }`}>
+                              <span className={styles[`eventTypeTag_${event.type}`]}>
                                 {event.type.charAt(0).toUpperCase() + event.type.slice(1)}
                               </span>
                             </div>
                           </div>
-                          <div className="flex space-x-1">
-                            <Button 
-                              variant="ghost" 
-                              size="icon" 
-                              className="h-7 w-7"
-                              onClick={() => editEvent(event)}
-                            >
-                              <Edit className="h-4 w-4" />
+                          <div className={styles.actionButtons}>
+                            <Button variant="ghost" size="icon" className={styles.iconButton} onClick={() => editEvent(event)}>
+                              <Edit className={styles.iconSmall} />
                             </Button>
-                            <Button 
-                              variant="ghost" 
-                              size="icon" 
-                              className="h-7 w-7 text-red-500 hover:text-red-600"
-                              onClick={() => deleteEvent(event)}
-                            >
-                              <Trash2 className="h-4 w-4" />
+                            <Button variant="ghost" size="icon" className={styles.deleteButton} onClick={() => deleteEvent(event)}>
+                              <Trash2 className={styles.iconSmall} />
                             </Button>
                           </div>
                         </div>
@@ -510,16 +409,12 @@ const CalendarPage = () => {
                     ))}
                   </ul>
                 ) : (
-                  <div className="text-center py-10 text-muted-foreground">
+                  <div className={styles.emptyState}>
                     <p>No events for this date</p>
-                    <Button 
-                      variant="link" 
-                      onClick={() => {
-                        setEventToEdit(null);
-                        setIsNewEventDialogOpen(true);
-                      }}
-                      className="mt-2"
-                    >
+                    <Button variant="link" onClick={() => {
+                      setEventToEdit(null);
+                      setIsNewEventDialogOpen(true);
+                    }} className={styles.addButton}>
                       + Add an event
                     </Button>
                   </div>
