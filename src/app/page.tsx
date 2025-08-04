@@ -155,7 +155,7 @@ export default function Home() {
             {/* Hero Section */}
             <Hero
             title="Empowering Students for Academic Success"
-            subtitle="Edvantage helps tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform."
+            subtitle="Edvantae helps tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform."
             ctaText="Get Started"
             ctaLink="/contact"
             secondaryCtaText="Learn More"

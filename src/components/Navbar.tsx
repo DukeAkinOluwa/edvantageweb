@@ -39,7 +39,7 @@ const Navbar = () => {
         <Link
           href="/" className="text-2xl font-display font-bold text-edvantage-blue flex items-center"
         >
-          <span className="mr-2">Edvantage</span>
+          <span className="mr-2">Edvantae</span>
         </Link>
 
         {/* Desktop Menu */}

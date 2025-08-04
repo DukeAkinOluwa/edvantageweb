@@ -7,14 +7,14 @@ import { AchievementProvider } from "@/contexts/AchievementContext";
 import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Edvantage Student Hub",
+  title: "Edvantae Student Hub",
   description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
   metadataBase: new URL('https://edvantage.com.ng'),
   openGraph: {
     url: ".",
-    title: "Edvantage Student Hub",
+    title: "Edvantae Student Hub",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
-    siteName: "Edvantage Hub",
+    siteName: "Edvantae Hub",
     images: [
       {
         url: "/Images/edvantagewebicon.png",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Edvantage",
-    title: "Edvantage Student Hub",
+    site: "@Edvantae",
+    title: "Edvantae Student Hub",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
     images: "/Images/edvantagewebicon.png",
   },
