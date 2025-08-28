@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { Instagram, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,7 +21,7 @@ const Footer = () => {
               engaging and efficient platform.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a
+              {/* <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -38,9 +38,9 @@ const Footer = () => {
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
-              </a>
+              </a> */}
               <a
-                href="https://www.instagram.com/edvantage_edu"
+                href="https://www.instagram.com/edvantae_edu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
@@ -49,7 +49,7 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://linkedin.com/company/edvantageng"
+                href="https://linkedin.com/company/edvantaelimited"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
@@ -158,10 +158,10 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-edvantage-blue" />
                 <a
-                  href="mailto:edvantage.edu.ng@gmail.con"
+                  href="mailto:edvantaelimited@gmail.com"
                   className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
                 >
-                  edvantage.edu.ng@gmail.con
+                  edvantaelimited@gmail.con
                 </a>
               </li>
             </ul>

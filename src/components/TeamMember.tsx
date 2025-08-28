@@ -39,7 +39,7 @@ const TeamMember = ({ name, role, bio, imageUrl, socialLinks = [], delay = 0 }: 
       className="glass-card overflow-hidden transition-all duration-300 hover:shadow-xl group animate-scale-in"
       style={animationStyle}
     >
-      <div className="relative overflow-hidden h-64">
+      <div className="relative overflow-hidden h-[450px]">
         <Image
           width={400}
           height={400}
@@ -70,7 +70,7 @@ const TeamMember = ({ name, role, bio, imageUrl, socialLinks = [], delay = 0 }: 
       </div>
       
       <div className="p-6">
-        <h3 className="heading-sm">{name}</h3>
+        <h3 className="text-xl font-semibold">{name}</h3>
         <p className="text-edvantage-blue font-medium mb-3">{role}</p>
         <p className="text-edvantage-dark-gray">{bio}</p>
       </div>
