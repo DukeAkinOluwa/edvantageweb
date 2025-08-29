@@ -197,7 +197,7 @@ const SettingsPage = () => {
           department: profileData.department,
           level: profileData.level,
           bio: profileData.bio,
-          joinDate: "2024-01-15",
+          joinDate: "2025-01-15",
         },
         projects: [
           {
@@ -220,13 +220,13 @@ const SettingsPage = () => {
             id: "task-1",
             title: "Literature review",
             completed: true,
-            dueDate: "2024-03-15",
+            dueDate: "2025-03-15",
           },
           {
             id: "task-2",
             title: "Data collection",
             completed: true,
-            dueDate: "2024-04-01",
+            dueDate: "2025-04-01",
           }
         ],
         settings: {
