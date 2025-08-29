@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import DashboardShell from "./dashboardshell";
 
 export const metadata: Metadata = {
-  title: "Dashboard - Edvantage Student Hub",
+  title: "Dashboard - Edvantage Limited | Student Hub",
   openGraph: {
-    title: "Dashboard - Edvantage Student Hub",
+    title: "Dashboard - Edvantage Limited | Student Hub",
   },
   twitter: {
-    title: "Dashboard - Edvantage Student Hub",
+    title: "Dashboard - Edvantage Limited | Student Hub",
   },
 };
 

@@ -13,6 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
+      url: `${baseUrl}`,
+      lastModified: new Date(),
+      priority: 1,
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
       priority: 1,
