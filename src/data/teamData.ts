@@ -33,7 +33,7 @@ export const teamMembers: TeamMember[] = [
     id: 2,
     name: "Owolabi Titilayo",
     role: "Executive Director, Marketing & Communications",
-    bio: "Titilayo brings operational excellence and strategic vision to Edvantage. Her background in business administration ensures the company delivers on its promises to students.",
+    bio: "Titilayo brings operational excellence and strategic vision to Edvantae. Her background in business administration ensures the company delivers on its promises to students.",
     imageUrl: "/Images/Titilayo.jpg",
     socialLinks: [
       {
@@ -50,7 +50,7 @@ export const teamMembers: TeamMember[] = [
   //   id: 3,
   //   name: "David Adeyemi",
   //   role: "CTO",
-  //   bio: "David leads the technical vision and development of Edvantage. With expertise in mobile applications and AI, he ensures the platform delivers a seamless experience for students.",
+  //   bio: "David leads the technical vision and development of Edvantae. With expertise in mobile applications and AI, he ensures the platform delivers a seamless experience for students.",
   //   imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
   //   socialLinks: [
   //     {
@@ -67,7 +67,7 @@ export const teamMembers: TeamMember[] = [
   //   id: 4,
   //   name: "Oluwaseun Johnson",
   //   role: "Head of Design",
-  //   bio: "Oluwaseun crafts the user experience that makes Edvantage intuitive and engaging. Her design philosophy focuses on simplicity and accessibility for all students.",
+  //   bio: "Oluwaseun crafts the user experience that makes Edvantae intuitive and engaging. Her design philosophy focuses on simplicity and accessibility for all students.",
   //   imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80",
   //   socialLinks: [
   //     {

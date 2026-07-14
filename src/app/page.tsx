@@ -124,19 +124,19 @@ export default function Home() {
 
         const faqs = [
         {
-            question: "What is Edvantage?",
+            question: "What is Edvantae?",
             answer:
-            "Edvantage is a productivity and collaboration tool designed specifically for tertiary students. It helps with time management, collaboration, and provides academic resources to enhance your learning experience.",
+            "Edvantae is a productivity and collaboration tool designed specifically for tertiary students. It helps with time management, collaboration, and provides academic resources to enhance your learning experience.",
         },
         {
-            question: "How much does Edvantage cost?",
+            question: "How much does Edvantae cost?",
             answer:
-            "Edvantage offers a freemium model. Basic features are available for free, with premium features accessible for ₦00.00/year - an affordable price designed specifically for students.",
+            "Edvantae offers a freemium model. Basic features are available for free, with premium features accessible for ₦00.00/year - an affordable price designed specifically for students.",
         },
         {
-            question: "Can I use Edvantage on multiple devices?",
+            question: "Can I use Edvantae on multiple devices?",
             answer:
-            "Yes! Edvantage is available on web and mobile platforms, allowing you to access your academic tools and resources anywhere, anytime.",
+            "Yes! Edvantae is available on web and mobile platforms, allowing you to access your academic tools and resources anywhere, anytime.",
         },
         {
             question: "How do study squads work?",
@@ -144,7 +144,7 @@ export default function Home() {
             "Study squads allow you to create or join groups with classmates, share resources, discuss topics, and collaborate on projects. You can set group goals, assign tasks, and track progress together.",
         },
         {
-            question: "Is my data secure with Edvantage?",
+            question: "Is my data secure with Edvantae?",
             answer:
             "Absolutely. We take data privacy and security seriously. All your personal information and academic data are encrypted and protected according to the highest industry standards.",
         },
@@ -168,11 +168,11 @@ export default function Home() {
             <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-edvantage-blue mb-4">
+                <h2 className="text-3xl font-bold text-edvantae-blue mb-4">
                     Designed for Student Success
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Edvantage combines essential tools that address the unique
+                    Edvantae combines essential tools that address the unique
                     challenges faced by tertiary students.
                 </p>
                 </div>
@@ -195,7 +195,7 @@ export default function Home() {
             <section className="py-20">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-edvantage-blue mb-4">
+                <h2 className="text-3xl font-bold text-edvantae-blue mb-4">
                     Simple, Transparent Pricing
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -258,7 +258,7 @@ export default function Home() {
             </section>
 
             {/* Stats Section */}
-            <section className="py-20 bg-edvantage-blue text-white">
+            <section className="py-20 bg-edvantae-blue text-white">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div className="p-6">
@@ -281,19 +281,19 @@ export default function Home() {
             <section className="py-20">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-edvantage-blue mb-4">
+                <h2 className="text-3xl font-bold text-edvantae-blue mb-4">
                     What Students Say
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     Hear from students who have transformed their academic
-                    experience with Edvantage.
+                    experience with Edvantae.
                 </p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
                 <div className="bgwhite p-8 rounded-xl shadow-md">
                     <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-edvantage-light-blue rounded-full flex items-center justify-center text-edvantage-blue">
+                    <div className="w-12 h-12 bg-edvantae-light-blue rounded-full flex items-center justify-center text-edvantae-blue">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -317,7 +317,7 @@ export default function Home() {
                     </div>
                     </div>
                     <p className="text-gray-600">
-                    &quot;Edvantage has completely changed how I manage my
+                    &quot;Edvantae has completely changed how I manage my
                     academic life. The reminder system ensures I never miss
                     deadlines, and the study squads feature has made group
                     projects so much easier!&quot;
@@ -326,7 +326,7 @@ export default function Home() {
 
                 <div className="bgwhite p-8 rounded-xl shadow-md">
                     <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-edvantage-light-blue rounded-full flex items-center justify-center text-edvantage-blue">
+                    <div className="w-12 h-12 bg-edvantae-light-blue rounded-full flex items-center justify-center text-edvantae-blue">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -350,7 +350,7 @@ export default function Home() {
                     </div>
                     </div>
                     <p className="text-gray-600">
-                    &quot;As a course rep, Edvantage has made communicating with
+                    &quot;As a course rep, Edvantae has made communicating with
                     my classmates seamless. The academic calendar keeps everyone
                     on the same page, and the gamification makes studying more
                     fun!&quot;
@@ -359,7 +359,7 @@ export default function Home() {
 
                 <div className="bgwhite p-8 rounded-xl shadow-md">
                     <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-edvantage-light-blue rounded-full flex items-center justify-center text-edvantage-blue">
+                    <div className="w-12 h-12 bg-edvantae-light-blue rounded-full flex items-center justify-center text-edvantae-blue">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -385,7 +385,7 @@ export default function Home() {
                     <p className="text-gray-600">
                     &quot;The AI study support is a game-changer for difficult
                     concepts. I&apos;ve seen my grades improve since using
-                    Edvantage, and the affordable price makes it accessible to all
+                    Edvantae, and the affordable price makes it accessible to all
                     students.&quot;
                     </p>
                 </div>
@@ -397,11 +397,11 @@ export default function Home() {
             <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-edvantage-blue mb-4">
+                <h2 className="text-3xl font-bold text-edvantae-blue mb-4">
                     Frequently Asked Questions
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Get answers to common questions about Edvantage and how it can
+                    Get answers to common questions about Edvantae and how it can
                     help you succeed academically.
                 </p>
                 </div>
@@ -418,7 +418,7 @@ export default function Home() {
                 <div className="text-center mt-12">
                     <Link
                     href="/blog"
-                    className="text-edvantage-blue hover:text-blue-700 font-semibold"
+                    className="text-edvantae-blue hover:text-blue-700 font-semibold"
                     >
                     View more FAQs in our blog →
                     </Link>
@@ -431,23 +431,23 @@ export default function Home() {
             <section className="py-20">
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl font-bold text-edvantage-blue mb-6">
+                <h2 className="text-3xl font-bold text-edvantae-blue mb-6">
                     Ready to Transform Your Academic Experience?
                 </h2>
                 <p className="text-xl text-gray-600 mb-8">
-                    Join thousands of students already using Edvantage to enhance
+                    Join thousands of students already using Edvantae to enhance
                     their productivity, collaboration, and academic success.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                     <Link
                     href="/contact"
-                    className="px-8 py-3 bg-edvantage-blue text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                    className="px-8 py-3 bg-edvantae-blue text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
                     >
                     Get Started Now
                     </Link>
                     <Link
                     href="/about"
-                    className="px-8 py-3 bgwhite border border-edvantage-blue text-edvantage-blue rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                    className="px-8 py-3 bgwhite border border-edvantae-blue text-edvantae-blue rounded-lg font-medium hover:bg-gray-50 transition-colors"
                     >
                     Learn More
                     </Link>

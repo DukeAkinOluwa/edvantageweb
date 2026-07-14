@@ -44,7 +44,7 @@ const ShareableAchievements: React.FC = () => {
   
   const shareOnSocialMedia = (platform: 'twitter' | 'facebook' | 'linkedin') => {
     let shareUrl = '';
-    const text = `Check out my achievements on Edvantage! I've earned ${earnedAchievements.length} achievements and ${userPoints} points.`;
+    const text = `Check out my achievements on Edvantae! I've earned ${earnedAchievements.length} achievements and ${userPoints} points.`;
     
     switch (platform) {
       case 'twitter':

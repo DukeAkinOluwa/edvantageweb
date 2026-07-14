@@ -15,7 +15,7 @@ export const ProjectHeader: React.FC<ProjectHeaderProps> = ({ onCreateProject })
       
       <div className="flex items-center gap-2">
         <Button 
-          className="bg-edvantage-blue hover:bg-edvantage-dark-blue transition-colors" 
+          className="bg-edvantae-blue hover:bg-edvantae-dark-blue transition-colors" 
           onClick={onCreateProject}
         >
           <Plus className="h-4 w-4 mr-2" />

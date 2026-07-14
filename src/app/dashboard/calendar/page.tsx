@@ -499,7 +499,7 @@ const CalendarPage = () => {
             <Button variant="outline" onClick={() => setIsNewTaskDialogOpen(false)}>
               Cancel
             </Button>
-            <Button className="bg-edvantage-blue hover:bg-edvantage-dark-blue" onClick={saveTask}>
+            <Button className="bg-edvantae-blue hover:bg-edvantae-dark-blue" onClick={saveTask}>
               {taskToEdit ? 'Update Task' : 'Add Task'}
             </Button>
           </DialogFooter>
@@ -595,7 +595,7 @@ const CalendarPage = () => {
             <Button variant="outline" onClick={() => setIsNewEventDialogOpen(false)}>
               Cancel
             </Button>
-            <Button className="bg-edvantage-blue hover:bg-edvantage-dark-blue" onClick={saveEvent}>
+            <Button className="bg-edvantae-blue hover:bg-edvantae-dark-blue" onClick={saveEvent}>
               {eventToEdit ? 'Update Event' : 'Add Event'}
             </Button>
           </DialogFooter>

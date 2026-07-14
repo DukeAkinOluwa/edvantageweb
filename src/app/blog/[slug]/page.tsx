@@ -18,14 +18,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `Edvantage Blog | ${post.title}`,
+    title: `Edvantae Blog | ${post.title}`,
     description: `${post.excerpt}`,
     openGraph: {
-      title: `Edvantage Blog | ${post.title}`,
+      title: `Edvantae Blog | ${post.title}`,
       description: `${post.excerpt}`,
     },
     twitter:{
-      title: `Edvantage Blog | ${post.title}`,
+      title: `Edvantae Blog | ${post.title}`,
       description: `${post.excerpt}`,
     }
   };

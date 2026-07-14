@@ -9,7 +9,7 @@ import PageTransition from "@/components/PageTransition";
 export const metadata: Metadata = {
   title: "Edvantae Limited | Student Hub",
   description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
-  metadataBase: new URL('https://edvantage.com.ng'),
+  metadataBase: new URL('https://edvantae.com.ng'),
   openGraph: {
     url: ".",
     title: "Edvantae Limited | Student Hub",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Edvantae Hub",
     images: [
       {
-        url: "/Images/edvantagewebicon.png",
+        url: "/Images/edvantaewebicon.png",
         width: 500,
         height: 500,
       },
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     site: "@Edvantae",
     title: "Edvantae Limited | Student Hub",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
-    images: "/Images/edvantagewebicon.png",
+    images: "/Images/edvantaewebicon.png",
   },
-  icons: '/Images/edvantagewebicon.png',
+  icons: '/Images/edvantaewebicon.png',
 };
 
 export default function RootLayout({

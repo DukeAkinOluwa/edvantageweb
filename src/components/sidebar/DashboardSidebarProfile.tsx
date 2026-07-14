@@ -23,7 +23,7 @@ export const DashboardSidebarProfile: React.FC<DashboardSidebarProfileProps> = (
         className="flex items-center space-x-3 p-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         onClick={onClick}
       >
-        <div className="h-10 w-10 rounded-full bg-edvantage-blue dark:bg-edvantage-blue/80 flex items-center justify-center text-white font-medium">
+        <div className="h-10 w-10 rounded-full bg-edvantae-blue dark:bg-edvantae-blue/80 flex items-center justify-center text-white font-medium">
           {user.name.charAt(0)}
         </div>
         <div className="flex-1 min-w-0">

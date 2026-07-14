@@ -145,7 +145,7 @@ export class IndexedDBService {
 }
 
 export const db = new IndexedDBService({
-  name: 'edvantage-db',
+  name: 'edvantae-db',
   version: 1,
   stores: [
     {

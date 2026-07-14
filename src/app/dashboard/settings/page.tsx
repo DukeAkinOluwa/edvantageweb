@@ -244,7 +244,7 @@ const SettingsPage = () => {
       // Create a link and trigger download
       const link = document.createElement('a');
       link.href = url;
-      link.download = `edvantage-user-data-${new Date().toISOString().split('T')[0]}.json`;
+      link.download = `edvantae-user-data-${new Date().toISOString().split('T')[0]}.json`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -566,7 +566,7 @@ const SettingsPage = () => {
             <CardHeader>
               <CardTitle>Appearance Settings</CardTitle>
               <CardDescription>
-                Customize how Edvantage looks on your device.
+                Customize how Edvantae looks on your device.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -576,7 +576,7 @@ const SettingsPage = () => {
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div
                       className={`border rounded-lg p-4 flex items-center justify-between cursor-pointer hover:bg-secondary transition-colors ${
-                        themeSettings.theme === 'light' ? 'border-edvantage-blue bg-secondary' : ''
+                        themeSettings.theme === 'light' ? 'border-edvantae-blue bg-secondary' : ''
                       }`}
                     >
                       <div className="flex items-center">
@@ -587,7 +587,7 @@ const SettingsPage = () => {
                         </div>
                       </div>
                       {themeSettings.theme === 'light' && (
-                        <div className="h-6 w-6 rounded-full bg-edvantage-blue flex items-center justify-center">
+                        <div className="h-6 w-6 rounded-full bg-edvantae-blue flex items-center justify-center">
                           <Check className="h-4 w-4 text-white" />
                         </div>
                       )}
@@ -595,7 +595,7 @@ const SettingsPage = () => {
                     
                     <div
                       className={`border rounded-lg p-4 flex items-center justify-between cursor-pointer hover:bg-secondary transition-colors ${
-                        themeSettings.theme === 'dark' ? 'border-edvantage-blue bg-secondary' : ''
+                        themeSettings.theme === 'dark' ? 'border-edvantae-blue bg-secondary' : ''
                       }`}
                     >
                       <div className="flex items-center">
@@ -606,7 +606,7 @@ const SettingsPage = () => {
                         </div>
                       </div>
                       {themeSettings.theme === 'dark' && (
-                        <div className="h-6 w-6 rounded-full bg-edvantage-blue flex items-center justify-center">
+                        <div className="h-6 w-6 rounded-full bg-edvantae-blue flex items-center justify-center">
                           <Check className="h-4 w-4 text-white" />
                         </div>
                       )}
@@ -727,7 +727,7 @@ const SettingsPage = () => {
                 <div>
                   <h3 className="text-base font-medium mb-2">Data Export</h3>
                   <p className="text-sm text-muted-foreground mt-1 mb-3">
-                    Download a copy of all your data stored on Edvantage.
+                    Download a copy of all your data stored on Edvantae.
                   </p>
                   <Button 
                     variant="outline" 

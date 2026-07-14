@@ -56,7 +56,7 @@ const Login = () => {
       
       toast({
         title: "Login successful",
-        description: `Welcome back to Edvantage${accountType === 'organization' ? ' (Organization account)' : ''}!`,
+        description: `Welcome back to Edvantae${accountType === 'organization' ? ' (Organization account)' : ''}!`,
       });
 
       // Redirect based on account type
@@ -74,7 +74,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-edvantage-light-blue dark:bg-gray-900 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-edvantae-light-blue dark:bg-gray-900 px-4">
       <Button 
         variant="ghost" 
         size="icon" 
@@ -104,7 +104,7 @@ const Login = () => {
             
             <TabsContent value="student">
               <div className="flex justify-center mb-4">
-                <GraduationCap className="h-10 w-10 text-edvantage-blue dark:text-edvantage-light-blue" />
+                <GraduationCap className="h-10 w-10 text-edvantae-blue dark:text-edvantae-light-blue" />
               </div>
               <CardTitle className="text-2xl text-center font-bold">Student Sign In</CardTitle>
               <CardDescription className="text-center">
@@ -114,7 +114,7 @@ const Login = () => {
             
             <TabsContent value="organization">
               <div className="flex justify-center mb-4">
-                <Building2 className="h-10 w-10 text-edvantage-blue dark:text-edvantage-light-blue" />
+                <Building2 className="h-10 w-10 text-edvantae-blue dark:text-edvantae-light-blue" />
               </div>
               <CardTitle className="text-2xl text-center font-bold">Organization Sign In</CardTitle>
               <CardDescription className="text-center">
@@ -154,7 +154,7 @@ const Login = () => {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">Password</Label>
-                <Link href="/forgot-password" className="text-sm text-edvantage-blue dark:text-edvantage-light-blue hover:underline">
+                <Link href="/forgot-password" className="text-sm text-edvantae-blue dark:text-edvantae-light-blue hover:underline">
                   Forgot password?
                 </Link>
               </div>
@@ -178,15 +178,15 @@ const Login = () => {
               </label>
             </div>
             
-            <Button type="submit" className="w-full bg-edvantage-blue hover:bg-edvantage-dark-blue" disabled={isSubmitting}>
+            <Button type="submit" className="w-full bg-edvantae-blue hover:bg-edvantae-dark-blue" disabled={isSubmitting}>
               {isSubmitting ? "Signing in..." : "Sign in"}
             </Button>
           </form>
         </CardContent>
 
         <CardFooter className="text-center text-sm">
-          <span>New to Edvantage? </span>
-          <Link href="/register" className="text-edvantage-blue dark:text-edvantage-light-blue hover:underline">
+          <span>New to Edvantae? </span>
+          <Link href="/register" className="text-edvantae-blue dark:text-edvantae-light-blue hover:underline">
             Create an account
           </Link>
         </CardFooter>

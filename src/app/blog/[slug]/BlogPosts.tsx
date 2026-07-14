@@ -64,7 +64,7 @@ export default function BlogPost({ slug }: BlogPostProps) {
                     {post.excerpt}
                   </p>
                   <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                    At Edvantage, we believe that every student has the
+                    At Edvantae, we believe that every student has the
                     potential to excel academically when given the right tools
                     and support.
                   </p>

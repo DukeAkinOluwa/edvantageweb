@@ -61,7 +61,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     // Check localStorage for saved user
-    const savedUser = getLocalStorageItem<User>('edvantageUser');
+    const savedUser = getLocalStorageItem<User>('edvantaeUser');
     if (savedUser) {
       setUser(savedUser);
     }
@@ -79,7 +79,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         // Use the appropriate demo user based on account type
         const userToSet = accountType === 'organization' ? DEMO_ORG_USER : DEMO_USER;
         setUser(userToSet);
-        setLocalStorageItem('edvantageUser', userToSet);
+        setLocalStorageItem('edvantaeUser', userToSet);
       } else {
         throw new Error("Invalid credentials");
       }
@@ -112,7 +112,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       };
       
       setUser(newUser);
-      setLocalStorageItem('edvantageUser', newUser);
+      setLocalStorageItem('edvantaeUser', newUser);
     } catch (error) {
       console.error("Registration failed:", error);
       throw error;
@@ -123,7 +123,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const logout = () => {
     setUser(null);
-    removeLocalStorageItem('edvantageUser');
+    removeLocalStorageItem('edvantaeUser');
   };
 
   return (

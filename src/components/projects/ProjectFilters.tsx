@@ -49,7 +49,7 @@ export const ProjectFilters: React.FC<ProjectFiltersProps> = ({
             <Button variant="outline" size="icon" className="rounded-full relative">
               <Filter className="h-4 w-4" />
               {filterPriority && (
-                <span className="absolute -top-1 -right-1 h-2 w-2 bg-edvantage-blue rounded-full" />
+                <span className="absolute -top-1 -right-1 h-2 w-2 bg-edvantae-blue rounded-full" />
               )}
             </Button>
           </PopoverTrigger>
@@ -88,7 +88,7 @@ export const ProjectFilters: React.FC<ProjectFiltersProps> = ({
             <Button variant="outline" size="icon" className="rounded-full relative">
               <SortAsc className="h-4 w-4" />
               {sortBy && (
-                <span className="absolute -top-1 -right-1 h-2 w-2 bg-edvantage-blue rounded-full" />
+                <span className="absolute -top-1 -right-1 h-2 w-2 bg-edvantae-blue rounded-full" />
               )}
             </Button>
           </PopoverTrigger>
@@ -103,7 +103,7 @@ export const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                 >
                   <span className="w-full flex items-center justify-between">
                     Sort by title
-                    <SortAsc className={`h-4 w-4 ${sortBy?.includes('title') ? 'text-edvantage-blue' : ''}`} />
+                    <SortAsc className={`h-4 w-4 ${sortBy?.includes('title') ? 'text-edvantae-blue' : ''}`} />
                   </span>
                 </Button>
                 
@@ -114,7 +114,7 @@ export const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                 >
                   <span className="w-full flex items-center justify-between">
                     Sort by due date
-                    <Calendar className={`h-4 w-4 ${sortBy?.includes('due-date') ? 'text-edvantage-blue' : ''}`} />
+                    <Calendar className={`h-4 w-4 ${sortBy?.includes('due-date') ? 'text-edvantae-blue' : ''}`} />
                   </span>
                 </Button>
                 
@@ -125,7 +125,7 @@ export const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                 >
                   <span className="w-full flex items-center justify-between">
                     Sort by progress
-                    <Progress className={`h-2 w-12 ${sortBy?.includes('progress') ? 'bg-edvantage-blue' : ''}`} value={50} />
+                    <Progress className={`h-2 w-12 ${sortBy?.includes('progress') ? 'bg-edvantae-blue' : ''}`} value={50} />
                   </span>
                 </Button>
               </div>

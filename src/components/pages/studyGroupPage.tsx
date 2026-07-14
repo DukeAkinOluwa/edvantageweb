@@ -107,7 +107,7 @@ const GroupsPage = () => {
   
   // Copy invite link
   const copyInviteLink = () => {
-    const link = `https://edvantage.app/join/${selectedGroup?.id}`;
+    const link = `https://edvantae.app/join/${selectedGroup?.id}`;
     navigator.clipboard.writeText(link);
     
     toast({
@@ -334,7 +334,7 @@ const GroupsPage = () => {
               Cancel
             </Button>
             <Button 
-              className="bg-edvantage-blue hover:bg-edvantage-dark-blue" 
+              className="bg-edvantae-blue hover:bg-edvantae-dark-blue" 
               onClick={createGroup}
               disabled={!newGroup.name}
             >
@@ -356,7 +356,7 @@ const GroupsPage = () => {
           <div className="space-y-4 py-4">
             <div className="p-3 bg-muted rounded-md flex items-center justify-between">
               <div className="text-sm break-all">
-                https://edvantage.app/join/{selectedGroup?.id}
+                https://edvantae.app/join/{selectedGroup?.id}
               </div>
               <Button variant="ghost" size="sm" onClick={copyInviteLink}>
                 <Copy className="h-4 w-4 mr-1" />
@@ -380,7 +380,7 @@ const GroupsPage = () => {
               Cancel
             </Button>
             <Button 
-              className="bg-edvantage-blue hover:bg-edvantage-dark-blue" 
+              className="bg-edvantae-blue hover:bg-edvantae-dark-blue" 
               onClick={() => sendInvites("example1@example.com, example2@example.com")}
             >
               Send Invites

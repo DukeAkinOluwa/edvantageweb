@@ -61,10 +61,10 @@
   --input: 214 32% 91%;
   --ring: 222 84% 5%;
   --radius: 1rem;
-  --edvantage-blue: #2A52BE;
-  --edvantage-dark-blue: #014792;
-  --edvantage-light-blue: #FAFBFD;
-  --edvantage-dark-gray: #374151;
+  --edvantae-blue: #2A52BE;
+  --edvantae-dark-blue: #014792;
+  --edvantae-light-blue: #FAFBFD;
+  --edvantae-dark-gray: #374151;
   --font-display: "Inter", sans-serif;
 }
 
@@ -130,7 +130,7 @@
   }
   .btn-primary {
     padding: 0.75rem 1.5rem;
-    background-color: var(--edvantage-blue);
+    background-color: var(--edvantae-blue);
     color: white;
     border-radius: 9999px;
     font-weight: 500;
@@ -138,7 +138,7 @@
     transition: all 300ms;
   }
   .btn-primary:hover {
-    background-color: var(--edvantage-dark-blue);
+    background-color: var(--edvantae-dark-blue);
   }
   .btn-primary:active {
     transform: scale(0.95);
@@ -146,25 +146,25 @@
   .btn-secondary {
     padding: 0.75rem 1.5rem;
     background-color: white;
-    color: var(--edvantage-blue);
-    border: 1px solid var(--edvantage-blue);
+    color: var(--edvantae-blue);
+    border: 1px solid var(--edvantae-blue);
     border-radius: 9999px;
     font-weight: 500;
     transition: all 300ms;
   }
   .btn-secondary:hover {
-    background-color: var(--edvantage-light-blue);
+    background-color: var(--edvantae-light-blue);
   }
   .btn-secondary:active {
     transform: scale(0.95);
   }
   .nav-link {
     position: relative;
-    color: var(--edvantage-dark-gray);
+    color: var(--edvantae-dark-gray);
     transition: color 300ms;
   }
   .nav-link:hover {
-    color: var(--edvantage-blue);
+    color: var(--edvantae-blue);
   }
   .nav-link::after {
     content: "";
@@ -173,7 +173,7 @@
     left: 0;
     right: 0;
     height: 0.125rem;
-    background-color: var(--edvantage-blue);
+    background-color: var(--edvantae-blue);
     transform: scaleX(0);
     transition: transform 300ms;
   }
@@ -191,22 +191,22 @@
     transform: translateY(0);
   }
 }
-.text-edvantage-blue {
+.text-edvantae-blue {
   --tw-text-opacity: 1;
   color: rgb(42 82 190/var(--tw-text-opacity, 1));
 }
 
-.bg-edvantage-light-blue {
+.bg-edvantae-light-blue {
   --tw-bg-opacity: 1;
   background-color: rgb(230 242 255/var(--tw-bg-opacity, 1));
 }
 
-.bg-edvantage-blue {
+.bg-edvantae-blue {
   --tw-bg-opacity: 1;
   background-color: rgb(42 82 190/var(--tw-bg-opacity, 1));
 }
 
-.bg-edvantage-blue\/5 {
+.bg-edvantae-blue\/5 {
   background-color: rgba(42, 82, 190, 0.05);
 }
 
@@ -214,23 +214,23 @@
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
-.text-edvantage-dark-gray {
+.text-edvantae-dark-gray {
   --tw-text-opacity: 1;
   color: rgb(74 85 104/var(--tw-text-opacity, 1));
 }
 
-.from-edvantage-blue {
+.from-edvantae-blue {
   --tw-gradient-from: #2A52BE;
   --tw-gradient-to: rgba(2, 3, 3, 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.via-edvantage-blue\/80 {
+.via-edvantae-blue\/80 {
   --tw-gradient-to: rgb(42 82 190 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(42 82 190 / 0.8) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
-.to-edvantage-dark-blue {
+.to-edvantae-dark-blue {
   --tw-gradient-to: #2A52BE;
 }
 
@@ -240,7 +240,7 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
 }
 
-.from-edvantage-light-blue\/20 {
+.from-edvantae-light-blue\/20 {
   --tw-gradient-from: rgb(230 242 255 / 0.2);
   --tw-gradient-to: rgb(230 242 255 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);

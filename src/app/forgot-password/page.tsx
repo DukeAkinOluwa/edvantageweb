@@ -61,7 +61,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-edvantage-light-blue dark:bg-gray-900 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-edvantae-light-blue dark:bg-gray-900 px-4">
       <Button 
         variant="ghost" 
         size="icon" 
@@ -84,7 +84,7 @@ const ForgotPassword = () => {
       <Card className="w-full max-w-md shadow-lg animate-fade-in dark:bg-gray-800 dark:text-gray-100">
         <CardHeader className="space-y-1">
           <div className="flex justify-center mb-6">
-            <Mail className="h-12 w-12 text-edvantage-blue dark:text-edvantage-light-blue" />
+            <Mail className="h-12 w-12 text-edvantae-blue dark:text-edvantae-light-blue" />
           </div>
           <CardTitle className="text-2xl text-center font-bold">Reset your password</CardTitle>
           <CardDescription className="text-center">
@@ -110,7 +110,7 @@ const ForgotPassword = () => {
               <div className="pt-2">
                 <Button 
                   type="submit" 
-                  className="w-full bg-edvantage-blue hover:bg-edvantage-dark-blue dark:bg-edvantage-blue/80 dark:hover:bg-edvantage-blue" 
+                  className="w-full bg-edvantae-blue hover:bg-edvantae-dark-blue dark:bg-edvantae-blue/80 dark:hover:bg-edvantae-blue" 
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Reset Link"}
@@ -130,7 +130,7 @@ const ForgotPassword = () => {
         </CardContent>
         <CardFooter className="flex flex-col space-y-4">
           <div className="text-center text-sm">
-            <Link href="/login" className="text-edvantage-blue dark:text-edvantage-light-blue hover:underline">
+            <Link href="/login" className="text-edvantae-blue dark:text-edvantae-light-blue hover:underline">
               Return to sign in
             </Link>
           </div>

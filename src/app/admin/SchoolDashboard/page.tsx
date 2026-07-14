@@ -101,7 +101,7 @@ const SchoolDashboard: React.FC = () => {
       {/* Sidebar */}
       <div className="w-64 bgwhite dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col">
         <div className="p-4 flex items-center gap-3 border-b border-gray-200 dark:border-gray-700">
-          <div className="bg-edvantage-blue rounded-md p-2">
+          <div className="bg-edvantae-blue rounded-md p-2">
             <GraduationCap className="h-6 w-6 text-white" />
           </div>
           <h1 className="text-xl font-bold">Edu Admin</h1>
@@ -130,7 +130,7 @@ const SchoolDashboard: React.FC = () => {
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                 onClick={() => setActiveTab('overview')}
               >
-                <Home className="h-5 w-5 text-edvantage-blue" />
+                <Home className="h-5 w-5 text-edvantae-blue" />
                 <span>Overview</span>
               </Link>
             </li>
@@ -139,7 +139,7 @@ const SchoolDashboard: React.FC = () => {
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                 onClick={() => setActiveTab('students')}
               >
-                <Users className="h-5 w-5 text-edvantage-blue" />
+                <Users className="h-5 w-5 text-edvantae-blue" />
                 <span>Students</span>
               </Link>
             </li>
@@ -148,7 +148,7 @@ const SchoolDashboard: React.FC = () => {
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                 onClick={() => setActiveTab('departments')}
               >
-                <Briefcase className="h-5 w-5 text-edvantage-blue" />
+                <Briefcase className="h-5 w-5 text-edvantae-blue" />
                 <span>Departments</span>
               </Link>
             </li>
@@ -157,7 +157,7 @@ const SchoolDashboard: React.FC = () => {
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                 onClick={() => setActiveTab('courses')}
               >
-                <BookOpen className="h-5 w-5 text-edvantage-blue" />
+                <BookOpen className="h-5 w-5 text-edvantae-blue" />
                 <span>Courses</span>
               </Link>
             </li>
@@ -166,7 +166,7 @@ const SchoolDashboard: React.FC = () => {
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                 onClick={() => setActiveTab('resources')}
               >
-                <Book className="h-5 w-5 text-edvantage-blue" />
+                <Book className="h-5 w-5 text-edvantae-blue" />
                 <span>Resources</span>
               </Link>
             </li>
@@ -175,7 +175,7 @@ const SchoolDashboard: React.FC = () => {
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                 onClick={() => setActiveTab('calendar')}
               >
-                <Calendar className="h-5 w-5 text-edvantage-blue" />
+                <Calendar className="h-5 w-5 text-edvantae-blue" />
                 <span>Calendar</span>
               </Link>
             </li>
@@ -184,7 +184,7 @@ const SchoolDashboard: React.FC = () => {
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                 onClick={() => setActiveTab('analytics')}
               >
-                <BarChart3 className="h-5 w-5 text-edvantage-blue" />
+                <BarChart3 className="h-5 w-5 text-edvantae-blue" />
                 <span>Analytics</span>
               </Link>
             </li>
@@ -193,7 +193,7 @@ const SchoolDashboard: React.FC = () => {
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                 onClick={() => setActiveTab('achievements')}
               >
-                <Award className="h-5 w-5 text-edvantage-blue" />
+                <Award className="h-5 w-5 text-edvantae-blue" />
                 <span>Achievements</span>
               </Link>
             </li>
@@ -508,7 +508,7 @@ const SchoolDashboard: React.FC = () => {
                         <CardContent className="pt-0">
                           <div className="flex items-center justify-between text-sm">
                             <span>Students: {Math.floor(Math.random() * 200) + 50}</span>
-                            <ThumbsUp className="h-4 w-4 text-edvantage-blue" />
+                            <ThumbsUp className="h-4 w-4 text-edvantae-blue" />
                           </div>
                         </CardContent>
                       </Card>

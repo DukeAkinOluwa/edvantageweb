@@ -58,7 +58,7 @@ const TeamMember = ({ name, role, bio, imageUrl, socialLinks = [], delay = 0 }: 
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bgwhite/90 flex items-center justify-center text-edvantage-blue hover:bg-edvantage-blue hover:text-white transition-colors duration-300"
+                  className="w-9 h-9 rounded-full bgwhite/90 flex items-center justify-center text-edvantae-blue hover:bg-edvantae-blue hover:text-white transition-colors duration-300"
                   aria-label={`${name}'s ${link.platform}`}
                 >
                   {renderSocialIcon(link.platform)}
@@ -71,8 +71,8 @@ const TeamMember = ({ name, role, bio, imageUrl, socialLinks = [], delay = 0 }: 
       
       <div className="p-6">
         <h3 className="text-xl font-semibold">{name}</h3>
-        <p className="text-edvantage-blue font-medium mb-3">{role}</p>
-        <p className="text-edvantage-dark-gray">{bio}</p>
+        <p className="text-edvantae-blue font-medium mb-3">{role}</p>
+        <p className="text-edvantae-dark-gray">{bio}</p>
       </div>
     </div>
   );

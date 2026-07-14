@@ -19,13 +19,13 @@ const FaqItem = ({ question, answer, isOpen = false }: FaqItemProps) => {
         aria-expanded={expanded}
       >
         <h3 className="text-lg font-medium text-foreground">{question}</h3>
-        <span className="text-edvantage-blue ml-4">
+        <span className="text-edvantae-blue ml-4">
           {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
         </span>
       </button>
       
       <div
-        className={`mt-2 text-edvantage-dark-gray transition-all duration-300 ease-in-out overflow-hidden ${
+        className={`mt-2 text-edvantae-dark-gray transition-all duration-300 ease-in-out overflow-hidden ${
           expanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

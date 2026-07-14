@@ -27,8 +27,8 @@ export const DashboardSidebarLink: React.FC<DashboardSidebarLinkProps> = ({
       href={link.path}
       className={`flex items-center px-4 py-3 rounded-lg transition-colors ${
         isActive 
-          ? 'bg-edvantage-blue dark:bg-edvantage-blue/80 text-white' 
-          : 'hover:bg-edvantage-light-blue dark:hover:bg-gray-800 text-edvantage-dark-gray dark:text-gray-300'
+          ? 'bg-edvantae-blue dark:bg-edvantae-blue/80 text-white' 
+          : 'hover:bg-edvantae-light-blue dark:hover:bg-gray-800 text-edvantae-dark-gray dark:text-gray-300'
       }`}
       onClick={onClick}
     >

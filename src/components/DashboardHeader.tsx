@@ -78,7 +78,7 @@ const DashboardHeader: React.FC = () => {
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="icon" className="rounded-full" aria-label="User menu">
-                        <div className="h-8 w-8 rounded-full bg-edvantage-blue flex items-center justify-center text-white font-medium">
+                        <div className="h-8 w-8 rounded-full bg-edvantae-blue flex items-center justify-center text-white font-medium">
                         {user?.name.charAt(0)}
                         </div>
                     </Button>

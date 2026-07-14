@@ -57,7 +57,7 @@ export function useTasks() {
         console.error('Error getting tasks from IndexedDB:', dbError);
         
         // Fallback to localStorage
-        const localTasks = getLocalStorageItem<Task[]>(`edvantage-tasks-${user.id}`);
+        const localTasks = getLocalStorageItem<Task[]>(`edvantae-tasks-${user.id}`);
         if (localTasks && localTasks.length > 0) {
           userTasks = localTasks;
         }
@@ -72,7 +72,7 @@ export function useTasks() {
         // Store the generated tasks in both storage options
         try {
           // Store in localStorage as backup
-          setLocalStorageItem(`edvantage-tasks-${user.id}`, userTasks);
+          setLocalStorageItem(`edvantae-tasks-${user.id}`, userTasks);
           
           // Store each task in IndexedDB
           for (const task of userTasks) {
@@ -151,11 +151,11 @@ export function useTasks() {
       await db.put('tasks', completedTask);
       
       // Update in localStorage as backup
-      const localTasks = getLocalStorageItem<Task[]>(`edvantage-tasks-${user.id}`) || [];
+      const localTasks = getLocalStorageItem<Task[]>(`edvantae-tasks-${user.id}`) || [];
       const updatedLocalTasks = localTasks.map(task => 
         task.id === taskId ? completedTask : task
       );
-      setLocalStorageItem(`edvantage-tasks-${user.id}`, updatedLocalTasks);
+      setLocalStorageItem(`edvantae-tasks-${user.id}`, updatedLocalTasks);
       
     } catch (error) {
       console.error('Error updating task:', error);
@@ -182,8 +182,8 @@ export function useTasks() {
       await db.add('tasks', newTask);
       
       // Update localStorage backup
-      const localTasks = getLocalStorageItem<Task[]>(`edvantage-tasks-${user.id}`) || [];
-      setLocalStorageItem(`edvantage-tasks-${user.id}`, [...localTasks, newTask]);
+      const localTasks = getLocalStorageItem<Task[]>(`edvantae-tasks-${user.id}`) || [];
+      setLocalStorageItem(`edvantae-tasks-${user.id}`, [...localTasks, newTask]);
       
     } catch (error) {
       console.error('Error adding task:', error);

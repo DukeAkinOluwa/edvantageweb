@@ -135,8 +135,8 @@ const AdminDashboard = () => {
       <div className="hidden md:flex w-64 flex-col bgwhite border-r border-gray-200 min-h-screen">
         <div className="p-4 border-b">
           <div className="flex items-center justify-center">
-            <School className="h-8 w-8 text-edvantage-blue mr-2" />
-            <h1 className="text-xl font-bold text-edvantage-blue">Edvantage Admin</h1>
+            <School className="h-8 w-8 text-edvantae-blue mr-2" />
+            <h1 className="text-xl font-bold text-edvantae-blue">Edvantae Admin</h1>
           </div>
           <div className="text-sm text-center text-muted-foreground mt-1">
             University of Lagos
@@ -232,7 +232,7 @@ const AdminDashboard = () => {
                 <Menu className="h-6 w-6" />
               </Button>
               <div className="ml-3">
-                <School className="h-6 w-6 text-edvantage-blue" />
+                <School className="h-6 w-6 text-edvantae-blue" />
               </div>
             </div>
             
@@ -299,7 +299,7 @@ const AdminDashboard = () => {
             <div className="flex items-center">
               <div className="relative w-full md:w-64">
                 <select 
-                  className="block w-full rounded-md border-input bgbackground px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-edvantage-blue"
+                  className="block w-full rounded-md border-input bgbackground px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-edvantae-blue"
                   value={selectedDepartment}
                   onChange={(e) => setSelectedDepartment(e.target.value)}
                 >
@@ -321,7 +321,7 @@ const AdminDashboard = () => {
                       <p className="text-sm font-medium text-muted-foreground">Total Students</p>
                       <h3 className="text-3xl font-bold">{SCHOOL_STATS.totalStudents}</h3>
                     </div>
-                    <Users className="h-12 w-12 text-edvantage-blue opacity-80" />
+                    <Users className="h-12 w-12 text-edvantae-blue opacity-80" />
                   </div>
                   <div className="mt-4 flex items-center text-sm text-muted-foreground">
                     <div className="flex items-center text-green-600">
@@ -360,7 +360,7 @@ const AdminDashboard = () => {
                   <div className="mt-4">
                     <div className="w-full bg-gray-200 rounded-full h-2">
                       <div 
-                        className="bg-edvantage-blue h-2 rounded-full" 
+                        className="bg-edvantae-blue h-2 rounded-full" 
                         style={{ width: `${(SCHOOL_STATS.licensesUsed / SCHOOL_STATS.licensesTotal) * 100}%` }}
                       />
                     </div>
@@ -386,8 +386,8 @@ const AdminDashboard = () => {
                   <div className="space-y-4">
                     {RECENT_ACTIVITIES.map(activity => (
                       <div key={activity.id} className="flex items-start border-b pb-4 last:border-0 last:pb-0">
-                        <div className="bg-edvantage-light-blue p-2 rounded-full">
-                          <Activity className="h-5 w-5 text-edvantage-blue" />
+                        <div className="bg-edvantae-light-blue p-2 rounded-full">
+                          <Activity className="h-5 w-5 text-edvantae-blue" />
                         </div>
                         <div className="ml-4 flex-1">
                           <div className="flex items-center justify-between">
@@ -435,7 +435,7 @@ const AdminDashboard = () => {
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-1.5">
                           <div 
-                            className="bg-edvantage-blue h-1.5 rounded-full" 
+                            className="bg-edvantae-blue h-1.5 rounded-full" 
                             style={{ width: '63%' }}
                           />
                         </div>
@@ -487,7 +487,7 @@ const AdminDashboard = () => {
                       {POPULAR_RESOURCES.map(resource => (
                         <div key={resource.id} className="flex items-start">
                           <div className="p-1.5 bg-gray-100 rounded">
-                            <FileText className="h-5 w-5 text-edvantage-blue" />
+                            <FileText className="h-5 w-5 text-edvantae-blue" />
                           </div>
                           <div className="ml-3 flex-1">
                             <div className="flex items-center justify-between">
@@ -537,7 +537,7 @@ const AdminDashboard = () => {
                           <div className="flex-1">
                             <div className="w-full bg-gray-200 rounded-full h-2">
                               <div 
-                                className="bg-edvantage-blue h-2 rounded-full" 
+                                className="bg-edvantae-blue h-2 rounded-full" 
                                 style={{ width: `${90 - (index * 5)}%` }}
                               />
                             </div>

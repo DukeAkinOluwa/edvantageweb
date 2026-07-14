@@ -6,17 +6,17 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-edvantage-blue/5 pt-16 pb-8">
+    <footer className="bg-edvantae-blue/5 pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
             <Link
               href="/"
-              className="text-2xl font-display font-bold text-edvantage-blue inline-block mb-2"
+              className="text-2xl font-display font-bold text-edvantae-blue inline-block mb-2"
             >
-              Edvantage
+              Edvantae
             </Link>
-            <p className="text-edvantage-dark-gray max-w-xs">
+            <p className="text-edvantae-dark-gray max-w-xs">
               Simplifying the academic journey for tertiary students with an
               engaging and efficient platform.
             </p>
@@ -25,7 +25,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
@@ -34,7 +34,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
@@ -43,7 +43,7 @@ const Footer = () => {
                 href="https://www.instagram.com/edvantae_edu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -52,7 +52,7 @@ const Footer = () => {
                 href="https://linkedin.com/company/edvantaelimited"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
@@ -66,7 +66,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   Home
                 </Link>
@@ -74,7 +74,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/about"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   About Us
                 </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/leadership"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   Our Leadership Team
                 </Link>
@@ -90,7 +90,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/blog"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   Blog
                 </Link>
@@ -98,7 +98,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/contact"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   Contact
                 </Link>
@@ -112,7 +112,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/#features"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   Time Management
                 </Link>
@@ -120,7 +120,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/#features"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   Collaboration
                 </Link>
@@ -128,7 +128,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/#features"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   Gamification
                 </Link>
@@ -136,7 +136,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/#features"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   Academic Resources
                 </Link>
@@ -144,7 +144,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/#features"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
                   AI Support
                 </Link>
@@ -156,12 +156,12 @@ const Footer = () => {
             <h3 className="font-display font-bold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-center">
-                <Mail size={18} className="mr-2 text-edvantage-blue" />
+                <Mail size={18} className="mr-2 text-edvantae-blue" />
                 <a
-                  href="mailto:edvantaelimited@gmail.com"
-                  className="text-edvantage-dark-gray hover:text-edvantage-blue transition-colors"
+                  href="mailto:hello@edvantae.com"
+                  className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"
                 >
-                  edvantaelimited@gmail.con
+                  hello@edvantae.com
                 </a>
               </li>
             </ul>
@@ -174,8 +174,8 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-200 pt-8 mt-8 text-center">
-          <Link href="/dashboard" className="text-sm text-edvantage-dark-gray">
-            &copy; {currentYear} Edvantage. All rights reserved.
+          <Link href="/dashboard" className="text-sm text-edvantae-dark-gray">
+            &copy; {currentYear} Edvantae. All rights reserved.
           </Link>
         </div>
       </div>

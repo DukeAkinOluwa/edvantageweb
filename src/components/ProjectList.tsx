@@ -82,7 +82,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({ projects, onOpenProjec
               </DropdownMenu>
             </div>
             <CardTitle 
-              className="text-lg mt-2 cursor-pointer hover:text-edvantage-blue transition-colors"
+              className="text-lg mt-2 cursor-pointer hover:text-edvantae-blue transition-colors"
               onClick={() => onOpenProject(project.id)}
             >
               {project.title}

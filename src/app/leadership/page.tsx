@@ -31,9 +31,9 @@ export default function Team() {
             <div className="container mx-auto py-16 px-4">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                  <h1 className="text-4xl font-bold mb-4 text-edvantage-blue">Our Executives</h1>
+                  <h1 className="text-4xl font-bold mb-4 text-edvantae-blue">Our Executives</h1>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Meet the visionaries behind Edvantage who are passionate about transforming
+                    Meet the visionaries behind Edvantae who are passionate about transforming
                     the academic experience for tertiary students.
                   </p>
                 </div>
@@ -59,7 +59,7 @@ export default function Team() {
                   </p>
                   <a 
                     href="/contact" 
-                    className="inline-block bg-edvantage-blue text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors"
+                    className="inline-block bg-edvantae-blue text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors"
                   >
                     Get in Touch
                   </a>

@@ -165,7 +165,7 @@ const ProjectDetailPage: React.FC = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-edvantage-blue"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-edvantae-blue"></div>
       </div>
     );
   }
@@ -440,7 +440,7 @@ const ProjectDetailPage: React.FC = () => {
           
           <Dialog open={isTaskDialogOpen} onOpenChange={setIsTaskDialogOpen}>
             <DialogTrigger asChild>
-              <Button className="gap-2 bg-edvantage-blue hover:bg-edvantage-dark-blue">
+              <Button className="gap-2 bg-edvantae-blue hover:bg-edvantae-dark-blue">
                 <PlusCircle className="h-4 w-4" />
                 <span className="hidden sm:inline">Add Task</span>
               </Button>

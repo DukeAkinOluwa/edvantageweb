@@ -386,11 +386,11 @@ const AiSupportPage = () => {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           {/* <h1 className="text-2xl font-bold flex items-center">
-            <Sparkles className="h-6 w-6 mr-2 text-edvantage-blue" />
+            <Sparkles className="h-6 w-6 mr-2 text-edvantae-blue" />
             AI Study Support
           </h1> */}
           <h1 className="text-2xl font-bold flex items-center">
-            <Sparkles className="h-6 w-6 mr-2 text-edvantage-blue" />
+            <Sparkles className="h-6 w-6 mr-2 text-edvantae-blue" />
           </h1>
           <p className="text-muted-foreground">
             Get help understanding complex topics, summarizing content, and more.
@@ -436,7 +436,7 @@ const AiSupportPage = () => {
                     {messages.length === 0 ? (
                       <div className="flex items-center justify-center h-full">
                         <div className="text-center max-w-md">
-                          <Lightbulb className="h-8 w-8 mx-auto mb-4 text-edvantage-accent" />
+                          <Lightbulb className="h-8 w-8 mx-auto mb-4 text-edvantae-accent" />
                           <h3 className="text-lg font-medium">How can I help with your studies?</h3>
                           <p className="text-sm text-muted-foreground mt-2">
                             Ask me anything about your coursework, or try one of the suggested prompts.
@@ -454,7 +454,7 @@ const AiSupportPage = () => {
                               <div 
                                 className={`p-3 rounded-lg ${
                                   message.type === 'user' 
-                                    ? 'bg-edvantage-blue text-white' 
+                                    ? 'bg-edvantae-blue text-white' 
                                     : 'bg-gray-100'
                                 }`}
                               >
@@ -543,7 +543,7 @@ const AiSupportPage = () => {
               <TabsContent value="document" className="m-0">
                 <div className="h-[500px] flex flex-col items-center justify-center p-6">
                   <div className="text-center max-w-md">
-                    <FileText className="h-12 w-12 mx-auto mb-4 text-edvantage-blue" />
+                    <FileText className="h-12 w-12 mx-auto mb-4 text-edvantae-blue" />
                     <h3 className="text-xl font-medium">Document Analysis</h3>
                     <p className="text-sm text-muted-foreground mt-3 mb-6">
                       Upload course materials, lecture notes, or textbook chapters to summarize content, extract key concepts, or get explanations.
@@ -570,7 +570,7 @@ const AiSupportPage = () => {
               <TabsContent value="image" className="m-0">
                 <div className="h-[500px] flex flex-col items-center justify-center p-6">
                   <div className="text-center max-w-md">
-                    <ImageIcon className="h-12 w-12 mx-auto mb-4 text-edvantage-blue" />
+                    <ImageIcon className="h-12 w-12 mx-auto mb-4 text-edvantae-blue" />
                     <h3 className="text-xl font-medium">Visual Learning</h3>
                     <p className="text-sm text-muted-foreground mt-3 mb-6">
                       Upload diagrams, charts, or images from your textbooks to get explanations and understand visual concepts better.

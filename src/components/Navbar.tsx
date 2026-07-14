@@ -37,7 +37,7 @@ const Navbar = () => {
     >
       <nav className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         <Link
-          href="/" className="text-2xl font-display font-bold text-edvantage-blue flex items-center"
+          href="/" className="text-2xl font-display font-bold text-edvantae-blue flex items-center"
         >
           <span className="mr-2">Edvantae</span>
         </Link>
@@ -85,7 +85,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-edvantage-dark-gray"
+        <button className="md:hidden text-edvantae-dark-gray"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -106,7 +106,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
           >
-            <X size={24} className="text-edvantage-dark-gray" />
+            <X size={24} className="text-edvantae-dark-gray" />
           </button>
           <Link
             href="/" className="text-xl font-medium py-2 border-b border-gray-100"

@@ -41,8 +41,8 @@ export const AchievementProvider: React.FC<{ children: ReactNode }> = ({ childre
   
   useEffect(() => {
     if (user) {
-      const savedAchievements = localStorage.getItem(`edvantage-achievements-${user.id}`);
-      const savedPoints = localStorage.getItem(`edvantage-points-${user.id}`);
+      const savedAchievements = localStorage.getItem(`edvantae-achievements-${user.id}`);
+      const savedPoints = localStorage.getItem(`edvantae-points-${user.id}`);
       
       if (savedAchievements) {
         setAchievements(JSON.parse(savedAchievements));
@@ -56,8 +56,8 @@ export const AchievementProvider: React.FC<{ children: ReactNode }> = ({ childre
   
   useEffect(() => {
     if (user && achievements.length > 0) {
-      localStorage.setItem(`edvantage-achievements-${user.id}`, JSON.stringify(achievements));
-      localStorage.setItem(`edvantage-points-${user.id}`, String(userPoints));
+      localStorage.setItem(`edvantae-achievements-${user.id}`, JSON.stringify(achievements));
+      localStorage.setItem(`edvantae-points-${user.id}`, String(userPoints));
     }
   }, [achievements, userPoints, user]);
   
@@ -126,7 +126,7 @@ export const AchievementProvider: React.FC<{ children: ReactNode }> = ({ childre
     
     const shareableId = uuidv4().substring(0, 8);
     const baseUrl = window.location.origin;
-    localStorage.setItem(`edvantage-share-${shareableId}`, JSON.stringify(shareData));
+    localStorage.setItem(`edvantae-share-${shareableId}`, JSON.stringify(shareData));
     
     return `${baseUrl}/achievements/shared/${shareableId}`;
   };

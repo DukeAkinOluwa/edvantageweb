@@ -300,7 +300,7 @@ const GroupDetailPage = () => {
                           <div 
                             className={`p-3 rounded-lg mt-1 ${
                               message.senderId === 'user-1' 
-                                ? 'bg-edvantage-blue text-white' 
+                                ? 'bg-edvantae-blue text-white' 
                                 : 'bg-muted'
                             }`}
                           >
@@ -313,7 +313,7 @@ const GroupDetailPage = () => {
                                   key={index} 
                                   className={`p-2 rounded flex items-center space-x-2 ${
                                     message.senderId === 'user-1' 
-                                      ? 'bg-edvantage-dark-blue text-white' 
+                                      ? 'bg-edvantae-dark-blue text-white' 
                                       : 'bg-gray-100'
                                   }`}
                                 >

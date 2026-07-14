@@ -33,31 +33,31 @@ const BlogCard = ({ title, excerpt, slug, date, category, imageUrl, delay = 0 }:
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
         />
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bgwhite/90 backdrop-blur-sm text-edvantage-blue text-xs font-medium rounded-full">
+          <span className="px-3 py-1 bgwhite/90 backdrop-blur-sm text-edvantae-blue text-xs font-medium rounded-full">
             {category}
           </span>
         </div>
       </div>
       
       <div className="p-6">
-        <div className="flex items-center text-sm text-edvantage-dark-gray mb-3">
+        <div className="flex items-center text-sm text-edvantae-dark-gray mb-3">
           <Calendar size={14} className="mr-1" />
           <span>{date}</span>
         </div>
         
         <Link href={`/blog/${slug}`}>
-          <h3 className="heading-sm mb-3 group-hover:text-edvantage-blue transition-colors duration-300">
+          <h3 className="heading-sm mb-3 group-hover:text-edvantae-blue transition-colors duration-300">
             {title}
           </h3>
         </Link>
         
-        <p className="text-edvantage-dark-gray mb-4 line-clamp-2">
+        <p className="text-edvantae-dark-gray mb-4 line-clamp-2">
           {excerpt}
         </p>
         
         <Link 
           href={`/blog/${slug}`} 
-          className="text-edvantage-blue font-medium inline-flex items-center group-hover:underline"
+          className="text-edvantae-blue font-medium inline-flex items-center group-hover:underline"
         >
           Read More
           <svg 

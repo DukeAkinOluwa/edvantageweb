@@ -90,8 +90,8 @@ const DashboardSidebar = ({ onToggleCollapse }: DashboardSidebarProps) => {
     <>
       <div className="flex items-center justify-between px-4 py-5">
         {!isCollapsed && (
-          <Link href="/dashboard" className="text-xl font-bold text-edvantage-blue dark:text-edvantage-light-blue flex items-center">
-            Edvantage
+          <Link href="/dashboard" className="text-xl font-bold text-edvantae-blue dark:text-edvantae-light-blue flex items-center">
+            Edvantae
           </Link>
         )}
         
@@ -141,7 +141,7 @@ const DashboardSidebar = ({ onToggleCollapse }: DashboardSidebarProps) => {
             label="View Profile"
             isCollapsed={isCollapsed}
             onClick={viewProfile}
-            className="text-edvantage-blue dark:text-edvantage-light-blue"
+            className="text-edvantae-blue dark:text-edvantae-light-blue"
           />
         )}
         

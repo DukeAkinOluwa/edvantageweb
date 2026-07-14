@@ -23,7 +23,7 @@ export const DashboardSidebarAction: React.FC<DashboardSidebarActionProps> = ({
   const buttonContent = (
     <Button
       variant="ghost"
-      className={`w-full justify-start hover:bg-edvantage-light-blue dark:hover:bg-gray-800 ${
+      className={`w-full justify-start hover:bg-edvantae-light-blue dark:hover:bg-gray-800 ${
         isCollapsed ? 'px-0 justify-center' : 'px-4'
       } ${className}`}
       onClick={onClick}

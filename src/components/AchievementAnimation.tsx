@@ -68,11 +68,11 @@ const AchievementAnimation: React.FC<AchievementAnimationProps> = ({ achievement
             </div>
           </div>
           
-          <h3 className="text-xl font-bold mb-2 text-edvantage-blue dark:text-edvantage-light-blue">
+          <h3 className="text-xl font-bold mb-2 text-edvantae-blue dark:text-edvantae-light-blue">
             Achievement Unlocked!
           </h3>
           
-          <div className="achievement-card p-4 border border-edvantage-blue/20 dark:border-edvantage-blue/40 rounded-lg bg-edvantage-light-blue dark:bg-edvantage-blue/10 mb-4">
+          <div className="achievement-card p-4 border border-edvantae-blue/20 dark:border-edvantae-blue/40 rounded-lg bg-edvantae-light-blue dark:bg-edvantae-blue/10 mb-4">
             <div className="flex items-center mb-2">
               <div className="text-3xl mr-3 text-yellow-500">
                 {achievement.icon || <Award />}
@@ -86,7 +86,7 @@ const AchievementAnimation: React.FC<AchievementAnimationProps> = ({ achievement
               <div className="text-xs text-gray-500 dark:text-gray-400">
                 Completed just now
               </div>
-              <div className="text-edvantage-blue dark:text-edvantage-light-blue font-bold">
+              <div className="text-edvantae-blue dark:text-edvantae-light-blue font-bold">
                 +{achievement.points} pts
               </div>
             </div>
@@ -94,7 +94,7 @@ const AchievementAnimation: React.FC<AchievementAnimationProps> = ({ achievement
           
           <button
             onClick={onClose}
-            className="text-sm text-edvantage-blue dark:text-edvantage-light-blue hover:underline pointer-events-auto"
+            className="text-sm text-edvantae-blue dark:text-edvantae-light-blue hover:underline pointer-events-auto"
           >
             Continue
           </button>

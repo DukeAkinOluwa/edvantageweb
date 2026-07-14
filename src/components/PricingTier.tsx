@@ -26,21 +26,21 @@ const PricingTier = ({
   return (
     <div className={`rounded-2xl p-8 h-full flex flex-col ${
       isPopular 
-        ? 'bg-edvantage-blue text-white shadow-lg scale-105 border-4 border-edvantage-light-blue' 
+        ? 'bg-edvantae-blue text-white shadow-lg scale-105 border-4 border-edvantae-light-blue' 
         : 'bgwhite border border-gray-200'
     }`}>
       {isPopular && (
-        <div className="py-1 px-4 bg-edvantage-light-blue text-edvantage-blue text-sm font-medium rounded-full w-fit mb-4">
+        <div className="py-1 px-4 bg-edvantae-light-blue text-edvantae-blue text-sm font-medium rounded-full w-fit mb-4">
           Most Popular
         </div>
       )}
       
-      <h3 className={`text-xl font-bold ${isPopular ? 'text-white' : 'text-edvantage-blue'}`}>
+      <h3 className={`text-xl font-bold ${isPopular ? 'text-white' : 'text-edvantae-blue'}`}>
         {name}
       </h3>
       
       <div className="mt-4 mb-4">
-        <span className={`text-4xl font-bold ${isPopular ? 'text-white' : 'text-edvantage-blue'}`}>
+        <span className={`text-4xl font-bold ${isPopular ? 'text-white' : 'text-edvantae-blue'}`}>
           {price}
         </span>
         <span className={`text-sm ${isPopular ? 'text-white/70' : 'text-gray-600'}`}>
@@ -56,9 +56,9 @@ const PricingTier = ({
         {features.map((feature, index) => (
           <div key={index} className="flex items-start">
             <div className={`mr-3 mt-1 rounded-full p-1 ${
-              isPopular ? 'bgwhite/20' : 'bg-edvantage-light-blue/30'
+              isPopular ? 'bgwhite/20' : 'bg-edvantae-light-blue/30'
             }`}>
-              <Check size={16} className={isPopular ? 'text-white' : 'text-edvantage-blue'} />
+              <Check size={16} className={isPopular ? 'text-white' : 'text-edvantae-blue'} />
             </div>
             <span className={isPopular ? 'text-white/90' : 'text-gray-700'}>
               {feature}
@@ -70,8 +70,8 @@ const PricingTier = ({
       <Button 
         className={`w-full mt-auto ${
           isPopular 
-            ? 'bgwhite hover:bg-gray-100 text-edvantage-blue' 
-            : 'bg-edvantage-blue hover:bg-edvantage-dark-blue text-white'
+            ? 'bgwhite hover:bg-gray-100 text-edvantae-blue' 
+            : 'bg-edvantae-blue hover:bg-edvantae-dark-blue text-white'
         }`}
         asChild
       >

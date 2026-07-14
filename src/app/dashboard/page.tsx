@@ -430,7 +430,7 @@ const Dashboard = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {dashboardFeatures.map((feature) => (
                         <Link key={feature.id} href={feature.path}>
-                        <Card className="h-full transition-all hover:shadow-md hover:border-edvantage-blue">
+                        <Card className="h-full transition-all hover:shadow-md hover:border-edvantae-blue">
                             <CardHeader className="pb-2">
                             <div className={`p-2 rounded-lg w-fit ${feature.color}`}>
                                 <div className="h-5 w-5">
