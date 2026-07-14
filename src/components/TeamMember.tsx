@@ -1,9 +1,9 @@
 
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 import Image from "next/image";
 
 interface SocialLink {
-  platform: 'twitter' | 'linkedin' | 'github';
+  platform: 'twitter' | 'linkedin' | 'github' | 'email';
   url: string;
 }
 
@@ -29,6 +29,8 @@ const TeamMember = ({ name, role, bio, imageUrl, socialLinks = [], delay = 0 }: 
         return <Linkedin size={18} />;
       case 'github':
         return <Github size={18} />;
+      case 'email':
+        return <Mail size={18} />;
       default:
         return null;
     }

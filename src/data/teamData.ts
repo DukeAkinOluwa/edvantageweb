@@ -6,7 +6,7 @@ export interface TeamMember {
   bio: string;
   imageUrl: string;
   socialLinks: {
-    platform: 'twitter' | 'linkedin' | 'github';
+    platform: 'twitter' | 'linkedin' | 'github' | 'email';
     url: string;
   }[];
 }
@@ -26,6 +26,10 @@ export const teamMembers: TeamMember[] = [
       {
         platform: "linkedin",
         url: "https://linkedin.com/in/akindukoakinoluwa"
+      },
+      {
+        platform: "email",
+        url: "mailto:akinoluwa.akinduko@edvantae.com"
       }
     ]
   },
