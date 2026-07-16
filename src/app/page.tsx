@@ -16,6 +16,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+import featureStyles from "@/styles/components/featureSection.module.scss"
+
 export default function Home() {
     return (
         <>
@@ -165,30 +167,27 @@ export default function Home() {
             />
 
             {/* Features Section */}
-            <section className="py-20 bg-gray-50">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-edvantae-blue mb-4">
-                    Designed for Student Success
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Edvantae combines essential tools that address the unique
-                    challenges faced by tertiary students.
-                </p>
-                </div>
+            <section className={featureStyles.featuresSection}>
+                <div className={featureStyles.container}>
+                    <div className={featureStyles.headerText}>
+                    <h2 className={featureStyles.title}>Designed for Student Success</h2>
+                    <p className={featureStyles.subtitle}>
+                        Edvantae combines essential tools that address the unique challenges faced by tertiary students.
+                    </p>
+                    </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {features.map((feature, index) => (
-                    <FeatureCard
-                    key={index}
-                    icon={feature.icon}
-                    title={feature.title}
-                    description={feature.description}
-                    delay={index * 100}
-                    />
-                ))}
+                    <div className={featureStyles.grid}>
+                    {features.map((feature, index) => (
+                        <FeatureCard
+                        key={index}
+                        icon={feature.icon}
+                        title={feature.title}
+                        description={feature.description}
+                        delay={index * 100}
+                        />
+                    ))}
+                    </div>
                 </div>
-            </div>
             </section>
 
             {/* NEW Pricing Section */}

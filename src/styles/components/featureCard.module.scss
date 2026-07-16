@@ -1,0 +1,129 @@
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden; // Keeps the diagonal background lines clipped inside the card boundaries
+  padding: 2.5rem 2rem; // Generous vertical padding to mimic the tall reference card structure
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: scaleIn 0.6s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -15px rgba(29, 78, 216, 0.12);
+    border-color: rgba(255, 255, 255, 0.75);
+
+    // Subtle scale effect on the background pattern during hover
+    &::before {
+      transform: scale(1.05);
+    }
+  }
+
+  // ==========================================
+  // Pseudo-element for the Backward-Diagonal Pattern (-45deg)
+  // ==========================================
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.14; // Very subtle, elegant print texture
+    transition: transform 0.5s ease;
+    pointer-events: none;
+    
+    // Your exact backward-facing diagonal stripe pattern
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.6) 0px,
+      rgba(255, 255, 255, 0.6) 20px,
+      transparent 20px,
+      transparent 40px
+    );
+  }
+
+  // Ensure content elements float cleanly above the background pattern
+  .iconWrapper, .cardTitle, .cardDescription {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// =======================================================
+// Dynamic Color Themes (Different Blues and Corresponding Greys)
+// =======================================================
+
+// Card 1: Premium Ice Blue (High Contrast)
+.card:nth-child(4n + 1) {
+  background: linear-gradient(180deg, #e0f2fe 0%, #bae6fd 60%, #7dd3fc 100%);
+  .iconWrapper { background-color: rgba(255, 255, 255, 0.5); color: #0369a1; }
+  .cardTitle { color: #0c4a6e; }
+  .cardDescription { color: #0f5a83; }
+}
+
+// Card 2: Slate / Cool Grey (Highly modern, anchors the blues)
+.card:nth-child(4n + 2) {
+  background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 60%, #cbd5e1 100%);
+  .iconWrapper { background-color: rgba(255, 255, 255, 0.5); color: #334155; }
+  .cardTitle { color: #0f172a; }
+  .cardDescription { color: #334155; }
+}
+
+// Card 3: Deep Royal Frost
+.card:nth-child(4n + 3) {
+  background: linear-gradient(180deg, #dbeafe 0%, #bfdbfe 60%, #93c5fd 100%);
+  .iconWrapper { background-color: rgba(255, 255, 255, 0.5); color: #1d4ed8; }
+  .cardTitle { color: #1e3a8a; }
+  .cardDescription { color: #2563eb; }
+}
+
+// Card 4: Bright Minimal Pearl (Warm Grey transition)
+.card:nth-child(4n + 4) {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 60%, #e2e8f0 100%);
+  .iconWrapper { background-color: rgba(255, 255, 255, 0.8); color: #475569; }
+  .cardTitle { color: #1e293b; }
+  .cardDescription { color: #475569; }
+}
+
+// Icon wrapper base styling
+.iconWrapper {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem; // Larger spacing for a premium layout
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .iconWrapper {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  font-weight: 700; // Chunkier headers look premium alongside gradients
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.02em;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
