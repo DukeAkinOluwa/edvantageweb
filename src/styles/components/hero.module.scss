@@ -1,0 +1,261 @@
+@use '../variables.scss' as vars;
+
+
+$blue-light: rgba(29, 78, 216, 0.1); // bg-edvantae-light-blue
+
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// ==========================================
+// Hero Styles
+// ==========================================
+.heroSection {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 8rem;    // pt-32
+  padding-bottom: 5rem; // pb-20
+
+  @media (min-width: $breakpoint-md) {
+    padding-top: 10rem;    // md:pt-40
+    padding-bottom: 8rem; // md:pb-32
+  }
+
+  // Lighter, soft-blue gradient base
+  background: 
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, #f3f8fc 0%, #e0f2fe 50%, #bfe2ff 100%);
+
+  // 2. Slanted Stripes Overlay (Matching Edvantae's forward arrow motif)
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+    
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.4) 0px,
+      rgba(255, 255, 255, 0.4) 40px,
+      transparent 40px,
+      transparent 80px
+    );
+
+    @media (min-width: $breakpoint-md) {
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.3) 0px,
+        rgba(255, 255, 255, 0.3) 100px,
+        transparent 100px,
+        transparent 200px
+      );
+    }
+  }
+}
+
+// Ensure the main layout sits on top of the background stripes
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;  // px-4
+  padding-right: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding-left: 2rem;  // md:px-8
+    padding-right: 2rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem; // gap-12
+  align-items: center;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); // lg:grid-cols-2
+  }
+}
+
+// ==========================================
+// Column 1: Left Content Style
+// ==========================================
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; // space-y-6
+  max-width: 36rem; // max-w-xl
+}
+
+.badge {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 0.25rem 0.75rem; // py-1 px-3
+  border-radius: 9999px; // rounded-full
+  background-color: $blue-light;
+  color: vars.$edvantaeBlue;
+  font-size: 0.875rem; // text-sm
+  font-weight: 500; // font-medium
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #111827;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 3.75rem; // heading-xl equivalents
+    line-height: 1;
+  }
+}
+
+.subtitle {
+  font-size: 1.125rem; // text-lg
+  color: vars.$edvantae-dark-gray;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; // gap-4
+  padding-top: 1rem; // pt-4
+}
+
+// Buttons
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  background-color: vars.$edvantaeBlue; // dark gray/black button
+  color: vars.$edvantaeWhite;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #1f2937;
+  }
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #e5e7eb;
+  }
+}
+
+.btnIcon {
+  margin-left: 0.5rem; // ml-2
+}
+
+// ==========================================
+// Column 2: Right Media Elements
+// ==========================================
+.imageCol {
+  position: relative;
+
+  @media (min-width: $breakpoint-lg) {
+    height: 500px; // lg:h-[500px]
+  }
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem; // rounded-2xl
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); // shadow-2xl
+  transition: transform 0.7s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.fallbackBg {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, vars.$edvantaeBlue 0%, rgba(vars.$edvantaeBlue, 0.8) 50%, vars.$edvantae-dark-blue 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+// Glow accents around images
+.glowDot {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(48px); // blur-3xl / blur-2xl
+  pointer-events: none;
+}
+
+.glowLeft {
+  bottom: -1.5rem; // -bottom-6
+  left: -1.5rem;  // -left-6
+  width: 6rem;    // w-24
+  height: 6rem;   // h-24
+  background-color: rgba(vars.$edvantaeBlue, 0.1);
+}
+
+.glowRight {
+  top: -2.5rem;  // -top-10
+  right: -2.5rem; // -right-10
+  width: 8rem;    // w-32
+  height: 8rem;   // h-32
+  background-color: rgba(vars.$edvantaeBlue, 0.1);
+}
+
+// ==========================================
+// Animations
+// ==========================================
+.animateSlideLeft {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animateSlideRight {
+  animation: slideInRight 0.8s ease-out forwards;
+}

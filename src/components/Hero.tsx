@@ -1,7 +1,7 @@
-
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import styles from "@/styles/components/hero.module.scss";
 
 interface HeroProps {
   title: string;
@@ -11,7 +11,7 @@ interface HeroProps {
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
   imageUrl?: string;
-  backgroundImage: string;
+  backgroundImage?: string;
 }
 
 const Hero = ({
@@ -24,45 +24,50 @@ const Hero = ({
   imageUrl,
 }: HeroProps) => {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 max-w-xl animate-slide-in-left">
-            <div className="inline-block py-1 px-3 rounded-full bg-edvantae-light-blue text-edvantae-blue text-sm font-medium mb-2">
+    <section className={styles.heroSection}>
+      <div className={styles.container}>
+        <div className={styles.grid}>
+          
+          {/* Left Column (Content) */}
+          <div className={`${styles.contentCol} ${styles.animateSlideLeft}`}>
+            <span className={styles.badge}>
               Student Productivity Platform
-            </div>
-            <h1 className="heading-xl">{title}</h1>
-            <p className="text-lg text-edvantae-dark-gray">{subtitle}</p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link href={ctaLink} className="btn-primary flex items-center">
+            </span>
+            <h1 className={styles.title}>{title}</h1>
+            <p className={styles.subtitle}>{subtitle}</p>
+            <div className={styles.buttonGroup}>
+              <Link href={ctaLink} className={styles.btnPrimary}>
                 {ctaText}
-                <ArrowRight size={18} className="ml-2" />
+                <ArrowRight size={18} className={styles.btnIcon} />
               </Link>
               {secondaryCtaText && secondaryCtaLink && (
-                <Link href={secondaryCtaLink} className="btn-secondary">
+                <Link href={secondaryCtaLink} className={styles.btnSecondary}>
                   {secondaryCtaText}
                 </Link>
               )}
             </div>
           </div>
-          <div className="relative lg:h-[500px] animate-slide-in-right">
+
+          {/* Right Column (Media) */}
+          <div className={`${styles.imageCol} ${styles.animateSlideRight}`}>
             {imageUrl ? (
               <Image
                 width={400}
                 height={400}
                 src={imageUrl}
                 alt="Edvantae App"
-                className="w-full h-full object-cover rounded-2xl shadow-2xl transition-transform duration-700 hover:scale-[1.02]"
+                className={styles.heroImage}
               />
             ) : (
-              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-edvantae-blue via-edvantae-blue/80 to-edvantae-dark-blue flex items-center justify-center text-white font-display text-2xl">
+              <div className={styles.fallbackBg}>
                 Edvantae
               </div>
             )}
-            {/* Decorative elements */}
-            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-edvantae-accent/10 rounded-full blur-2xl"></div>
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-edvantae-blue/10 rounded-full blur-3xl"></div>
+            {/* Glow Decorative Elements */}
+            <div className={`${styles.glowDot} ${styles.glowLeft}`}></div>
+            <div className={`${styles.glowDot} ${styles.glowRight}`}></div>
           </div>
+
         </div>
       </div>
     </section>
