@@ -83,7 +83,7 @@ const Navbar = () => {
           <Image
             width={400}
             height={400}
-            src={"/Images/edvantaenavbarlogo.png"}
+            src={"/Images/edvantaenavbarlogo.jpg"}
             alt="Edvantae App"
             className={styles.navLogo}
           />
