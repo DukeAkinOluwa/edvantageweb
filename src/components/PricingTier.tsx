@@ -1,6 +1,7 @@
-
 import { Check } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import styles from "@/styles/components/pricingTier.module.scss";
 
 interface PricingTierProps {
   name: string;
@@ -11,6 +12,7 @@ interface PricingTierProps {
   isPopular?: boolean;
   ctaText: string;
   ctaLink: string;
+  bgImage: string; // The URL for the magnificent blended background photo
 }
 
 const PricingTier = ({
@@ -22,45 +24,56 @@ const PricingTier = ({
   isPopular = false,
   ctaText,
   ctaLink,
+  bgImage,
 }: PricingTierProps) => {
   return (
-    <div className={`rounded-2xl p-8 h-full flex flex-col ${
-      isPopular 
-        ? 'bg-edvantae-blue text-white shadow-lg scale-105 border-4 border-edvantae-light-blue' 
-        : 'bgwhite border border-gray-200'
-    }`}>
+    <div className={`${styles.card} ${isPopular ? styles.popular : styles.standard}`}>
+      
+      {/* Spectacular Blended Image Watermark */}
+      <div className={styles.bgImageContainer}>
+        <Image
+          src={bgImage}
+          alt=""
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className={styles.bgImage}
+          aria-hidden="true"
+        />
+      </div>
+
       {isPopular && (
-        <div className="py-1 px-4 bg-edvantae-light-blue text-edvantae-blue text-sm font-medium rounded-full w-fit mb-4">
+        <div className={styles.popularBadge}>
           Most Popular
         </div>
       )}
       
-      <h3 className={`text-xl font-bold ${isPopular ? 'text-white' : 'text-edvantae-blue'}`}>
+      <h3 className={styles.title}>
         {name}
       </h3>
       
-      <div className="mt-4 mb-4">
-        <span className={`text-4xl font-bold ${isPopular ? 'text-white' : 'text-edvantae-blue'}`}>
+      <div className={styles.priceWrapper}>
+        <span className={styles.price}>
           {price}
         </span>
-        <span className={`text-sm ${isPopular ? 'text-white/70' : 'text-gray-600'}`}>
+        <span className={styles.period}>
           /{period}
         </span>
       </div>
       
-      <p className={`mb-6 ${isPopular ? 'text-white/80' : 'text-gray-600'}`}>
+      <p className={styles.description}>
         {description}
       </p>
       
-      <div className="space-y-4 mb-8 flex-grow">
+      <div className={styles.featuresList}>
         {features.map((feature, index) => (
-          <div key={index} className="flex items-start">
-            <div className={`mr-3 mt-1 rounded-full p-1 ${
-              isPopular ? 'bgwhite/20' : 'bg-edvantae-light-blue/30'
-            }`}>
-              <Check size={16} className={isPopular ? 'text-white' : 'text-edvantae-blue'} />
+          <div key={index} className={styles.featureRow}>
+            <div className={styles.checkIconWrapper}>
+              <Check 
+                size={14} 
+                className={isPopular ? 'text-white' : 'text-edvantae-blue'} 
+              />
             </div>
-            <span className={isPopular ? 'text-white/90' : 'text-gray-700'}>
+            <span className={styles.featureText}>
               {feature}
             </span>
           </div>
@@ -68,9 +81,9 @@ const PricingTier = ({
       </div>
       
       <Button 
-        className={`w-full mt-auto ${
+        className={`${styles.ctaButton} ${
           isPopular 
-            ? 'bgwhite hover:bg-gray-100 text-edvantae-blue' 
+            ? 'bg-white hover:bg-gray-100 text-edvantae-blue' 
             : 'bg-edvantae-blue hover:bg-edvantae-dark-blue text-white'
         }`}
         asChild

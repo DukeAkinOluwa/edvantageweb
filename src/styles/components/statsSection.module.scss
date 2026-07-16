@@ -1,0 +1,119 @@
+$breakpoint-md: 768px;
+
+.statsSection {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0; // py-20
+  
+  // Base background: Deep, rich Edvantae Blue with a premium dark-to-bright gradient
+  background: linear-gradient(135deg, #1d4ed8 0%, #172554 100%);
+  z-index: 1;
+
+  // High-gloss top shine
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  // ==============================================================================
+  // Premium Dual-Tone Alternating Backlit Panel with Smooth Blended Lighting Masks
+  // ==============================================================================
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.1; // Clean, restrained background pattern visibility
+    background-image: 
+      // LAYER 1: Ambient Lighting Overlay to smooth/feather the transition lines
+      repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.1) 0px,
+        rgba(255, 255, 255, 0.05) 30px,
+        transparent 40px,
+        rgba(255, 255, 255, 0) 78px,
+        rgba(255, 255, 255, 0.18) 80px, // Highlights and blends the seam
+        rgba(255, 255, 255, 0.05) 110px,
+        transparent 120px,
+        rgba(255, 255, 255, 0) 158px,
+        rgba(255, 255, 255, 0.18) 160px
+      ),
+      // LAYER 2: Precise Base Bands
+      repeating-linear-gradient(
+        -45deg,
+        #2a52be 0px,                         // Band A starts
+        #2a52be 78px,                        // Band A ends (78px wide)
+        rgba(255, 255, 255, 0.3) 78px,       // Softened 2px Separator Line
+        rgba(255, 255, 255, 0.3) 80px,       
+        #2347a8 80px,                        // Band B starts (Slightly darker shade)
+        #2347a8 158px,                       // Band B ends (78px wide)
+        rgba(255, 255, 255, 0.3) 158px,      // Softened 2px Separator Line
+        rgba(255, 255, 255, 0.3) 160px       
+      );
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 2; // Sits safely above the background lines
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 0 2rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+// Glassmorphism Stat Cards
+.statCard {
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  // Glass highlight borders (bright at the top left, fading out)
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1); // Inside gloss stroke
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.number {
+  font-size: 3.5rem; // Slightly larger for extra impact
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums; // Prevents layout jitter while counting
+  // Subtle text reflection/glow
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.label {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}

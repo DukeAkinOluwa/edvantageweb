@@ -11,12 +11,76 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 // import { useState } from 'react';
 // import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState } from "react";
 
 // Layouts
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 import featureStyles from "@/styles/components/featureSection.module.scss"
+import statsStyles from "@/styles/components/statsSection.module.scss"
+import pricingStyles from "@/styles/components/pricingSectioin.module.scss"
+
+interface CountUpProps {
+    end: number;
+    duration?: number;
+    decimals?: number;
+    prefix?: string;
+    suffix?: string;
+}
+
+const CountUp = ({ end, duration = 2000, decimals = 0, prefix = "", suffix = "" }: CountUpProps) => {
+    const [count, setCount] = useState(0);
+    const elementRef = useRef<HTMLDivElement>(null);
+    const hasAnimated = useRef(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting && !hasAnimated.current) {
+            hasAnimated.current = true;
+            let startTime: number | null = null;
+
+            const animate = (timestamp: number) => {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                
+                // Easing Out Quad to decelerate smoothly near the end
+                const easeProgress = progress * (2 - progress);
+                
+                setCount(easeProgress * end);
+
+                if (progress < 1) {
+                requestAnimationFrame(animate);
+                } else {
+                setCount(end); // Guard rail to set exact final value
+                }
+            };
+
+            requestAnimationFrame(animate);
+            }
+        },
+        { threshold: 0.1 } // Starts when 10% of the number container is visible
+        );
+
+        if (elementRef.current) {
+        observer.observe(elementRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, [end, duration]);
+
+    return (
+        <div ref={elementRef} className={statsStyles.number}>
+        {prefix}
+        {count.toLocaleString(undefined, {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals,
+        })}
+        {suffix}
+        </div>
+    );
+};
 
 export default function Home() {
     return (
@@ -191,89 +255,98 @@ export default function Home() {
             </section>
 
             {/* NEW Pricing Section */}
-            <section className="py-20">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-edvantae-blue mb-4">
-                    Simple, Transparent Pricing
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Choose the plan that suits your academic needs, with affordable
-                    options for every student.
-                </p>
-                </div>
+            <section className={pricingStyles.pricingSection}>
+                <div className={pricingStyles.container}>
+                    <div className={pricingStyles.header}>
+                    <h2 className={pricingStyles.title}>Simple, Transparent Pricing</h2>
+                    <p className={pricingStyles.subtitle}>
+                        Choose the plan that suits your academic needs, with affordable options for every student.
+                    </p>
+                    </div>
 
-                <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <PricingTier
+                    <div className={pricingStyles.grid}>
+                    <PricingTier
                     name="Basic"
                     price="Free"
                     period="forever"
                     description="Essential features for individual students"
                     features={[
-                    "Academic calendar",
-                    "Basic task management",
-                    "Access to study guides",
-                    "Email support",
+                        "Academic calendar",
+                        "Basic task management",
+                        "Access to study guides",
+                        "Email support",
                     ]}
                     ctaText="Get Started"
                     ctaLink="/contact"
-                />
+                    // Soft, calming lone student writing/studying
+                    bgImage="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600"
+                    />
 
-                <PricingTier
+                    <PricingTier
                     name="Pro"
                     price="₦00.00"
                     period="year"
                     description="Everything in Basic plus premium features"
                     features={[
-                    "Advanced task prioritization",
-                    "Study group collaboration",
-                    "AI study assistant",
-                    "Gamification rewards",
-                    "Priority support",
+                        "Advanced task prioritization",
+                        "Study group collaboration",
+                        "AI study assistant",
+                        "Gamification rewards",
+                        "Priority support",
                     ]}
                     isPopular={true}
                     ctaText="Try Pro"
                     ctaLink="/contact"
-                />
+                    // Highly energetic group of students collaborating
+                    bgImage="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600"
+                    />
 
-                <PricingTier
+                    <PricingTier
                     name="Campus"
                     price="Custom"
                     period="year"
                     description="Enterprise solution for institutions"
                     features={[
-                    "Everything in Pro",
-                    "Campus-wide deployment",
-                    "Admin dashboard",
-                    "API integration",
-                    "Dedicated support",
-                    "Custom branding",
+                        "Everything in Pro",
+                        "Campus-wide deployment",
+                        "Admin dashboard",
+                        "API integration",
+                        "Dedicated support",
                     ]}
                     ctaText="Contact Us"
                     ctaLink="/contact"
-                />
+                    // Grand, classic university building architecture/pillars
+                    bgImage="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600"
+                    />
+                    </div>
                 </div>
-            </div>
             </section>
 
             {/* Stats Section */}
-            <section className="py-20 bg-edvantae-blue text-white">
-            <div className="container mx-auto px-4">
-                <div className="grid md:grid-cols-3 gap-8 text-center">
-                <div className="p-6">
-                    <div className="text-5xl font-bold mb-2">2.1M+</div>
-                    <p className="text-xl opacity-80">Nigerian Students</p>
+            <section className={statsStyles.statsSection}>
+                <div className={statsStyles.container}>
+                    <div className={statsStyles.grid}>
+                    
+                    {/* Card 1: Nigerian Students (Counts 0 to 2.1 with 1 decimal) */}
+                    <div className={statsStyles.statCard}>
+                        <CountUp end={2.1} decimals={1} suffix="M+" />
+                        <p className={statsStyles.label}>Nigerian Students</p>
+                    </div>
+
+                    {/* Card 2: Mobile Adoption (Counts 0 to 47) */}
+                    <div className={statsStyles.statCard}>
+                        <CountUp end={47} suffix="%" />
+                        <p className={statsStyles.label}>Mobile Adoption</p>
+                    </div>
+
+                    {/* Card 3: Static Value */}
+                    <div className={statsStyles.statCard}>
+                        <div className={statsStyles.number}>₦00.00</div>
+                        <p className={statsStyles.label}>Per Year</p>
+                    </div>
+                    
+                    </div>
                 </div>
-                <div className="p-6">
-                    <div className="text-5xl font-bold mb-2">47%</div>
-                    <p className="text-xl opacity-80">Mobile Adoption</p>
-                </div>
-                <div className="p-6">
-                    <div className="text-5xl font-bold mb-2">₦00.00</div>
-                    <p className="text-xl opacity-80">Per Year</p>
-                </div>
-                </div>
-            </div>
             </section>
 
             {/* Testimonials Section */}

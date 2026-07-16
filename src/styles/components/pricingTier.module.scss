@@ -1,0 +1,267 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+
+  // Global Hover transitions
+  &:hover {
+    transform: translateY(-8px);
+    
+    .bgImage {
+      transform: scale(1.05);
+      opacity: 0.15; // Standard card brings out the photo to 15% opacity on hover
+    }
+
+    &::after {
+      opacity: 0.25; // Enhance the diagonal pattern on hover for standard cards
+    }
+  }
+
+  // ========================================================
+  // Subtle Diagonal Pattern Layer (-45deg) - Standard Default
+  // ========================================================
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.12; // Beautifully faint default
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.5) 0px,
+      rgba(255, 255, 255, 0.5) 2px,   // Ultra-thin 2px line
+      transparent 2px,
+      transparent 80px                // Spaced-out gaps
+    );
+  }
+
+  // Standard Plan Style (Glassmorphic Pearl / Grey)
+  &.standard {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(241, 245, 249, 0.7) 100%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(8px);
+
+    &:hover {
+      border-color: rgba(29, 78, 216, 0.2);
+      box-shadow: 0 20px 40px -15px rgba(29, 78, 216, 0.08);
+    }
+
+    // Standard card pattern color adjustment
+    &::after {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(29, 78, 216, 0.08) 0px,
+        rgba(29, 78, 216, 0.08) 2px,
+        transparent 2px,
+        transparent 80px
+      );
+    }
+  }
+
+  // ========================================================
+  // Popular Plan Style (Alternating Dual-Tone Backlit Panel)
+  // ========================================================
+  &.popular {
+    // Elegant deep-blue gradient base
+    background: linear-gradient(135deg, #1d4ed8 0%, #172554 100%);
+    border: 4px solid #e0f2fe; // edvantae-light-blue
+    box-shadow: 0 20px 40px -10px rgba(29, 78, 216, 0.25);
+    transform: scale(1.05);
+
+    // Dynamic Solid Dual-Tone Alternate Pane Structure with Blended lighting
+    &::after {
+      opacity: 0.2; // Full opacity to display solid alternating bands
+      background-image: 
+        // LAYER 1: Ambient Lighting Overlay to smooth/feather the transition lines
+        repeating-linear-gradient(
+          -45deg,
+          rgba(255, 255, 255, 0.1) 0px,
+          rgba(255, 255, 255, 0.05) 30px,
+          transparent 40px,
+          rgba(255, 255, 255, 0) 78px,
+          rgba(255, 255, 255, 0.18) 80px, // Highlights the seam
+          rgba(255, 255, 255, 0.05) 110px,
+          transparent 120px,
+          rgba(255, 255, 255, 0) 158px,
+          rgba(255, 255, 255, 0.18) 160px
+        ),
+        // LAYER 2: Precise Base Bands
+        repeating-linear-gradient(
+          -45deg,
+          #2a52be 0px,                         // Band A starts (Exact color)
+          #2a52be 78px,                        // Band A ends (78px wide)
+          rgba(255, 255, 255, 0.3) 78px,       // Softened 2px Separator Line
+          rgba(255, 255, 255, 0.3) 80px,       
+          #2347a8 80px,                        // Band B starts (Slightly darker shade)
+          #2347a8 158px,                       // Band B ends (78px wide)
+          rgba(255, 255, 255, 0.3) 158px,      // Softened 2px Separator Line
+          rgba(255, 255, 255, 0.3) 160px       
+        );
+    }
+
+    // Specific Hover Overrides for the Popular Card
+    &:hover {
+      transform: scale(1.05) translateY(-8px);
+      box-shadow: 0 30px 50px -10px rgba(29, 78, 216, 0.35);
+
+      // Kept heavily suppressed to avoid overwhelming text details
+      .bgImage {
+        opacity: 0.06; 
+      }
+      
+      // Prevent standard opacity overrides from fading the solid bands
+      &::after {
+        opacity: 0.2; 
+      }
+    }
+
+    // Top Radial "Spotlight" Glow (Acts as global lighting across the card)
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 70%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+  }
+}
+
+// ==========================================
+// Embedded Watermark Image Handling
+// ==========================================
+.bgImageContainer {
+  position: absolute;
+  inset: 0;
+  z-index: -2; 
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.8s ease;
+  
+  .standard & {
+    opacity: 0.06; 
+    filter: grayscale(1) contrast(1.1) brightness(1.1);
+    mix-blend-mode: multiply;
+  }
+
+  .popular & {
+    opacity: 0.04; 
+    filter: grayscale(1) contrast(1.2) brightness(0.8);
+    mix-blend-mode: overlay;
+  }
+}
+
+// ==========================================
+// Card Typography & Inner Content
+// ==========================================
+.popularBadge {
+  padding: 0.25rem 1rem;
+  background-color: #e0f2fe; 
+  color: #1d4ed8; 
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  .standard & { color: #1d4ed8; }
+  .popular & { color: #ffffff; }
+}
+
+.priceWrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: baseline;
+}
+
+.price {
+  font-size: 2.5rem; 
+  font-weight: 800;
+  letter-spacing: -0.03em;
+
+  .standard & { color: #1d4ed8; }
+  .popular & { color: #ffffff; }
+}
+
+.period {
+  font-size: 0.875rem;
+  margin-left: 0.25rem;
+
+  .standard & { color: #4b5563; }
+  .popular & { color: rgba(255, 255, 255, 0.7); }
+}
+
+.description {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  .standard & { color: #4b5563; }
+  .popular & { color: rgba(255, 255, 255, 0.8); }
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.featureRow {
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkIconWrapper {
+  margin-right: 0.75rem;
+  margin-top: 0.125rem;
+  border-radius: 9999px;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .standard & { background-color: rgba(224, 242, 254, 0.5); }
+  .popular & { background-color: rgba(255, 255, 255, 0.15); }
+}
+
+.featureText {
+  font-size: 0.95rem;
+
+  .standard & { color: #374151; }
+  .popular & { color: rgba(255, 255, 255, 0.9); }
+}
+
+.ctaButton {
+  width: 100%;
+  margin-top: auto;
+  border-radius: 0.75rem;
+}
