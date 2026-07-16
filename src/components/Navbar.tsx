@@ -1,91 +1,119 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import styles from "@/styles/components/navbar.module.scss"; 
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  
+  // Store the previous scroll position in a ref to compare against
+  const lastScrollY = useRef(0);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  // 1. Lock/Unlock background scroll when the mobile menu opens/closes
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // 2. Handle scroll logic (only if the mobile menu is closed)
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      // If the mobile menu is open, we freeze scroll detection to prevent moving
+      if (isOpen) return;
+
+      const currentScrollY = window.scrollY;
+
+      // Determine if the background should be styled (scrolled past 20px)
+      if (currentScrollY > 20) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
+
+      // Hide on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+        // Scrolling Down & past the header height -> Hide
+        setVisible(false);
+      } else {
+        // Scrolling Up -> Show
+        setVisible(true);
+      }
+
+      // Update the ref to the current position
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isOpen]); // Added isOpen dependency so the scroll handler updates when menu state changes
 
   // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
   }, []);
 
+  // Compute the header classes based on scrolling behavior
+  // Note: if isOpen is true, we force it to remain visible!
+  const headerClass = `
+    ${styles.header} 
+    ${scrolled ? styles.scrolled : ""} 
+    ${!visible && !isOpen ? styles.hidden : ""}
+  `.trim();
+  
+  const navClass = `
+    ${styles.nav} 
+    ${scrolled ? styles.scrolled : ""}
+  `.trim();
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "py-3 bgwhite/80 backdrop-blur-lg shadow-sm"
-          : "py-5 bg-transparent"
-      }`}
-    >
-      <nav className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-        <Link
-          href="/" className="text-2xl font-display font-bold text-edvantae-blue flex items-center"
-        >
-          <span className="mr-2">Edvantae</span>
+    <header className={headerClass}>
+      <nav className={navClass}>
+        <Link href="/" className={styles.logo}>
+          <Image
+            width={400}
+            height={400}
+            src={"/Images/edvantaenavbarlogo.png"}
+            alt="Edvantae App"
+            className={styles.navLogo}
+          />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 items-center">
-          <Link
-            href="/"
-            className={`nav-link`}
-            // className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
-          >
+        <div className={styles.desktopMenu}>
+          <Link href="/" className={styles.navLink}>
             Home
           </Link>
-          <Link
-            href="/about"
-            className={`nav-link`}
-            // className={`nav-link ${ location.pathname === "/about" ? "active" : ""}`}
-          >
+          <Link href="/about" className={styles.navLink}>
             About
           </Link>
-          <Link
-            href="/leadership"
-            className={`nav-link`}
-            // className={`nav-link ${ location.pathname === "/leadership" ? "active" : ""}`}
-          >
+          <Link href="/leadership" className={styles.navLink}>
             Leadership
           </Link>
-          <Link
-            href="/blog"
-            className={`nav-link`}
-            // className={`nav-link ${ location.pathname.includes("/blog") ? "active" : ""}`}
-          >
+          <Link href="/blog" className={styles.navLink}>
             Blog
           </Link>
-          <Link
-            href="/contact"
-            className={`nav-link`}
-            // className={`nav-link ${ location.pathname === "/contact" ? "active" : ""}`}
-          >
+          <Link href="/contact" className={styles.navLink}>
             Contact
           </Link>
-          <Link href="#" className="btn-primary">
+          <Link href="#" className={styles.btnPrimary}>
             Get Started
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-edvantae-dark-gray"
+        <button 
+          className={styles.mobileMenuBtn}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -94,46 +122,33 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu */}
-      <div
-        className={`fixed inset-0 bgwhite z-40 transition-transform duration-300 ease-in-out transform md:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } pt-24`}
-      >
-        <div className="container mx-auto px-8 flex flex-col space-y-6 relative">
+      <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ""}`}>
+        <div className={styles.mobileContainer}>
           {/* Explicit Close Button */}
           <button 
-            className="absolute top-[-60px] right-4 p-2 hover:bg-gray-100 rounded-full"
+            className={styles.closeBtn}
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
           >
             <X size={24} className="text-edvantae-dark-gray" />
           </button>
-          <Link
-            href="/" className="text-xl font-medium py-2 border-b border-gray-100"
-          >
+          
+          <Link href="/" className={styles.mobileLink}>
             Home
           </Link>
-          <Link
-            href="/about" className="text-xl font-medium py-2 border-b border-gray-100"
-          >
+          <Link href="/about" className={styles.mobileLink}>
             About
           </Link>
-          <Link
-            href="/leadership" className="text-xl font-medium py-2 border-b border-gray-100"
-          >
+          <Link href="/leadership" className={styles.mobileLink}>
             Leadership
           </Link>
-          <Link
-            href="/blog" className="text-xl font-medium py-2 border-b border-gray-100"
-          >
+          <Link href="/blog" className={styles.mobileLink}>
             Blog
           </Link>
-          <Link
-            href="/contact" className="text-xl font-medium py-2 border-b border-gray-100"
-          >
+          <Link href="/contact" className={styles.mobileLink}>
             Contact
           </Link>
-          <Link href="#" className="btn-primary text-center mt-4">
+          <Link href="#" className={`${styles.btnPrimary} ${styles.mobileBtn}`}>
             Get Started
           </Link>
         </div>

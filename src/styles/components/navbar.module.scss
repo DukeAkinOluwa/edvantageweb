@@ -1,0 +1,203 @@
+@use '../variables.scss' as vars;
+
+// Variables
+$blue: #0f172a; // Swap this for your actual Edvantae-blue hex code
+$dark-gray: #4b5563; 
+$transition-speed: 0.3s;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    
+    // Use transition-property: transform for ultra-smooth performance
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, padding 0.3s ease;
+    transform: translateY(0); // Visible by default
+
+    // padding: 1.25rem 0; 
+    background-color: transparent;
+
+    // 1. Class added when scrolling down
+    &.hidden {
+        transform: translateY(-100%);
+    }
+
+    // 2. Class added when scrolled past the offset threshold
+    // &.scrolled {
+        // padding: 0.75rem 0; 
+        // background-color: rgba(255, 255, 255, 0.85);
+        // backdrop-filter: blur(16px);
+        // box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+    // }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px; // container mx-auto
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    background-color: rgba(11, 10, 15, 0.99);
+    border-radius: 0 0 20px 20px;
+    
+    // Use transition-property: transform for ultra-smooth performance
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, padding 0.3s ease;
+    transform: translateY(0); // Visible by default
+  
+    &.hidden {
+        transform: translateY(-100%);
+    }
+
+    &.scrolled {
+        // padding: 0.75rem 0; 
+        background-color: rgba(11, 10, 15, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (min-width: 768px) {
+        padding: 15px 2rem; // px-8
+    }
+    @media (max-width: 1150) {
+        max-width: 1000pxx; // container mx-auto
+  }
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $blue;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  span {
+    margin-right: 0.5rem;
+  }
+}
+
+.navLogo{
+    position: relative;
+    height: auto;
+    max-width: 150px;
+    object-fit: contain;
+
+    // @media (max-width: 767px) {
+    //     height: 700px;
+    // }
+}
+
+.desktopMenu {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 2rem; // space-x-8
+  }
+}
+
+.navLink {
+    color: vars.$edvantaeWhite;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover, &.active {
+        color: $blue;
+    }
+  
+    &.scrolled {
+        color: vars.$black;
+    }
+}
+
+.btnPrimary {
+  background-color: vars.$edvantaeBlue;
+  color: vars.$white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &.mobileBtn {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+.mobileMenuBtn {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $dark-gray;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: 40;
+  padding: 6rem 0 3rem; // pt-24
+  transition: transform $transition-speed ease-in-out;
+  transform: translateX(100%); // hidden by default
+  height: 100dvh;
+    background-color: rgb(250, 251, 253, 0.99);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobileContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem; // space-y-6
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -60px;
+  right: 1rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+}
+
+.mobileLink {
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  text-decoration: none;
+  color: #111827;
+}
