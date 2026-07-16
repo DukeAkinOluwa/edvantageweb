@@ -11,6 +11,7 @@ import Image from "next/image";
 // Layouts
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Hero from "@/components/Hero";
 
 export default function About() {
     return (
@@ -29,37 +30,18 @@ export default function About() {
     function Index () {
         return (
             <PageTransition>
+              <Hero
+                title="About Edvantae"
+                subtitle="Edvantae simplifies the academic journey for tertiary students by providing an engaging and efficient platform that integrates time management, collaboration, and academic tools. The app is built to help students overcome challenges such as poor time management, disjointed academic planning, and a lack of centralized collaboration tools."
+                ctaText=""
+                ctaLink=""
+                secondaryCtaText=""
+                secondaryCtaLink=""
+                backgroundImage=""
+                imageUrl="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+              />
               <div className="container mx-auto py-16 px-4">
-              <div className="max-w-5xl mx-auto">
-                <div className="bg-gradient-to-br from-edvantae-light-blue/20 to-white rounded-3xl p-8 md:p-12 mb-16 shadow-sm">
-                  <div className="flex flex-col md:flex-row gap-8 items-center">
-                    <div className="md:w-1/2">
-                      <h1 className="text-4xl md:text-5xl font-bold mb-6 text-edvantae-blue">
-                        About <span className="text-edvantae-dark-blue">Edvantae</span>
-                      </h1>
-                      <p className="text-lg leading-relaxed text-gray-700">
-                        Edvantae simplifies the academic journey for tertiary students by providing an engaging and efficient 
-                        platform that integrates time management, collaboration, and academic tools. The app is built to help 
-                        students overcome challenges such as poor time management, disjointed academic planning, and a lack 
-                        of centralized collaboration tools.
-                      </p>
-                    </div>
-                    <div className="md:w-1/2">
-                      <div className="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                        <AspectRatio ratio={16/9}>
-                          <Image 
-                            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-                            alt="Student using Edvantae app" 
-                            className="object-cover w-full h-full"
-                            width={1000}
-                            height={1000}
-                          />
-                        </AspectRatio>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
+              <div className="max-w-5xl mx-auto">                
                 <div className="space-y-16">
                   <section className="bgwhite rounded-2xl shadow-md overflow-hidden p-8 md:p-10">
                     <h2 className="text-3xl font-bold mb-8 text-center text-edvantae-blue">Our Mission</h2>

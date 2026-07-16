@@ -6,12 +6,12 @@ import styles from "@/styles/components/hero.module.scss";
 interface HeroProps {
   title: string;
   subtitle: string;
-  ctaText: string;
-  ctaLink: string;
+  ctaText?: string;       // Made optional with "?"
+  ctaLink?: string;       // Made optional with "?"
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
   imageUrl?: string;
-  backgroundImage?: string;
+  backgroundImage?: string; // Optional to prevent compile issues
 }
 
 const Hero = ({
@@ -23,6 +23,9 @@ const Hero = ({
   secondaryCtaLink,
   imageUrl,
 }: HeroProps) => {
+  // Check if we have at least one button to render
+  const hasButtons = (ctaText && ctaLink) || (secondaryCtaText && secondaryCtaLink);
+
   return (
     <section className={styles.heroSection}>
       <div className={styles.container}>
@@ -35,17 +38,23 @@ const Hero = ({
             </span>
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.subtitle}>{subtitle}</p>
-            <div className={styles.buttonGroup}>
-              <Link href={ctaLink} className={styles.btnPrimary}>
-                {ctaText}
-                <ArrowRight size={18} className={styles.btnIcon} />
-              </Link>
-              {secondaryCtaText && secondaryCtaLink && (
-                <Link href={secondaryCtaLink} className={styles.btnSecondary}>
-                  {secondaryCtaText}
-                </Link>
-              )}
-            </div>
+            
+            {/* Render the button container only if buttons actually exist */}
+            {hasButtons && (
+              <div className={styles.buttonGroup}>
+                {ctaText && ctaLink && (
+                  <Link href={ctaLink} className={styles.btnPrimary}>
+                    {ctaText}
+                    <ArrowRight size={18} className={styles.btnIcon} />
+                  </Link>
+                )}
+                {secondaryCtaText && secondaryCtaLink && (
+                  <Link href={secondaryCtaLink} className={styles.btnSecondary}>
+                    {secondaryCtaText}
+                  </Link>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Right Column (Media) */}
@@ -63,7 +72,6 @@ const Hero = ({
                 Edvantae
               </div>
             )}
-            {/* Glow Decorative Elements */}
             <div className={`${styles.glowDot} ${styles.glowLeft}`}></div>
             <div className={`${styles.glowDot} ${styles.glowRight}`}></div>
           </div>

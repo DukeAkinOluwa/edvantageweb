@@ -45,8 +45,10 @@ $breakpoint-lg: 1024px;
 
   // Lighter, soft-blue gradient base
   background: 
-    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0) 100%),
-    linear-gradient(180deg, #f3f8fc 0%, #e0f2fe 50%, #bfe2ff 100%);
+  // 1. More intense top glow: Stays white longer (up to 40%) before fading out completely at 80%
+  radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 80%),
+  // 2. Richer blue gradient: Deeper transition at the mid and bottom points to create dramatic depth
+  linear-gradient(180deg, #edf5fd 0%, #cbe5fc 50%, #9bcbf5 100%);
 
   // 2. Slanted Stripes Overlay (Matching Edvantae's forward arrow motif)
   &::before {
@@ -55,7 +57,7 @@ $breakpoint-lg: 1024px;
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.35;
+    opacity: 0.5;
     
     background-image: repeating-linear-gradient(
       45deg,
@@ -158,7 +160,7 @@ $breakpoint-lg: 1024px;
   background-color: vars.$edvantaeBlue; // dark gray/black button
   color: vars.$edvantaeWhite;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 10rem;
   font-weight: 500;
   text-decoration: none;
   transition: background-color 0.2s ease-in-out;
@@ -174,7 +176,7 @@ $breakpoint-lg: 1024px;
   background-color: #f3f4f6;
   color: #374151;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 10rem;
   font-weight: 500;
   text-decoration: none;
   transition: background-color 0.2s ease-in-out;
