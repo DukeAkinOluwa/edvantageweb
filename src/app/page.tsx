@@ -21,6 +21,7 @@ import featureStyles from "@/styles/components/featureSection.module.scss"
 import statsStyles from "@/styles/components/statsSection.module.scss"
 import pricingStyles from "@/styles/components/pricingSectioin.module.scss"
 import DashboardTestimonials from "@/components/DashboardTestimonials";
+import DashboardFAQ from "@/components/DashboardFaq";
 
 interface CountUpProps {
     end: number;
@@ -400,38 +401,7 @@ export default function Home() {
             <DashboardTestimonials />
 
             {/* FAQ Section */}
-            <section className="py-20 bg-gray-50">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-edvantae-blue mb-4">
-                    Frequently Asked Questions
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Get answers to common questions about Edvantae and how it can
-                    help you succeed academically.
-                </p>
-                </div>
-
-                <div className="max-w-3xl mx-auto">
-                {faqs.map((faq, index) => (
-                    <FaqItem
-                    key={index}
-                    question={faq.question}
-                    answer={faq.answer}
-                    />
-                ))}
-
-                <div className="text-center mt-12">
-                    <Link
-                    href="/blog"
-                    className="text-edvantae-blue hover:text-blue-700 font-semibold"
-                    >
-                    View more FAQs in our blog →
-                    </Link>
-                </div>
-                </div>
-            </div>
-            </section>
+            <DashboardFAQ />
 
             {/* CTA Section */}
             <section className="py-20">

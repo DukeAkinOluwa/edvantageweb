@@ -1,0 +1,189 @@
+$breakpoint-md: 768px;
+
+.faqSection {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0; // py-20
+  // Sophisticated, clean light-mode gradient
+  background: radial-gradient(100% 100% at 50% 0%, #f8fafc 0%, #e2e8f0 100%);
+  z-index: 1;
+}
+
+// Highly precise light slate math grid representing clean organization
+.mathGrid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// Gentle soft-cyan ambient background glow
+.ambientGlow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0) 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 1;
+  animation: pulseGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px; // Optimized width for readable text lines
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.headerText {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1e293b; // Rich deep slate instead of black
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 2.75rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #64748b; // Muted cool gray
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+// ==========================================
+// Accordion Item Styles
+// ==========================================
+.faqWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faqItem {
+  border-radius: 1.25rem;
+  // Sleek white glass look
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  box-shadow: 
+    0 4px 20px rgba(15, 23, 42, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  }
+
+  &.active {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #3b82f6; // Highlighting active state with Edvantae Blue
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.05);
+  }
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 1.5rem;
+}
+
+.question {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  transition: color 0.2s ease;
+
+  .active & {
+    color: #1d4ed8; // Deep blue focus state
+  }
+}
+
+.icon {
+  color: #64748b;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+
+  .active & {
+    transform: rotate(180deg);
+    color: #1d4ed8;
+  }
+}
+
+.contentWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: #475569;
+  line-height: 1.625;
+  font-size: 0.975rem;
+}
+
+// ==========================================
+// Footer Links
+// ==========================================
+.footerText {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.blogLink {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: #1d4ed8; // Edvantae Blue
+  transition: color 0.2s ease, transform 0.2s ease;
+  gap: 0.5rem;
+
+  &:hover {
+    color: #1e40af;
+    transform: translateX(3px);
+  }
+}
