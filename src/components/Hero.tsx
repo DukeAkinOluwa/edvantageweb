@@ -23,11 +23,14 @@ const Hero = ({
   secondaryCtaLink,
   imageUrl,
 }: HeroProps) => {
-  // Check if we have at least one button to render
   const hasButtons = (ctaText && ctaLink) || (secondaryCtaText && secondaryCtaLink);
 
   return (
     <section className={styles.heroSection}>
+      {/* Newly Introduced Clean Background Layers */}
+      <div className={styles.mathGrid} />
+      <div className={styles.ambientGlow} />
+
       <div className={styles.container}>
         <div className={styles.grid}>
           
@@ -39,7 +42,6 @@ const Hero = ({
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.subtitle}>{subtitle}</p>
             
-            {/* Render the button container only if buttons actually exist */}
             {hasButtons && (
               <div className={styles.buttonGroup}>
                 {ctaText && ctaLink && (

@@ -1,6 +1,5 @@
 @use '../variables.scss' as vars;
 
-
 $blue-light: rgba(29, 78, 216, 0.1); // bg-edvantae-light-blue
 
 $breakpoint-md: 768px;
@@ -43,46 +42,49 @@ $breakpoint-lg: 1024px;
     padding-bottom: 8rem; // md:pb-32
   }
 
-  // Lighter, soft-blue gradient base
+  // Retains original rich blue base gradient with a clean white sunburst transition from top
   background: 
-  // 1. More intense top glow: Stays white longer (up to 40%) before fading out completely at 80%
-  radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 80%),
-  // 2. Richer blue gradient: Deeper transition at the mid and bottom points to create dramatic depth
-  linear-gradient(180deg, #edf5fd 0%, #cbe5fc 50%, #9bcbf5 100%);
-
-  // 2. Slanted Stripes Overlay (Matching Edvantae's forward arrow motif)
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.2;
-    
-    background-image: repeating-linear-gradient(
-      -45deg,
-      rgba(255, 255, 255, 0.4) 0px,
-      rgba(255, 255, 255, 0.4) 40px,
-      transparent 60px,
-      transparent 80px
-    );
-
-    @media (min-width: $breakpoint-md) {
-      background-image: repeating-linear-gradient(
-        -45deg,
-        rgba(255, 255, 255, 0.3) 0px,
-        rgba(255, 255, 255, 0.3) 100px,
-        transparent 100px,
-        transparent 200px
-      );
-    }
-  }
+    radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0) 80%),
+    linear-gradient(180deg, #edf5fd 0%, #cbe5fc 50%, #9bcbf5 100%);
 }
 
-// Ensure the main layout sits on top of the background stripes
+// Crisp math grid overlay using the pricing/features pattern configured for light-blue backgrounds
+.mathGrid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(29, 78, 216, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 216, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// Interactive ambient glow that provides dynamic movement over the light blue canvas
+.ambientGlow {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 800px;
+  height: 800px;
+  // Blend using Edvantae's brand blue with high transparency
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 1;
+  animation: pulseGlow 14s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.5; transform: translate(-20%, -20%) scale(0.9); }
+  100% { opacity: 0.9; transform: translate(10%, 10%) scale(1.1); }
+}
+
+// Ensure the main layout sits on top of background patterns
 .container {
   position: relative;
-  z-index: 1;
+  z-index: 2; // Elevated above grid and glow
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
