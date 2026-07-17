@@ -98,94 +98,125 @@ export default function Home() {
     );
 
     function Index() {
+
+        // Icon 1: Calendar & Clock (Time & Task)
+        const TimeIcon = () => (
+        <svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+            <linearGradient id="glow1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.8"/>
+                <stop offset="100%" stopColor="#93c5fd" stopOpacity="0.2"/>
+            </linearGradient>
+            <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="8" stdDeviation="10" floodColor="#1e3a8a" floodOpacity="0.15"/>
+            </filter>
+            </defs>
+            {/* Background Glow */}
+            <circle cx="100" cy="100" r="70" fill="url(#glow1)" filter="url(#shadow1)" />
+            {/* Calendar Base */}
+            <rect x="60" y="65" width="80" height="80" rx="16" fill="#ffffff" fillOpacity="0.9" stroke="#2a52be" strokeWidth="4"/>
+            <rect x="60" y="65" width="80" height="22" rx="4" fill="#2a52be"/>
+            {/* Binder Rings */}
+            <rect x="75" y="55" width="6" height="16" rx="3" fill="#93c5fd"/>
+            <rect x="119" y="55" width="6" height="16" rx="3" fill="#93c5fd"/>
+            {/* Grid Detail */}
+            <circle cx="80" cy="105" r="5" fill="#2a52be" fillOpacity="0.6"/>
+            <circle cx="100" cy="105" r="5" fill="#2a52be" fillOpacity="0.6"/>
+            <circle cx="120" cy="105" r="5" fill="#2a52be" fillOpacity="0.6"/>
+            <circle cx="80" cy="125" r="5" fill="#2a52be" fillOpacity="0.6"/>
+            <circle cx="100" cy="125" r="5" fill="#2a52be"/>
+            <circle cx="120" cy="125" r="5" fill="#2a52be" fillOpacity="0.6"/>
+        </svg>
+        );
+
+        // Icon 2: AI Sparkle Mind (AI Study Assistant)
+        const AIIcon = () => (
+        <svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+            <linearGradient id="glow2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9"/>
+                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.1"/>
+            </linearGradient>
+            </defs>
+            {/* Glass Core */}
+            <circle cx="100" cy="100" r="70" fill="url(#glow2)" stroke="#0284c7" strokeWidth="2" strokeDasharray="6 6" />
+            {/* Central AI Sparkle Node */}
+            <path d="M100 50 C100 80 80 100 50 100 C80 100 100 120 100 150 C100 120 120 100 150 100 C120 100 100 80 100 50 Z" fill="#0284c7" />
+            {/* Secondary Accent Sparkles */}
+            <path d="M145 65 C145 75 138 80 128 80 C138 80 145 85 145 95 C145 85 152 80 162 80 C152 80 145 75 145 65 Z" fill="#38bdf8" />
+            <circle cx="65" cy="65" r="6" fill="#0284c7" />
+            <circle cx="140" cy="135" r="4" fill="#38bdf8" />
+        </svg>
+        );
+
+        // Icon 3: Linked Nodes (Collaborative Study Squads)
+        const SquadsIcon = () => (
+        <svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+            <linearGradient id="glow3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.8"/>
+                <stop offset="100%" stopColor="#94a3b8" stopOpacity="0.2"/>
+            </linearGradient>
+            </defs>
+            {/* Soft Mesh Ring */}
+            <circle cx="100" cy="100" r="70" fill="url(#glow3)" stroke="#64748b" strokeWidth="2" />
+            {/* Connecting Network Ribbons */}
+            <line x1="75" y1="75" x2="125" y2="75" stroke="#475569" strokeWidth="3" strokeDasharray="4 4" />
+            <line x1="75" y1="75" x2="100" y2="130" stroke="#475569" strokeWidth="3" strokeDasharray="4 4" />
+            <line x1="125" y1="75" x2="100" y2="130" stroke="#475569" strokeWidth="3" strokeDasharray="4 4" />
+            {/* Nodes (representing students) */}
+            <circle cx="75" cy="75" r="16" fill="#1e293b" stroke="#ffffff" strokeWidth="3"/>
+            <circle cx="125" cy="75" r="16" fill="#475569" stroke="#ffffff" strokeWidth="3"/>
+            <circle cx="100" cy="130" r="20" fill="#2a52be" stroke="#ffffff" strokeWidth="4"/>
+        </svg>
+        );
+
+        // Icon 4: Stacked Books (Resource Library)
+        const LibraryIcon = () => (
+        <svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+            <linearGradient id="glow4" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.8"/>
+                <stop offset="100%" stopColor="#cbd5e1" stopOpacity="0.2"/>
+            </linearGradient>
+            </defs>
+            {/* Base Aura */}
+            <circle cx="100" cy="100" r="70" fill="url(#glow4)" />
+            {/* Bottom Book */}
+            <rect x="55" y="105" width="90" height="28" rx="6" fill="#475569" stroke="#ffffff" strokeWidth="2" />
+            <path d="M125 105 V133" stroke="#ffffff" strokeWidth="2" />
+            {/* Middle Book */}
+            <rect x="65" y="85" width="80" height="24" rx="5" fill="#2a52be" stroke="#ffffff" strokeWidth="2" />
+            <path d="M125 85 V109" stroke="#ffffff" strokeWidth="2" />
+            {/* Top Angled Book */}
+            <g transform="rotate(-8 100 100)">
+            <rect x="75" y="60" width="70" height="22" rx="4" fill="#64748b" stroke="#ffffff" strokeWidth="2" />
+            <path d="M125 60 V82" stroke="#ffffff" strokeWidth="2" />
+            </g>
+        </svg>
+        );
+
         const features = [
-        {
-            icon: (
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            >
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            ),
-            title: "Time & Task Management",
-            description:
-            "Centralized academic calendar, reminders, and prioritization systems to help you stay organized and meet deadlines.",
-        },
-        {
-            icon: (
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            >
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-            ),
-            title: "Collaboration & Study Groups",
-            description:
-            "Create study squads, join class groups, and collaborate on projects with ease.",
-        },
-        {
-            icon: (
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            >
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-            </svg>
-            ),
-            title: "Gamification & Motivation",
-            description:
-            "Earn points, compete on leaderboards, and receive rewards for achieving academic milestones.",
-        },
-        {
-            icon: (
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            >
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-            </svg>
-            ),
-            title: "Academic Resources & AI Support",
-            description:
-            "Access a rich library of course materials and get AI assistance in understanding complex topics.",
-        },
+            {
+                title: "Time & Task Management",
+                description: "Take control of your academic schedule with structured planners, customizable calendars, and prioritization tools built specifically for student life.",
+                icon: <TimeIcon />
+            },
+            {
+                title: "AI Study Assistant",
+                description: "Get instant academic support, smart concept summaries, and guided explanations tailored directly to your course materials and topics.",
+                icon: <AIIcon />
+            },
+            {
+                title: "Collaborative Study Squads",
+                description: "Form study groups, share resources, collaborate on projects, and keep each other accountable in real time.",
+                icon: <SquadsIcon />
+            },
+            {
+                title: "Resource Library",
+                description: "Access study guides, past questions, lecture notes, and textbook summaries categorized by course and university.",
+                icon: <LibraryIcon />
+            }
         ];
 
         const faqs = [
@@ -233,17 +264,22 @@ export default function Home() {
             {/* Features Section */}
             <section className={featureStyles.featuresSection}>
                 <div className={featureStyles.container}>
+                    
+                    {/* Left-Aligned Premium Header Block */}
                     <div className={featureStyles.headerText}>
+                    <span className={featureStyles.category}>Benefits</span>
                     <h2 className={featureStyles.title}>Designed for Student Success</h2>
                     <p className={featureStyles.subtitle}>
                         Edvantae combines essential tools that address the unique challenges faced by tertiary students.
                     </p>
                     </div>
 
+                    {/* Feature List */}
                     <div className={featureStyles.grid}>
                     {features.map((feature, index) => (
                         <FeatureCard
                         key={index}
+                        index={index}
                         icon={feature.icon}
                         title={feature.title}
                         description={feature.description}
@@ -251,6 +287,7 @@ export default function Home() {
                         />
                     ))}
                     </div>
+                    
                 </div>
             </section>
 
