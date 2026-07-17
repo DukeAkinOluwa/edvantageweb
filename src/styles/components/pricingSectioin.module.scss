@@ -5,40 +5,48 @@ $breakpoint-lg: 1024px;
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
-  background-color: #f8fafc; // Base canvas color
+  
+  // A clean, soft brand-aligned light canvas gradient
+  background: radial-gradient(100% 100% at 50% 0%, #fafbfd 0%, #f8fafc 100%);
+}
 
-  // ==============================================================================
-  // Ultra-Blended Sophisticated Background Image Layer
-  // ==============================================================================
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
+// Subtly visible structured light math grid (to match the features section pattern)
+.mathGrid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(42, 82, 190, 0.04) 1px, transparent 1px),     // Increased from 0.018 to 0.04
+    linear-gradient(90deg, rgba(42, 82, 190, 0.04) 1px, transparent 1px); // Increased from 0.018 to 0.04
+  background-size: 50px 50px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
 
-    // Combines radial fadeout, white-blue wash, and the abstract workspace texture
-    background-image: 
-      radial-gradient(circle at center, rgba(248, 250, 252, 0.4) 0%, #f8fafc 90%),
-      linear-gradient(rgba(248, 250, 252, 0.8), rgba(248, 250, 252, 0.8)),
-      url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600"); 
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    // Strips raw image colors to gracefully inherit the light background tone
-    background-blend-mode: normal, luminosity; 
-    
-    // Lowers contrast and opacity to keep it extremely subtle
-    opacity: 0.65;
-    filter: contrast(0.85) brightness(1.02) saturate(0.2);
-  }
+// A beautiful, slow-pulsing light ambient glow to break up the whitespace
+.ambientGlow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  // Boosted opacities below for a richer, cooler glow field:
+  background: radial-gradient(circle, rgba(42, 82, 190, 0.12) 0%, rgba(186, 230, 253, 0.18) 50%, rgba(248, 250, 252, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+  animation: pulseGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.95); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 }
 
 .container {
   position: relative;
-  z-index: 1; // High enough to layer safely above the background image
+  z-index: 2; // Sits above the grid and glow layers
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;

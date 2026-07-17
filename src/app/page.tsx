@@ -297,6 +297,10 @@ export default function Home() {
 
             {/* NEW Pricing Section */}
             <section className={pricingStyles.pricingSection}>
+                {/* Fluid Background Patterns */}
+                <div className={pricingStyles.mathGrid} />
+                <div className={pricingStyles.ambientGlow} />
+
                 <div className={pricingStyles.container}>
                     <div className={pricingStyles.header}>
                     <h2 className={pricingStyles.title}>Simple, Transparent Pricing</h2>
@@ -307,57 +311,54 @@ export default function Home() {
 
                     <div className={pricingStyles.grid}>
                     <PricingTier
-                    name="Basic"
-                    price="Free"
-                    period="forever"
-                    description="Essential features for individual students"
-                    features={[
+                        name="Basic"
+                        price="Free"
+                        period="forever"
+                        description="Essential features for individual students"
+                        features={[
                         "Academic calendar",
                         "Basic task management",
                         "Access to study guides",
                         "Email support",
-                    ]}
-                    ctaText="Get Started"
-                    ctaLink="/contact"
-                    // Soft, calming lone student writing/studying
-                    bgImage="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600"
+                        ]}
+                        ctaText="Get Started"
+                        ctaLink="/contact"
+                        bgImage="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600"
                     />
 
                     <PricingTier
-                    name="Pro"
-                    price="₦00.00"
-                    period="year"
-                    description="Everything in Basic plus premium features"
-                    features={[
+                        name="Pro"
+                        price="₦00.00"
+                        period="year"
+                        description="Everything in Basic plus premium features"
+                        features={[
                         "Advanced task prioritization",
                         "Study group collaboration",
                         "AI study assistant",
                         "Gamification rewards",
                         "Priority support",
-                    ]}
-                    isPopular={true}
-                    ctaText="Try Pro"
-                    ctaLink="/contact"
-                    // Highly energetic group of students collaborating
-                    bgImage="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600"
+                        ]}
+                        isPopular={true}
+                        ctaText="Try Pro"
+                        ctaLink="/contact"
+                        bgImage="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600"
                     />
 
                     <PricingTier
-                    name="Campus"
-                    price="Custom"
-                    period="year"
-                    description="Enterprise solution for institutions"
-                    features={[
+                        name="Campus"
+                        price="Custom"
+                        period="year"
+                        description="Enterprise solution for institutions"
+                        features={[
                         "Everything in Pro",
                         "Campus-wide deployment",
                         "Admin dashboard",
                         "API integration",
                         "Dedicated support",
-                    ]}
-                    ctaText="Contact Us"
-                    ctaLink="/contact"
-                    // Grand, classic university building architecture/pillars
-                    bgImage="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600"
+                        ]}
+                        ctaText="Contact Us"
+                        ctaLink="/contact"
+                        bgImage="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600"
                     />
                     </div>
                 </div>
