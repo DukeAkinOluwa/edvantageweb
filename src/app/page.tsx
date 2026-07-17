@@ -263,6 +263,10 @@ export default function Home() {
 
             {/* Features Section */}
             <section className={featureStyles.featuresSection}>
+                {/* Visual cooling layers */}
+                <div className={featureStyles.mathGrid} />
+                <div className={featureStyles.ambientGlow} />
+
                 <div className={featureStyles.container}>
                     
                     {/* Left-Aligned Premium Header Block */}
@@ -274,7 +278,7 @@ export default function Home() {
                     </p>
                     </div>
 
-                    {/* Feature List */}
+                    {/* Asymmetrical Feature Grid */}
                     <div className={featureStyles.grid}>
                     {features.map((feature, index) => (
                         <FeatureCard

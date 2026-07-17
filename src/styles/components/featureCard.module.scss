@@ -110,9 +110,9 @@ $breakpoint-md: 768px;
   line-height: 1.55;
 }
 
-// =======================================================
-// Brand-Aligned Color Themes (Trust, Calm, Professionalism)
-// =======================================================
+// =========================================================================
+// Unified Color Themes & Asymmetric Grid Spanning ({3, 2} & {2, 3})
+// =========================================================================
 
 // Panel 1: Signature Deep Trust Blue (Primary #2a52be base)
 .card:nth-child(4n + 1) {
@@ -121,6 +121,10 @@ $breakpoint-md: 768px;
   
   .cardTitle { color: #ffffff; }
   .cardDescription { color: rgba(255, 255, 255, 0.85); }
+
+  @media (min-width: $breakpoint-md) {
+    grid-column: span 3; // Card 1 (Row 1): Spans 3 Columns (60%)
+  }
 }
 
 // Panel 2: Calming Soft Ice Blue (Calm, open, relaxed state of mind)
@@ -130,6 +134,16 @@ $breakpoint-md: 768px;
 
   .cardTitle { color: #0369a1; }
   .cardDescription { color: rgba(12, 74, 110, 0.85); }
+
+  @media (min-width: $breakpoint-md) {
+    grid-column: span 2; // Card 2 (Row 1): Spans 2 Columns (40%)
+    padding: 3rem 2.5rem; // More balanced padding for smaller card bounds
+
+    .iconWrapper {
+      width: 140px;
+      height: 140px;
+    }
+  }
 }
 
 // Panel 3: Transparent Pearl (Using brand base #fafbfd)
@@ -139,6 +153,16 @@ $breakpoint-md: 768px;
 
   .cardTitle { color: #1e293b; }
   .cardDescription { color: #475569; }
+
+  @media (min-width: $breakpoint-md) {
+    grid-column: span 2; // Card 3 (Row 2): Spans 2 Columns (40%)
+    padding: 3rem 2.5rem;
+
+    .iconWrapper {
+      width: 140px;
+      height: 140px;
+    }
+  }
 }
 
 // Panel 4: Light Slate Blue-Grey (Subtle transitional anchor)
@@ -148,4 +172,8 @@ $breakpoint-md: 768px;
 
   .cardTitle { color: #1e293b; }
   .cardDescription { color: #475569; }
+
+  @media (min-width: $breakpoint-md) {
+    grid-column: span 3; // Card 4 (Row 2): Spans 3 Columns (60%)
+  }
 }
