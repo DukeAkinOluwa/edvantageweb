@@ -19,6 +19,7 @@ import purpose from "@/styles/components/aboutPage/purpose.module.scss";
 import story from "@/styles/components/aboutPage/story.module.scss";
 import values from "@/styles/components/aboutPage/values.module.scss";
 import MissionSection from "@/components/aboutPage/missionSection";
+import BrandStorySection from "@/components/aboutPage/brandStorySection";
 
 export default function About() {
     return (
@@ -47,6 +48,7 @@ export default function About() {
                 backgroundImage=""
                 imageUrl="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
               />
+              <BrandStorySection />
               <MissionSection />
               <div className={layout.pageWrapper}>
                 <div className={layout.container}>
@@ -55,7 +57,7 @@ export default function About() {
                     {/* ==========================================
                         Section 2: Our Purpose
                       ========================================== */}
-                    <section className={purpose.splitSection}>
+                    {/* <section className={purpose.splitSection}>
                       <div className={purpose.splitGrid}>
                         <div className={purpose.splitContentCol}>
                           <h2 className={purpose.splitTitle}>Our Purpose</h2>
@@ -96,12 +98,12 @@ export default function About() {
                           />
                         </div>
                       </div>
-                    </section>
+                    </section> */}
 
                     {/* ==========================================
                         Section 3: Our Brand Story
                       ========================================== */}
-                    <section className={story.splitSection}>
+                    {/* <section className={story.splitSection}>
                       <div className={story.splitGrid}>
                         <div className={`${story.splitMediaCol} ${story.orderMediaMobile}`}>
                           <Image 
@@ -134,7 +136,7 @@ export default function About() {
                           </Link>
                         </div>
                       </div>
-                    </section>
+                    </section> */}
 
                     {/* ==========================================
                         Section 4: Our Values
