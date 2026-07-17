@@ -20,6 +20,7 @@ import Footer from "@/components/Footer";
 import featureStyles from "@/styles/components/featureSection.module.scss"
 import statsStyles from "@/styles/components/statsSection.module.scss"
 import pricingStyles from "@/styles/components/pricingSectioin.module.scss"
+import DashboardTestimonials from "@/components/DashboardTestimonials";
 
 interface CountUpProps {
     end: number;
@@ -396,120 +397,7 @@ export default function Home() {
             </section>
 
             {/* Testimonials Section */}
-            <section className="py-20">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-edvantae-blue mb-4">
-                    What Students Say
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Hear from students who have transformed their academic
-                    experience with Edvantae.
-                </p>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-8">
-                <div className="bgwhite p-8 rounded-xl shadow-md">
-                    <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-edvantae-light-blue rounded-full flex items-center justify-center text-edvantae-blue">
-                        <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        >
-                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <div className="ml-4">
-                        <h4 className="font-semibold">Chioma Okafor</h4>
-                        <p className="text-sm text-gray-500">
-                        Computer Science Student
-                        </p>
-                    </div>
-                    </div>
-                    <p className="text-gray-600">
-                    &quot;Edvantae has completely changed how I manage my
-                    academic life. The reminder system ensures I never miss
-                    deadlines, and the study squads feature has made group
-                    projects so much easier!&quot;
-                    </p>
-                </div>
-
-                <div className="bgwhite p-8 rounded-xl shadow-md">
-                    <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-edvantae-light-blue rounded-full flex items-center justify-center text-edvantae-blue">
-                        <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        >
-                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <div className="ml-4">
-                        <h4 className="font-semibold">Emmanuel Adebayo</h4>
-                        <p className="text-sm text-gray-500">
-                        Mechanical Engineering Student
-                        </p>
-                    </div>
-                    </div>
-                    <p className="text-gray-600">
-                    &quot;As a course rep, Edvantae has made communicating with
-                    my classmates seamless. The academic calendar keeps everyone
-                    on the same page, and the gamification makes studying more
-                    fun!&quot;
-                    </p>
-                </div>
-
-                <div className="bgwhite p-8 rounded-xl shadow-md">
-                    <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-edvantae-light-blue rounded-full flex items-center justify-center text-edvantae-blue">
-                        <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        >
-                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <div className="ml-4">
-                        <h4 className="font-semibold">Amina Ibrahim</h4>
-                        <p className="text-sm text-gray-500">
-                        Business Administration Student
-                        </p>
-                    </div>
-                    </div>
-                    <p className="text-gray-600">
-                    &quot;The AI study support is a game-changer for difficult
-                    concepts. I&apos;ve seen my grades improve since using
-                    Edvantae, and the affordable price makes it accessible to all
-                    students.&quot;
-                    </p>
-                </div>
-                </div>
-            </div>
-            </section>
+            <DashboardTestimonials />
 
             {/* FAQ Section */}
             <section className="py-20 bg-gray-50">

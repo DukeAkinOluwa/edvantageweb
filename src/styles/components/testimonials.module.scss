@@ -1,0 +1,202 @@
+$breakpoint-md: 768px;
+
+.testimonialsSection {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0; // py-20
+  background: radial-gradient(100% 100% at 50% 0%, #0d1220 0%, #07090e 100%);
+  z-index: 1;
+}
+
+// Crisp, high-end white math grid adjusted for dark backgrounds
+.mathGrid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// Soft back-lit neon glow hovering behind the scrolling cards
+.ambientGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(29, 78, 216, 0.05) 50%, rgba(23, 37, 84, 0) 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 1;
+  animation: pulseGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.95); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ==========================================
+// Marquee Layout & Animation
+// ==========================================
+.marqueeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  // SWAPPED: Gradual fade masks now blend perfectly into the #07090e dark base layout
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 3;
+    pointer-events: none;
+  }
+  &::before {
+    left: 0;
+    background: linear-gradient(90deg, #07090e 0%, rgba(7, 9, 14, 0) 100%);
+  }
+  &::after {
+    right: 0;
+    background: linear-gradient(-90deg, #07090e 0%, rgba(7, 9, 14, 0) 100%);
+  }
+}
+
+.marqueeRow {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  
+  // Pauses both rows when any card in this specific row is hovered
+  &:hover {
+    .marqueeTrack {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+}
+
+// Left scroll configuration
+.scrollLeft {
+  animation: scrollLeft 45s linear infinite;
+}
+
+// Right scroll configuration (opposite direction)
+.scrollRight {
+  animation: scrollRight 45s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); } // Moves exactly half-way (the length of one full set)
+}
+
+@keyframes scrollRight {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+// ==========================================
+// Testimonial Cards
+// ==========================================
+.testimonialCard {
+  width: 380px; // Consistent card size in tracking
+  flex-shrink: 0;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.01);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.avatarWrapper {
+  width: 3rem; // h-12 w-12 equivalent
+  height: 3rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa; // Soft neon light blue
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.userDetails {
+  margin-left: 1rem;
+}
+
+.userName {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+.userRole {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.quoteText {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.975rem;
+  line-height: 1.6;
+}
