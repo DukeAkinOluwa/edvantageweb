@@ -366,6 +366,10 @@ export default function Home() {
 
             {/* Stats Section */}
             <section className={statsStyles.statsSection}>
+                {/* Fluid Background Patterns */}
+                <div className={statsStyles.mathGrid} />
+                <div className={statsStyles.ambientGlow} />
+
                 <div className={statsStyles.container}>
                     <div className={statsStyles.grid}>
                     

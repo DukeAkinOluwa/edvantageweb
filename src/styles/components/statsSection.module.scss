@@ -8,59 +8,45 @@ $breakpoint-md: 768px;
   // Base background: Deep, rich Edvantae Blue with a premium dark-to-bright gradient
   background: linear-gradient(135deg, #1d4ed8 0%, #172554 100%);
   z-index: 1;
+}
 
-  // High-gloss top shine
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
-    pointer-events: none;
-    z-index: 1;
-  }
+// Crisp, high-end white math grid adjusted for dark backgrounds
+.mathGrid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
 
-  // ==============================================================================
-  // Premium Dual-Tone Alternating Backlit Panel with Smooth Blended Lighting Masks
-  // ==============================================================================
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.1; // Clean, restrained background pattern visibility
-    background-image: 
-      // LAYER 1: Ambient Lighting Overlay to smooth/feather the transition lines
-      repeating-linear-gradient(
-        -45deg,
-        rgba(255, 255, 255, 0.1) 0px,
-        rgba(255, 255, 255, 0.05) 30px,
-        transparent 40px,
-        rgba(255, 255, 255, 0) 78px,
-        rgba(255, 255, 255, 0.18) 80px, // Highlights and blends the seam
-        rgba(255, 255, 255, 0.05) 110px,
-        transparent 120px,
-        rgba(255, 255, 255, 0) 158px,
-        rgba(255, 255, 255, 0.18) 160px
-      ),
-      // LAYER 2: Precise Base Bands
-      repeating-linear-gradient(
-        -45deg,
-        #2a52be 0px,                         // Band A starts
-        #2a52be 78px,                        // Band A ends (78px wide)
-        rgba(255, 255, 255, 0.3) 78px,       // Softened 2px Separator Line
-        rgba(255, 255, 255, 0.3) 80px,       
-        #2347a8 80px,                        // Band B starts (Slightly darker shade)
-        #2347a8 158px,                       // Band B ends (78px wide)
-        rgba(255, 255, 255, 0.3) 158px,      // Softened 2px Separator Line
-        rgba(255, 255, 255, 0.3) 160px       
-      );
-  }
+// Soft back-lit neon glow hovering behind the glass cards
+.ambientGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  // Deep blue to electric light-blue halo
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(29, 78, 216, 0.05) 50%, rgba(23, 37, 84, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+  animation: pulseGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.95); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
 }
 
 .container {
   position: relative;
-  z-index: 2; // Sits safely above the background lines
+  z-index: 2; // Sits safely above the background grid and glow
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;
