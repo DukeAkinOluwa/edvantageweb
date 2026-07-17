@@ -1,0 +1,173 @@
+$breakpoint-md: 768px;
+
+.ctaSection {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0; // py-24
+  // Smooth light-mode gradient emphasizing the central canvas area
+  background: radial-gradient(100% 100% at 50% 50%, #f8fafc 0%, #e2e8f0 100%);
+  z-index: 1;
+}
+
+// Crisp engineering math grid overlay for structural consistency
+.mathGrid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// Centered ambient mesh glow highlighting the call to action
+.ambientGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.14) 0%, rgba(59, 130, 246, 0) 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 1;
+  animation: floatGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+  0% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.95); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 56rem; // max-w-4xl
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+
+  @media (min-width: $breakpoint-md) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a; // Deep slate for ideal contrast
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #475569; // Highly readable slate body text
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+  line-height: 1.625;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 1.25rem;
+  }
+}
+
+// ==========================================
+// Button Action Elements
+// ==========================================
+.actionsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+}
+
+// Primary glass button with solid gradient backdrop
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.875rem 2.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  box-shadow: 
+    0 4px 14px rgba(37, 99, 235, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-md) {
+    width: auto;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    box-shadow: 
+      0 8px 22px rgba(37, 99, 235, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+  }
+}
+
+// Bordered clean-glass button
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.875rem 2.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1d4ed8; // Edvantae Blue
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-md) {
+    width: auto;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(37, 99, 235, 0.6);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

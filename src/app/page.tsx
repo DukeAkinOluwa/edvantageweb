@@ -22,6 +22,7 @@ import statsStyles from "@/styles/components/statsSection.module.scss"
 import pricingStyles from "@/styles/components/pricingSectioin.module.scss"
 import DashboardTestimonials from "@/components/DashboardTestimonials";
 import DashboardFAQ from "@/components/DashboardFaq";
+import DashboardCTA from "@/components/DashboardCta";
 
 interface CountUpProps {
     end: number;
@@ -404,33 +405,7 @@ export default function Home() {
             <DashboardFAQ />
 
             {/* CTA Section */}
-            <section className="py-20">
-            <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl font-bold text-edvantae-blue mb-6">
-                    Ready to Transform Your Academic Experience?
-                </h2>
-                <p className="text-xl text-gray-600 mb-8">
-                    Join thousands of students already using Edvantae to enhance
-                    their productivity, collaboration, and academic success.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                    <Link
-                    href="/contact"
-                    className="px-8 py-3 bg-edvantae-blue text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
-                    >
-                    Get Started Now
-                    </Link>
-                    <Link
-                    href="/about"
-                    className="px-8 py-3 bgwhite border border-edvantae-blue text-edvantae-blue rounded-lg font-medium hover:bg-gray-50 transition-colors"
-                    >
-                    Learn More
-                    </Link>
-                </div>
-                </div>
-            </div>
-            </section>
+            <DashboardCTA />
         </PageTransition>
         );
     }
