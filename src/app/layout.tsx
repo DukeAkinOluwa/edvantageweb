@@ -9,7 +9,7 @@ import PageTransition from "@/components/PageTransition";
 export const metadata: Metadata = {
   title: "Edvantae Limited | Student Hub",
   description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
-  metadataBase: new URL('https://edvantae.com.ng'),
+  metadataBase: new URL('https://edvantae.com'),
   openGraph: {
     url: ".",
     title: "Edvantae Limited | Student Hub",
