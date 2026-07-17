@@ -57,19 +57,19 @@ $breakpoint-lg: 1024px;
     inset: 0;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.2;
     
     background-image: repeating-linear-gradient(
-      45deg,
+      -45deg,
       rgba(255, 255, 255, 0.4) 0px,
       rgba(255, 255, 255, 0.4) 40px,
-      transparent 40px,
+      transparent 60px,
       transparent 80px
     );
 
     @media (min-width: $breakpoint-md) {
       background-image: repeating-linear-gradient(
-        45deg,
+        -45deg,
         rgba(255, 255, 255, 0.3) 0px,
         rgba(255, 255, 255, 0.3) 100px,
         transparent 100px,
