@@ -1,0 +1,31 @@
+$breakpoint-md: 768px;
+$base-light: #fafbfd;
+
+.pageWrapper {
+  width: 100%;
+  background-color: $base-light;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.sectionsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+}

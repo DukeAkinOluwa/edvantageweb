@@ -1,0 +1,124 @@
+@use '../../variables.scss' as vars;
+
+$breakpoint-md: 768px;
+
+.splitSection {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.01);
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.splitContentCol {
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 4rem 3rem;
+  }
+}
+
+.splitTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.purposeLeadText {
+  font-size: 1.0625rem;
+  line-height: 1.625;
+  color: #334155;
+  margin-bottom: 1.75rem;
+}
+
+.numberedList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: start;
+}
+
+.listNumber {
+  flex-shrink: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: rgba(29, 78, 216, 0.08);
+  color: vars.$edvantaeBlue;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1875rem;
+}
+
+.listText {
+  margin-left: 0.875rem;
+  font-size: 0.9375rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.arrowLink {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: vars.$edvantaeBlue;
+  text-decoration: none;
+  align-self: flex-start;
+
+  &:hover {
+    .arrowIcon {
+      transform: translateX(4px);
+    }
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+.arrowIcon {
+  margin-left: 0.375rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.splitMediaCol {
+  width: 100%;
+  height: 24rem;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(29, 78, 216, 0.02);
+
+  @media (min-width: $breakpoint-md) {
+    height: 100%;
+    min-height: 32rem;
+  }
+}
+
+.splitImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

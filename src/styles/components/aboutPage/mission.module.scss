@@ -1,0 +1,248 @@
+@use '../../variables.scss' as vars;
+
+$breakpoint-md: 768px;
+$deep-blue-bg: #0b1329; 
+
+.cardSection {
+  position: relative;
+  width: 100%; // Spans the full viewport edge-to-edge
+  background-color: $deep-blue-bg; 
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 5rem 0; // Uniform spacing separation from hero section
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    pointer-events: none;
+    background-size: 50px 50px;
+    background-position: center;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    z-index: 1;
+  }
+}
+
+// CRUCIAL ADDITION: Enforces original centered responsive constraints
+.sectionContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.interactiveContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 64rem; // Keeps alignment identical to the sectionsStack widths
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $breakpoint-md) {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 2rem 4rem; 
+    align-items: center;
+  }
+}
+
+.missionNode {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    grid-column: 1; 
+  }
+}
+
+.indicatorBtn {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  width: 100%;
+  outline: none;
+
+  &:hover {
+    .indicatorLabel {
+      color: #ffffff;
+    }
+  }
+}
+
+.indicatorLabel {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #94a3b8;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.activeIndicator {
+  .indicatorLabel {
+    color: #38bdf8;
+    font-weight: 600;
+  }
+}
+
+.progressBarBg {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: #38bdf8;
+  width: 0%;
+  transition: width 30ms linear;
+}
+
+.inlineDisplayBox {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, margin-top 0.3s ease;
+  width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    display: none; 
+  }
+}
+
+.boxOpen {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.boxClosed {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+.cardInner {
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desktopDisplayWindow {
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1 / span 4; 
+    align-self: center; 
+    
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    min-height: 320px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+}
+
+.desktopSlide {
+  padding: 3rem 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.slideVisible {
+  position: relative;
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+  z-index: 2;
+}
+
+.slideHidden {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.97);
+  visibility: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.iconCircle {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  background-color: rgba(29, 78, 216, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  height: 1.75rem;
+  width: 1.75rem;
+  color: vars.$edvantaeBlue;
+}
+
+.cardHeading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.cardText {
+  font-size: 0.95rem;
+  color: #475569;
+  text-align: center;
+  line-height: 1.55;
+  max-width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
+}

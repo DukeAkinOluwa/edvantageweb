@@ -1,0 +1,88 @@
+@use '../../variables.scss' as vars;
+
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+.valuesSection {
+  background: radial-gradient(100% 100% at 50% 0%, rgba(241, 245, 249, 0.4) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border: 1px solid rgba(29, 78, 216, 0.08);
+  border-radius: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  backdrop-filter: blur(8px);
+
+  @media (min-width: $breakpoint-md) {
+    padding: 3.5rem 2.5rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.valueCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(29, 78, 216, 0.1);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(29, 78, 216, 0.3);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+  }
+}
+
+.iconCircle {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  background-color: rgba(29, 78, 216, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: vars.$edvantaeBlue;
+}
+
+.cardHeading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.cardText {
+  font-size: 0.9375rem;
+  color: #475569;
+  text-align: center;
+  line-height: 1.5;
+}
