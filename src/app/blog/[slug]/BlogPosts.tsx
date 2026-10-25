@@ -40,7 +40,7 @@ export default function BlogPost({ slug }: BlogPostProps) {
       <Sonner />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+          <main className='flex-grow' style={{paddingTop: "50px"}}>
           <PageTransition>
             <div className="container mx-auto py-16 px-4">
               <div className="max-w-4xl mx-auto">

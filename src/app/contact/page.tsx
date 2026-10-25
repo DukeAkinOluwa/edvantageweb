@@ -19,7 +19,7 @@ export default function Contact() {
           <Sonner />
           <div className='flex flex-col min-h-screen'>
             <Navbar />
-            <main className='flex-grow'>
+            <main className='flex-grow' style={{paddingTop: "50px"}}>
               <Index />
             </main>
             <Footer />
@@ -204,7 +204,7 @@ export default function Contact() {
                               <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
                             </svg>
                           </a>
-                          <a href="https://instagram.com/edvantaeapp" className="h-10 w-10 rounded-full bg-edvantae-light-blue flex items-center justify-center text-edvantae-blue hover:bg-edvantae-blue hover:text-white transition-colors">
+                          <a href="https://www.instagram.com/edvantae_one_campus" className="h-10 w-10 rounded-full bg-edvantae-light-blue flex items-center justify-center text-edvantae-blue hover:bg-edvantae-blue hover:text-white transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>

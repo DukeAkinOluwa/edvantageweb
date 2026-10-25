@@ -75,12 +75,13 @@ const CountUp = ({ end, duration = 2000, decimals = 0, prefix = "", suffix = "" 
 
     return (
         <div ref={elementRef} className={statsStyles.number}>
-        {prefix}
-        {count.toLocaleString(undefined, {
-            minimumFractionDigits: decimals,
-            maximumFractionDigits: decimals,
-        })}
-        {suffix}
+            <div className={statsStyles.mathGrid}></div>
+            {prefix}
+            {count.toLocaleString(undefined, {
+                minimumFractionDigits: decimals,
+                maximumFractionDigits: decimals,
+            })}
+            {suffix}
         </div>
     );
 };
@@ -368,35 +369,7 @@ export default function Home() {
             </section>
 
             {/* Stats Section */}
-            <section className={statsStyles.statsSection}>
-                {/* Fluid Background Patterns */}
-                <div className={statsStyles.mathGrid} />
-                <div className={statsStyles.ambientGlow} />
-
-                <div className={statsStyles.container}>
-                    <div className={statsStyles.grid}>
-                    
-                    {/* Card 1: Nigerian Students (Counts 0 to 2.1 with 1 decimal) */}
-                    <div className={statsStyles.statCard}>
-                        <CountUp end={2.1} decimals={1} suffix="M+" />
-                        <p className={statsStyles.label}>Nigerian Students</p>
-                    </div>
-
-                    {/* Card 2: Mobile Adoption (Counts 0 to 47) */}
-                    <div className={statsStyles.statCard}>
-                        <CountUp end={47} suffix="%" />
-                        <p className={statsStyles.label}>Mobile Adoption</p>
-                    </div>
-
-                    {/* Card 3: Static Value */}
-                    <div className={statsStyles.statCard}>
-                        <div className={statsStyles.number}>₦00.00</div>
-                        <p className={statsStyles.label}>Per Year</p>
-                    </div>
-                    
-                    </div>
-                </div>
-            </section>
+            
 
             {/* Testimonials Section */}
             <DashboardTestimonials />
@@ -410,3 +383,30 @@ export default function Home() {
         );
     }
 }
+
+
+{/* <section className={statsStyles.statsSection}>
+                <div className={statsStyles.mathGrid} />
+                <div className={statsStyles.ambientGlow} />
+
+                <div className={statsStyles.container}>
+                    <div className={statsStyles.grid}>
+                    
+                    <div className={statsStyles.statCard}>
+                        <CountUp end={2.1} decimals={1} suffix="M+" />
+                        <p className={statsStyles.label}>Nigerian Students</p>
+                    </div>
+
+                    <div className={statsStyles.statCard}>
+                        <CountUp end={47} suffix="%" />
+                        <p className={statsStyles.label}>Mobile Adoption</p>
+                    </div>
+
+                    <div className={statsStyles.statCard}>
+                        <div className={statsStyles.number}>₦00.00</div>
+                        <p className={statsStyles.label}>Per Year</p>
+                    </div>
+                    
+                    </div>
+                </div>
+            </section> */}

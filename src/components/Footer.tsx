@@ -40,7 +40,7 @@ const Footer = () => {
                 <Twitter size={20} />
               </a> */}
               <a
-                href="https://www.instagram.com/edvantae_edu"
+                href="https://www.instagram.com/edvantae_one_campus"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-edvantae-dark-gray hover:text-edvantae-blue transition-colors"

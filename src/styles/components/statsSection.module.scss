@@ -6,7 +6,9 @@ $breakpoint-md: 768px;
   padding: 5rem 0; // py-20
   
   // Base background: Deep, rich Edvantae Blue with a premium dark-to-bright gradient
-  background: linear-gradient(135deg, #1d4ed8 0%, #172554 100%);
+  background:
+    linear-gradient(rgba(29, 78, 216, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 216, 0.05) 1px, transparent 1px);
   z-index: 1;
 }
 
@@ -15,8 +17,8 @@ $breakpoint-md: 768px;
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(29, 78, 216, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 216, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
   background-position: center;
   pointer-events: none;
@@ -73,7 +75,7 @@ $breakpoint-md: 768px;
   border-radius: 1.5rem;
   // Glass highlight borders (bright at the top left, fading out)
   border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.03);
+  background:  radial-gradient(circle 700px at 00% 50%, #2A52BE 0%, #0d1220 70%);
   backdrop-filter: blur(12px);
   box-shadow: 
     0 4px 30px rgba(0, 0, 0, 0.1),
@@ -82,8 +84,22 @@ $breakpoint-md: 768px;
 
   &:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.06);
+    background:  radial-gradient(circle 900px at 00% 50%, #0d1220 0%, #2A52BE 70%);
     border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  
+// Crisp, high-end white math grid adjusted for dark backgrounds
+  .mathGrid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+    pointer-events: none;
+    z-index: 1;
   }
 }
 

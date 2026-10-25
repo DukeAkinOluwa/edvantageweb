@@ -40,7 +40,7 @@ $transition-speed: 0.3s;
     max-width: 1000px; // container mx-auto
     margin: 0 auto;
     padding: 1rem 1rem;
-    background-color: rgba(11, 10, 15, 0.99);
+    background: radial-gradient(circle 500px at 50% 50%, #2A52BE 0%, #0d1220 70%);
     border-radius: 0 0 20px 20px;
     
     // Use transition-property: transform for ultra-smooth performance

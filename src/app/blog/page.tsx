@@ -18,7 +18,7 @@ export default function Blog() {
           <Sonner />
           <div className='flex flex-col min-h-screen'>
             <Navbar />
-            <main className='flex-grow'>
+            <main className='flex-grow' style={{paddingTop: "50px"}}>
               <Index />
             </main>
             <Footer />

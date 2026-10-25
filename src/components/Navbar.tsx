@@ -81,8 +81,8 @@ const Navbar = () => {
       <nav className={navClass}>
         <Link href="/" className={styles.logo}>
           <Image
-            width={400}
-            height={400}
+            width={45}
+            height={45}
             src={"/Images/edvantaenavbarlogo.jpg"}
             alt="Edvantae App"
             className={styles.navLogo}
