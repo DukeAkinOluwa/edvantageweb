@@ -16,7 +16,7 @@ const Footer = () => {
               href="/"
               className="text-2xl font-display font-bold text-edvantae-blue inline-block mb-2"
             >
-              Edvantae
+              Edvantae OneCampus
             </Link>
             <p className="text-edvantae-dark-gray max-w-xs">
               Simplifying the academic journey for tertiary students with an
@@ -187,7 +187,7 @@ const Footer = () => {
         {/* Bottom Copyright */}
         <div className="border-t border-gray-200 pt-8 mt-8 text-center">
           <Link href="/dashboard" className="text-sm text-edvantae-dark-gray">
-            &copy; {currentYear} Edvantae. All rights reserved.
+            &copy; {currentYear} Edvantae Limited. All rights reserved.
           </Link>
         </div>
       </div>

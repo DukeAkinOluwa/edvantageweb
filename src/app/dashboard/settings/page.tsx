@@ -727,7 +727,7 @@ const SettingsPage = () => {
                 <div>
                   <h3 className="text-base font-medium mb-2">Data Export</h3>
                   <p className="text-sm text-muted-foreground mt-1 mb-3">
-                    Download a copy of all your data stored on Edvantae.
+                    Download a copy of all your data stored on Edvantae OneCampus.
                   </p>
                   <Button 
                     variant="outline" 

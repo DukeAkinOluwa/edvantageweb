@@ -66,12 +66,12 @@ const Hero = ({
                 width={400}
                 height={400}
                 src={imageUrl}
-                alt="Edvantae App"
+                alt="Edvantae OneCampus App"
                 className={styles.heroImage}
               />
             ) : (
               <div className={styles.fallbackBg}>
-                Edvantae
+                Edvantae OneCampus
               </div>
             )}
             <div className={`${styles.glowDot} ${styles.glowLeft}`}></div>

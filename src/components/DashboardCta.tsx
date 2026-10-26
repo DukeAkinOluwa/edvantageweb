@@ -15,7 +15,7 @@ const DashboardCTA = () => {
         </h2>
         
         <p className={styles.subtitle}>
-          Join thousands of students already using Edvantae to enhance 
+          Join thousands of students already using Edvantae OneCampus to enhance 
           their productivity, collaboration, and academic success.
         </p>
 

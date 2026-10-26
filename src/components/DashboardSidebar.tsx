@@ -91,7 +91,7 @@ const DashboardSidebar = ({ onToggleCollapse }: DashboardSidebarProps) => {
       <div className="flex items-center justify-between px-4 py-5">
         {!isCollapsed && (
           <Link href="/dashboard" className="text-xl font-bold text-edvantae-blue dark:text-edvantae-light-blue flex items-center">
-            Edvantae
+            OneCampus
           </Link>
         )}
         

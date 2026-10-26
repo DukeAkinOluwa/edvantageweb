@@ -225,19 +225,19 @@ export default function Home() {
 
         const faqs = [
         {
-            question: "What is Edvantae?",
+            question: "What is Edvantae OneCampus?",
             answer:
-            "Edvantae is a productivity and collaboration tool designed specifically for tertiary students. It helps with time management, collaboration, and provides academic resources to enhance your learning experience.",
+            "Edvantae OneCampus is a productivity and collaboration tool designed specifically for tertiary students. It helps with time management, collaboration, and provides academic resources to enhance your learning experience.",
         },
         {
-            question: "How much does Edvantae cost?",
+            question: "How much does Edvantae OneCampus cost?",
             answer:
-            "Edvantae offers a freemium model. Basic features are available for free, with premium features accessible for ₦00.00/year - an affordable price designed specifically for students.",
+            "Edvantae OneCampus offers a freemium model. Basic features are available for free, with premium features accessible for ₦00.00/year - an affordable price designed specifically for students.",
         },
         {
-            question: "Can I use Edvantae on multiple devices?",
+            question: "Can I use Edvantae OneCampus on multiple devices?",
             answer:
-            "Yes! Edvantae is available on web and mobile platforms, allowing you to access your academic tools and resources anywhere, anytime.",
+            "Yes! Edvantae OneCampus is available on web and mobile platforms, allowing you to access your academic tools and resources anywhere, anytime.",
         },
         {
             question: "How do study squads work?",
@@ -245,7 +245,7 @@ export default function Home() {
             "Study squads allow you to create or join groups with classmates, share resources, discuss topics, and collaborate on projects. You can set group goals, assign tasks, and track progress together.",
         },
         {
-            question: "Is my data secure with Edvantae?",
+            question: "Is my data secure with Edvantae OneCampus?",
             answer:
             "Absolutely. We take data privacy and security seriously. All your personal information and academic data are encrypted and protected according to the highest industry standards.",
         },
@@ -255,8 +255,8 @@ export default function Home() {
         <PageTransition>
             {/* Hero Section */}
             <Hero
-            title="Empowering Students for Academic Success"
-            subtitle="Edvantae helps tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform."
+            title="Empowering Academic Success"
+            subtitle="Edvantae OneCampus helps tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform."
             ctaText="Get Started"
             ctaLink="/contact"
             secondaryCtaText="Learn More"
@@ -276,9 +276,9 @@ export default function Home() {
                     {/* Left-Aligned Premium Header Block */}
                     <div className={featureStyles.headerText}>
                     <span className={featureStyles.category}>Benefits</span>
-                    <h2 className={featureStyles.title}>Designed for Student Success</h2>
+                    <h2 className={featureStyles.title}>Designed for Academic Success</h2>
                     <p className={featureStyles.subtitle}>
-                        Edvantae combines essential tools that address the unique challenges faced by tertiary students.
+                        Edvantae OneCampus combines essential tools that address the unique challenges faced by tertiary students.
                     </p>
                     </div>
 

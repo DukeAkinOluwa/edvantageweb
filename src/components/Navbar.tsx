@@ -84,7 +84,7 @@ const Navbar = () => {
             width={45}
             height={45}
             src={"/Images/edvantaenavbarlogo.jpg"}
-            alt="Edvantae App"
+            alt="Edvantae OneCampus App"
             className={styles.navLogo}
           />
         </Link>

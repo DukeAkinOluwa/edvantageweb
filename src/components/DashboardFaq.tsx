@@ -37,8 +37,8 @@ const FaqItem = ({ question, answer }: FaqItemProps) => {
 const DashboardFAQ = () => {
   const faqs = [
     {
-      question: "What is Edvantae?",
-      answer: "Edvantae is a centralized academic management and student collaboration ecosystem designed specifically for tertiary students in Nigeria to streamline task tracking, coordinate shared calendars, and run Study Squads."
+      question: "What is Edvantae OneCampus?",
+      answer: "Edvantae OneCampus is a centralized academic management and student collaboration ecosystem designed specifically for tertiary students in Nigeria to streamline task tracking, coordinate shared calendars, and run Study Squads."
     },
     {
       question: "How do Study Squads work?",
@@ -60,7 +60,7 @@ const DashboardFAQ = () => {
         <div className={styles.headerText}>
           <h2 className={styles.title}>Frequently Asked Questions</h2>
           <p className={styles.subtitle}>
-            Get answers to common questions about Edvantae and how it can help you succeed academically.
+            Get answers to common questions about Edvantae OneCampus and how it can aid you succeed academically.
           </p>
         </div>
 

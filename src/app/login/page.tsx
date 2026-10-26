@@ -56,7 +56,7 @@ const Login = () => {
       
       toast({
         title: "Login successful",
-        description: `Welcome back to Edvantae${accountType === 'organization' ? ' (Organization account)' : ''}!`,
+        description: `Welcome back to Edvantae OneCampus${accountType === 'organization' ? ' (Organization account)' : ''}!`,
       });
 
       // Redirect based on account type
@@ -185,7 +185,7 @@ const Login = () => {
         </CardContent>
 
         <CardFooter className="text-center text-sm">
-          <span>New to Edvantae? </span>
+          <span>New to Edvantae OneCampus? </span>
           <Link href="/register" className="text-edvantae-blue dark:text-edvantae-light-blue hover:underline">
             Create an account
           </Link>

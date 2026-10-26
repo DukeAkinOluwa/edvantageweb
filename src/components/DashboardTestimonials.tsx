@@ -15,13 +15,13 @@ const testimonialsData: Testimonial[] = [
     id: 1,
     name: "Chioma Okafor",
     role: "Computer Science Student",
-    quote: "Edvantae has completely changed how I manage my academic life. The reminder system ensures I never miss deadlines, and the study squads are fantastic!"
+    quote: "OneCampus has completely changed how I manage my academic life. The reminder system ensures I never miss deadlines, and the study squads are fantastic!"
 },
 {
     id: 2,
     name: "Emmanuel Adebayo",
     role: "Mechanical Engineering Student",
-    quote: "As a course rep, Edvantae has made communicating with my classmates seamless. The shared schedules keep everyone perfectly aligned!"
+    quote: "As a course rep, OneCampus has made communicating with my classmates seamless. The shared schedules keep everyone perfectly aligned!"
 },
 {
     id: 3,
@@ -39,7 +39,7 @@ const testimonialsData: Testimonial[] = [
     id: 5,
     name: "Funmi Alao",
     role: "Medicine & Surgery Student",
-    quote: "Managing my clinical postings and lecture notes was chaotic until I started using Edvantae. It's an absolute lifesaver!"
+    quote: "Managing my clinical postings and lecture notes was chaotic until I started using OneCampus. It's an absolute lifesaver!"
 },
 {
     id: 6,
@@ -89,7 +89,7 @@ const testimonialsData: Testimonial[] = [
     id: 13,
     name: "Tobi Adebisi",
     role: "Accounting Student",
-    quote: "Tax law and audit formulas are tough, but practicing with colleagues on Edvantae Study Squads makes the load much lighter."
+    quote: "Tax law and audit formulas are tough, but practicing with colleagues on OneCampus Study Squads makes the load much lighter."
 },
 {
     id: 14,
@@ -130,7 +130,7 @@ return (
         <div className={styles.header}>
         <h2 className={styles.title}>What Students Say</h2>
         <p className={styles.subtitle}>
-            Hear from tertiary students who have streamlined their workflow, managed their squads, and transformed their academic experience with Edvantae.
+            Hear from tertiary students who have streamlined their workflow, managed their squads, and transformed their academic experience with OneCampus.
         </p>
         </div>
 

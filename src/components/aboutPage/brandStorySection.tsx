@@ -28,10 +28,10 @@ export default function BrandStorySection() {
           <div className={`${story.splitContentCol} ${story.orderContentMobile}`}>
             <h2 className={story.splitTitle}>Our Brand Story</h2>
             <p className={story.bodyTextText}>
-              Edvantae was born out of a student&apos;s struggle to juggle assignments, deadlines, and personal life. 
+              Edvantae OneCampus was born out of a student&apos;s struggle to juggle assignments, deadlines, and personal life. 
             </p>
             <p className={story.bodyTextText}>
-              Recognizing the need for a centralized academic productivity platform, the idea of Edvantae was 
+              Recognizing the need for a centralized academic productivity platform, the idea of Edvantae OneCampus was 
               developed to help students manage their studies effectively, collaborate with peers, and stay 
               motivated to achieve academic excellence.
             </p>
@@ -42,7 +42,7 @@ export default function BrandStorySection() {
                 <Quote size={16} fill="currentColor" />
               </div>
               <p>
-                &quot;We created Edvantae because we believe every student deserves tools that work as hard as they do.&quot;
+                &quot;We created Edvantae OneCampus because we believe every student deserves tools that work as hard as they do.&quot;
               </p>
             </blockquote>
 

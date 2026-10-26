@@ -39,8 +39,8 @@ export default function About() {
         return (
             <PageTransition>
               <Hero
-                title="About Edvantae"
-                subtitle="Edvantae simplifies the academic journey for tertiary students by providing an engaging and efficient platform that integrates time management, collaboration, and academic tools. The app is built to help students overcome challenges such as poor time management, disjointed academic planning, and a lack of centralized collaboration tools."
+                title="About Edvantae OneCampus"
+                subtitle="Edvantae OneCampus simplifies the academic journey for tertiary students by providing an engaging and efficient platform that integrates time management, collaboration, and academic tools. The app is built to help students overcome challenges such as poor time management, disjointed academic planning, and a lack of centralized collaboration tools."
                 ctaText=""
                 ctaLink=""
                 secondaryCtaText=""

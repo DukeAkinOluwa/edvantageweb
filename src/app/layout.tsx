@@ -7,14 +7,14 @@ import { AchievementProvider } from "@/contexts/AchievementContext";
 import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Edvantae Limited | Student Hub",
+  title: "Edvantae OneCampus",
   description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
-  metadataBase: new URL('https://edvantae.com'),
+  metadataBase: new URL('https://onecampus.edvantae.com'),
   openGraph: {
     url: ".",
-    title: "Edvantae Limited | Student Hub",
+    title: "Edvantae OneCampus",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
-    siteName: "Edvantae Hub",
+    siteName: "Edvantae OneCampus",
     images: [
       {
         url: "/Images/edvantaewebicon.png",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@Edvantae",
-    title: "Edvantae Limited | Student Hub",
+    title: "Edvantae OneCampus",
     description: "The go-to platform for tertiary students manage time effectively, collaborate with peers, and access academic resources - all in one platform",
     images: "/Images/edvantaewebicon.png",
   },
